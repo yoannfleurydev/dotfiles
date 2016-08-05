@@ -7,8 +7,9 @@
 
 TERM=screen
 EDITOR=vim
+VISUAL=vim
 
-#}}}
+#}}
 
 #{{{ ZSH Modules
 
