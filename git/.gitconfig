@@ -1,0 +1,6 @@
+[user]
+	email = yoann.fleury@yahoo.com
+	name = Yoann Fleury
+[core]
+	editor = vim
+	excludesfile = /home/yfleury/.gitignore_global
