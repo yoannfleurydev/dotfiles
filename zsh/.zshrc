@@ -8,8 +8,17 @@
 TERM=screen
 EDITOR=vim
 VISUAL=vim
+PATH=$PATH:$HOME/.local/bin
+#}}}
 
-#}}
+#{{{ Set up prompt
+
+autoload -Uz promptinit
+promptinit
+prompt adam1
+
+#}}}
+
 
 #{{{ ZSH Modules
 
@@ -25,12 +34,17 @@ setopt AUTO_CD
 
 #}}}
 
-# Set up the prompt
+#{{{ POWERLINE
 
-autoload -Uz promptinit
-promptinit
-prompt adam1
+. /home/yfleury/.local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
+#}}}
+
+#{{{ ALIAS
+
+alias ez='vim ~/.zshrc'
+
+#}}}
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
