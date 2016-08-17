@@ -9,6 +9,8 @@ TERM=screen
 EDITOR=vim
 VISUAL=vim
 PATH=$PATH:$HOME/.local/bin
+XDG_CONFIG_HOME=$HOME/.config
+
 #}}}
 
 #{{{ Set up prompt
@@ -43,8 +45,10 @@ setopt AUTO_CD
 #{{{ ALIAS
 
 alias ez='vim ~/.zshrc'
+alias ev='vim ~/.vimrc'
 
 #}}}
+
 setopt histignorealldups sharehistory
 
 # Use emacs keybindings even if our EDITOR is set to vi
@@ -72,4 +76,10 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
-source /home/yfleury/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#{{{ PLUGINS
+
+# ZSH syntax highlighting plugin
+source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+#}}}
