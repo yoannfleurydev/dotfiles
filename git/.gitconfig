@@ -8,4 +8,15 @@
 	st = status
 	unstage = reset HEAD --
 	last = log -1 HEAD
-	l = log --pretty --oneline
+	l = log --pretty=oneline --graph --abbrev-commit
+
+[color "status"]
+
+	added = green 
+	changed = yellow
+	untracked = red
+
+[help]
+
+	# Automatically correct and execute mistyped commands
+	autocorrect = 1
