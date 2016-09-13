@@ -24,6 +24,7 @@ prompt adam1
 
 #{{{ ZSH Modules
 
+# Enable completion
 autoload -Uz compinit
 compinit
 
@@ -33,6 +34,9 @@ compinit
 
 # Auto change directory when typing the name of a directory
 setopt AUTO_CD
+
+# Will correct sl to ls (won't work if you install sl command :])
+setopt correctall
 
 #}}}
 
@@ -70,6 +74,10 @@ zstyle ':completion:*' verbose true
 
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
+
+zstyle ':completion:*:rm:*' ignore-line yes # Ignore files already present in rm command
+zstyle ':completion:*:mv:*' ignore-line yes # Ignore files already present in mv command
+zstyle ':completion:*:cp:*' ignore-line yes # Ignore files already present in cp command
 
 #{{{ PLUGINS
 
