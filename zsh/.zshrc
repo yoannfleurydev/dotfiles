@@ -39,7 +39,7 @@ setopt AUTO_CD
 #{{{ ALIAS
 
 alias ez='vim ~/.zshrc'
-alias ev='vim ~/.vimrc'
+alias ev='vim ~/.vim/vimrc'
 
 #}}}
 
