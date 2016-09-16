@@ -17,7 +17,7 @@ XDG_CONFIG_HOME=$HOME/.config
 
 autoload -Uz promptinit
 promptinit
-prompt adam1
+source ~/.zsh/prompt.zsh
 
 #}}}
 
