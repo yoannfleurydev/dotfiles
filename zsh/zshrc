@@ -33,10 +33,26 @@ compinit
 #{{{ OPTIONS
 
 # Auto change directory when typing the name of a directory
-setopt AUTO_CD
+setopt auto_cd
 
 # Will correct sl to ls (won't work if you install sl command :])
-setopt correctall
+setopt correct
+
+# Spelling correction for arguments
+unsetopt correct_all
+
+# Allow multiple terminal sessions to all append to one zsh history file
+setopt append_history
+
+# Save timestamp of command and the duration
+setopt extended_history
+
+# Don't write events to history that are duplicates of previous events
+setopt hist_ignore_dups
+
+# Remove command line from history list when first character on the line is a space
+setopt hist_ignore_space
+
 
 #}}}
 
