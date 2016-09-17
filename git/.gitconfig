@@ -9,6 +9,7 @@
 	unstage = reset HEAD --
 	last = log -1 HEAD
 	l = log --pretty=oneline --graph --abbrev-commit
+	conflicts = diff --name-only --diff-filter=U
 
 [color "status"]
 
