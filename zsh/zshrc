@@ -8,7 +8,8 @@
 TERM=screen
 EDITOR=vim
 VISUAL=vim
-PATH=$PATH:$HOME/.local/bin
+PATH=$PATH:$HOME/.local/bin:$HOME/bin/java/aspectj1.8/bin
+CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 XDG_CONFIG_HOME=$HOME/.config
 
 #}}}
