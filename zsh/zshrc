@@ -59,11 +59,7 @@ setopt hist_ignore_space
 
 #{{{ ALIAS
 
-alias ez='vim ~/.zshrc'
-alias ev='vim ~/.vim/vimrc'
-
-alias ls='ls --color=auto'
-alias ll='ls -alh'
+source ~/.zsh/aliases.zsh
 
 #}}}
 
