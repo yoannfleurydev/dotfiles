@@ -1,9 +1,11 @@
 [user]
 	email = yoann.fleury@yahoo.com
 	name = Yoann Fleury
+
 [core]
 	editor = vim
 	excludesfile = /home/yfleury/.gitignore_global
+
 [alias]
 	st = status
 	unstage = reset HEAD --
@@ -12,14 +14,17 @@
 	conflicts = diff --name-only --diff-filter=U
 
 [color "status"]
-
 	added = green 
 	changed = yellow
 	untracked = red
 
-[help]
+[diff]
+	mnemonicPrefix = true
+	wordRegex = .
 
+[help]
 	# Automatically correct and execute mistyped commands
 	autocorrect = 1
+
 [push]
 	default = simple
