@@ -10,12 +10,13 @@ EDITOR=vim
 VISUAL=vim
 
 # -- JAVA RELATED --
+JAVA_HOME=$HOME/bin/java/jdk1.8.0_102
 GRADLE_HOME=$HOME/bin/java/gradle-3.1
 SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 ANDROID_HOME=$HOME/bin/android/sdk
 # --
 
-PATH=$PATH:$HOME/.local/bin:$HOME/bin/java/jdk1.8.0_102/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
+PATH=$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 XDG_CONFIG_HOME=$HOME/.config
 
