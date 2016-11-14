@@ -1,0 +1,10 @@
+# Top most EditorConfig
+root = true
+
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+[*.{js,py,php,java}]
+charset = utf-8
+

@@ -16,6 +16,10 @@ SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 ANDROID_HOME=$HOME/bin/android/sdk
 # --
 
+# -- DEVELOPMENT RELATED --
+SYMFONY__TEMPLATING__HELPER__CODE__FILE_LINK_FORMAT='phpstorm://open?file=%f&line=%l'
+# --
+
 PATH=$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools
 CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 XDG_CONFIG_HOME=$HOME/.config
@@ -106,6 +110,7 @@ zstyle ':completion:*:cp:*' ignore-line yes # Ignore files already present in cp
 #{{{ PLUGINS
 
 # ZSH syntax highlighting plugin
+
 source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 #}}}
