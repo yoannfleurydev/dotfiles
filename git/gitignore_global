@@ -52,3 +52,5 @@ bower_components/
 out/
 build/
 *.iml
+.vscode
+
