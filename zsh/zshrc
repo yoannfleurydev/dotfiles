@@ -10,7 +10,7 @@ EDITOR=vim
 VISUAL=vim
 
 # -- JAVA RELATED --
-JAVA_HOME=$HOME/bin/java/jdk1.8.0_102
+JAVA_HOME=$HOME/bin/java/jdk
 GRADLE_HOME=$HOME/bin/java/gradle-3.1
 SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 ANDROID_HOME=$HOME/bin/android/sdk
