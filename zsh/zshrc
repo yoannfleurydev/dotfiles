@@ -27,6 +27,7 @@ PATH=$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/a
 
 MANPATH="/home/yfleury/.linuxbrew/share/man:$MANPATH"
 INFOPATH="/home/yfleury/.linuxbrew/share/info:$INFOPATH"
+XDG_DATA_DIRS="/home/yfleury/.linuxbrew/share:$XDG_DATA_DIRS"
 
 CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 XDG_CONFIG_HOME=$HOME/.config
