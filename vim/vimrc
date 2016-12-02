@@ -43,6 +43,7 @@ syntax enable
 set number
 set laststatus=2              " for the status bar to appear all the time
 set background=dark           " for the status bar to print correctly on gnome
+set tabstop=2 shiftwidth=2 expandtab
 
 let g:airline_powerline_fonts = 1 " for the status bar to use powerline char 
 let g:airline_theme='solarized'
