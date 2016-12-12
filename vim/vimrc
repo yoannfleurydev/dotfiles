@@ -24,6 +24,9 @@ Plugin 'editorconfig/editorconfig-vim'
 " Markdown viewer
 Plugin 'suan/vim-instant-markdown'
 
+" Language plugins
+Plugin 'leafgarland/typescript-vim'
+
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
@@ -47,3 +50,7 @@ set tabstop=2 shiftwidth=2 expandtab
 
 let g:airline_powerline_fonts = 1 " for the status bar to use powerline char 
 let g:airline_theme='solarized'
+
+
+" Next step fix a leafgarland/typescript-vim bug
+autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
