@@ -31,6 +31,7 @@ INFOPATH="/home/yfleury/.linuxbrew/share/info:$INFOPATH"
 XDG_DATA_DIRS="/home/yfleury/.linuxbrew/share:$XDG_DATA_DIRS"
 CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 XDG_CONFIG_HOME=$HOME/.config
+GOPATH="$HOME/dev/go":$GOPATH
 # --
 
 #}}}
