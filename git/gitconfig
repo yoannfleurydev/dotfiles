@@ -9,6 +9,7 @@
 [alias]
 	st = status
 	unstage = reset HEAD --
+  unmerged = branch -r --no-merged 
 	last = log -1 HEAD
 	l = log --pretty=oneline --graph --abbrev-commit
 	conflicts = diff --name-only --diff-filter=U
