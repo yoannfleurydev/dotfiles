@@ -19,6 +19,7 @@ MVN_HOME=$HOME/bin/maven
 
 # -- DEVELOPMENT RELATED --
 SYMFONY__TEMPLATING__HELPER__CODE__FILE_LINK_FORMAT='phpstorm://open?file=%f&line=%l'
+export GRAPHVIZ_DOT="/home/yfleury/.linuxbrew/bin/dot"
 # --
 
 # -- PATH --

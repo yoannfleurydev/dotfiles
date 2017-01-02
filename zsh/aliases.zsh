@@ -16,3 +16,5 @@ alias g="git"
 alias gpom="git push origin master"
 alias gp="git pull"
 alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
+
+alias plantuml="java -jar $HOME/bin/plantuml.jar"
