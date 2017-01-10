@@ -1,31 +1,33 @@
 [user]
-	email = yoann.fleury@yahoo.com
-	name = Yoann Fleury
+  email = yoann.fleury@yahoo.com
+  name = Yoann Fleury
 
 [core]
-	editor = vim
-	excludesfile = /home/yfleury/.gitignore_global
+  editor = vim
+  excludesfile = /home/yfleury/.gitignore_global
 
 [alias]
-	st = status
-	unstage = reset HEAD --
+  st = status
+  unstage = reset HEAD --
   unmerged = branch -r --no-merged 
-	last = log -1 HEAD
-	l = log --pretty=oneline --graph --abbrev-commit
-	conflicts = diff --name-only --diff-filter=U
+  last = log -1 HEAD
+  l = log --pretty=oneline --graph --abbrev-commit
+  conflicts = diff --name-only --diff-filter=U
 
 [color "status"]
-	added = green 
-	changed = yellow
-	untracked = red
+  added = green 
+  changed = yellow
+  untracked = red
 
 [diff]
-	mnemonicPrefix = true
-	wordRegex = .
+  # Use better prefix (c, i, w) instead of 'a' and 'b' in diff
+  mnemonicPrefix = true
+  wordRegex = .
 
 [help]
-	# Automatically correct and execute mistyped commands
-	autocorrect = 1
+  # Automatically correct and execute mistyped commands
+  autocorrect = 1
 
 [push]
-	default = simple
+  default = simple
+
