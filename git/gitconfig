@@ -13,6 +13,7 @@
   last = log -1 HEAD
   l = log --pretty=oneline --graph --abbrev-commit
   conflicts = diff --name-only --diff-filter=U
+  untrack = rm --cached
 
 [color "status"]
   added = green 
