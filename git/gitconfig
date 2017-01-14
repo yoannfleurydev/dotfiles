@@ -6,6 +6,9 @@
   editor = vim
   excludesfile = /home/yfleury/.gitignore_global
 
+[commit]
+  template = /home/yfleury/.git_commit_template
+
 [alias]
   st = status
   unstage = reset HEAD --
