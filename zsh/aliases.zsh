@@ -1,7 +1,7 @@
 alias ez="$EDITOR ~/.zshrc"
 alias ev="$EDITOR ~/.vim/vimrc"
 
-alias ls="ls --color=auto"
+alias ls="ls --color=auto -a"
 alias sl="ls --color=auto"
 alias ll="ls -alh --color=auto"
 
