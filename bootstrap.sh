@@ -2,11 +2,12 @@
 
 git pull origin master
 
-if [ $(hash git) -z ]; then
-  mkdir -p $HOME/etc/zsh-syntax-highlighting
-  git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/etc/zsh-syntax-highlighting
-else
-  echo "You need git" >&2
-  exit 1
-fi
+# Useful package on any linux system
+sudo apt-get install build-essential curl git python-setuptools ruby -y
 
+# ZSH Plugin
+mkdir -p $HOME/etc/zsh-syntax-highlighting
+git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/etc/zsh-syntax-highlighting
+
+# Brew installation
+ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
