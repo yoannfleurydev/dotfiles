@@ -53,4 +53,5 @@ out/
 build/
 *.iml
 .vscode
+*.swp
 
