@@ -55,6 +55,9 @@ prompt_git() {
   is_dirty() {
     test -n "$(git status --porcelain --ignore-submodules)"
   }
+  is_wip() {
+    test "$(git log --pretty=format:'%s' -1 HEAD)" = "WIP Commit"
+  }
   ref="$vcs_info_msg_0_"
   if [[ -n "$ref" ]]; then
     if is_dirty; then
@@ -68,6 +71,9 @@ prompt_git() {
       ref="$BRANCH $ref"
     else
       ref="$DETACHED ${ref/.../}"
+    fi
+    if is_wip; then
+      ref="${ref} WIP "
     fi
     prompt_segment $color $PRIMARY_FG
     print -Pn " $ref"
