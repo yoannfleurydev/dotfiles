@@ -26,6 +26,7 @@ Plugin 'suan/vim-instant-markdown'
 
 " Language plugins
 Plugin 'leafgarland/typescript-vim'
+Plugin 'IN3D/vim-raml'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
