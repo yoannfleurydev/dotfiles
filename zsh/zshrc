@@ -15,6 +15,7 @@ GRADLE_HOME=$HOME/bin/java/gradle-3.1
 SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 ANDROID_HOME=$HOME/bin/android/sdk
 MVN_HOME=$HOME/bin/maven
+CATALINA_HOME=$HOME/bin/tomcat
 # --
 
 # -- DEVELOPMENT RELATED --
