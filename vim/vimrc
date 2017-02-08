@@ -22,6 +22,10 @@ Plugin 'altercation/vim-colors-solarized'
 " NERDTree
 Plugin 'scrooloose/nerdtree'
 
+" Find in path like
+Plugin 'rking/ag.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+
 " EditorConfig
 Plugin 'editorconfig/editorconfig-vim'
 
