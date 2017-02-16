@@ -65,6 +65,8 @@ set ttymouse=xterm2           " mouse code for terminal
 let g:airline_powerline_fonts = 1 " for the status bar to use powerline char 
 let g:airline_theme='solarized'
 
+" Map kj as a new escape key
+imap kj <Esc>
 
 " Next step fix a leafgarland/typescript-vim bug
 autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
