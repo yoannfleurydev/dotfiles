@@ -122,7 +122,9 @@ zstyle ':completion:*:cp:*' ignore-line yes # Ignore files already present in cp
 #{{{ PLUGINS
 
 # ZSH syntax highlighting plugin
-
 source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+
+# ZSH k plugin (https://github.com/supercrabtree/k)
+source $HOME/etc/k/k.sh
 
 #}}}

@@ -8,7 +8,10 @@ sudo gem install terminal-emojify
 
 # ZSH Plugin
 mkdir -p $HOME/etc/zsh-syntax-highlighting
+mkdir -p $HOME/etc/k
+
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/etc/zsh-syntax-highlighting
+git clone git@github.com:supercrabtree/k.git $HOME/etc/k
 
 # Brew installation
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
