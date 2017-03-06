@@ -37,6 +37,7 @@ Plugin 'leafgarland/typescript-vim'
 Plugin 'IN3D/vim-raml'
 Plugin 'lumiliet/vim-twig'
 Plugin 'tpope/vim-cucumber'
+Plugin 'tpope/vim-markdown'
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
