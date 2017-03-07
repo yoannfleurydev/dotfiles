@@ -6,3 +6,5 @@ brew install git-cal
 brew install tig
 brew install the_silver_searcher
 brew install ranger
+brew install mycli
+
