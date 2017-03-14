@@ -38,6 +38,7 @@ Plugin 'IN3D/vim-raml'
 Plugin 'lumiliet/vim-twig'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-markdown'
+Plugin 'mattn/emmet-vim'
 
 " Better icons
 Plugin 'ryanoasis/vim-devicons'
