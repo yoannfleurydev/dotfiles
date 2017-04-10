@@ -15,7 +15,7 @@ Configuration files used by many softwares on UNIX systems. Use at your own risk
 
 * `npm -g install instant-markdown-d` for the Vim `instant-markdown-vim` plugin to work.
 * A basic shell to run the scripts.
-* A patched Nerd Font for devicons in Vim
+* A patched [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for devicons in Vim
 
 ## Softwares I use in CLI
 
