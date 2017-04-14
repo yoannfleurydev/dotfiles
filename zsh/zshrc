@@ -129,4 +129,7 @@ source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 # ZSH k plugin (https://github.com/supercrabtree/k)
 source $HOME/etc/k/k.sh
 
+# ZSH autosuggestion plugin (https://github.com/zsh-users/zsh-autosuggestions)
+source $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh
+
 #}}}
