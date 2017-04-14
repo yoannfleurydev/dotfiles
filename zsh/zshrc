@@ -53,6 +53,8 @@ source ~/.zsh/prompt.zsh
 autoload -Uz compinit
 compinit
 
+fpath=(path/to/zsh-completions/src $fpath)
+
 #}}}
 
 #{{{ OPTIONS
