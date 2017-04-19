@@ -24,7 +24,7 @@ export GRAPHVIZ_DOT="/home/yfleury/.linuxbrew/bin/dot"
 # --
 
 # -- PATH --
-PATH=$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
+PATH=$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
 # --
 
 # -- OTHER PATHS --
