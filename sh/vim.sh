@@ -17,3 +17,4 @@ echo "Link the vimrc file"
 ln -s /home/yfleury/etc/dotfiles/vim/vimrc /home/yfleury/.vim/vimrc
 
 vim +PluginInstall +qall
+

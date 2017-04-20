@@ -1,26 +1,26 @@
-#!/bin/sh
+#!/usr/bin/env bash
 
 git pull origin master
 
 # Useful package on any linux system
 sudo apt-get install build-essential curl git python-setuptools ruby -y
-sudo gem install terminal-emojify
 
-# ZSH Plugin
+##############
+### ZSH Plugin
+##############
+
+# Color feedback about commands 
 mkdir -p $HOME/etc/zsh-syntax-highlighting
-mkdir -p $HOME/etc/zsh-completions
-mkdir -p $HOME/etc/zsh-autosuggestions
-mkdir -p $HOME/etc/k
-
 git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/etc/zsh-syntax-highlighting
-git clone git://github.com/zsh-users/zsh-completions.git $HOME/etc/zsh-completions
-git clone git://github.com/zsh-users/zsh-autosuggestions $HOME/etc/zsh-autosuggestions
-git clone git@github.com:supercrabtree/k.git $HOME/etc/k
 
-rm -f ~/.zcompdump; compinit
+# Commands suggestions based on history
+mkdir -p $HOME/etc/zsh-autosuggestions
+git clone git://github.com/zsh-users/zsh-autosuggestions $HOME/etc/zsh-autosuggestions
+
+# k is the new ls
+mkdir -p $HOME/etc/k
+git clone git@github.com:supercrabtree/k.git $HOME/etc/k
 
 # Brew installation
 ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
 
-# TPM Installation
-git clone https://github.com/tmux-plugins/tpm ~/.tmux/plugins/tpm
