@@ -4,7 +4,8 @@
 
 ## Purpose
 
-Configuration files used by many softwares on UNIX systems. Use at your own risk.
+Configuration files used by many softwares on UNIX systems. Use at your own 
+risk.
 
 * editorconfig
 * git
@@ -13,13 +14,21 @@ Configuration files used by many softwares on UNIX systems. Use at your own risk
 
 ## Requirements
 
-* `npm -g install instant-markdown-d` for the Vim `instant-markdown-vim` plugin to work.
+Set zsh as your login shell :
+
+`chsh -s $(which zsh)`
+
+Be sure to have the following : 
+* `npm -g install instant-markdown-d` for the Vim `instant-markdown-vim` plugin 
+  to work.
 * A basic shell to run the scripts.
-* A patched [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for devicons in Vim
+* A patched [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for devicons in
+  Vim
 
 ## Softwares I use in CLI
 
-* [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) - similar to ack but faster
+* [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) - 
+  similar to ack but faster
 * [tig](https://github.com/jonas/tig) - text mode interface for git
 * [ranger](https://github.com/ranger/ranger) - a VIM-inspired file manager
 * [k](https://github.com/supercrabtree/k) - ls alternative
@@ -27,5 +36,6 @@ Configuration files used by many softwares on UNIX systems. Use at your own risk
 
 ## Feedbacks
 
-Suggestions and improvements are welcome on the [issue panel](https://github.com/yoannfleurydev/dotfiles/issues/new) !
+Suggestions and improvements are welcome on the 
+[issue panel](https://github.com/yoannfleurydev/dotfiles/issues/new) !
 
