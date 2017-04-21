@@ -9,6 +9,7 @@ risk.
 
 * editorconfig
 * git
+* tmux
 * vim
 * zsh
 
@@ -25,7 +26,7 @@ Be sure to have the following :
 * A patched [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for devicons in
   Vim
 
-## Softwares I use in CLI
+## Command Line Interface softwares
 
 * [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) - 
   similar to ack but faster
@@ -33,6 +34,8 @@ Be sure to have the following :
 * [ranger](https://github.com/ranger/ranger) - a VIM-inspired file manager
 * [k](https://github.com/supercrabtree/k) - ls alternative
 * [mycli](https://github.com/dbcli/mycli) - cli mysql client written in python
+* [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - a gitmoji 
+  interactive client for using emojis on commits.
 
 ## Feedbacks
 
