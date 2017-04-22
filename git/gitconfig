@@ -10,7 +10,7 @@
   template = /home/yfleury/.git_commit_template
 
 [alias]
-  st = status
+  st = status -sb
   unstage = reset HEAD --
   unmerged = branch -r --no-merged 
   last = log -1 HEAD
