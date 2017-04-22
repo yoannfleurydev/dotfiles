@@ -1,4 +1,4 @@
-#!/bin/bash
+#!/usr/bin/env
 
 hash vim 2> /dev/null
 if [ $? -ne 0 ]; then
@@ -14,7 +14,6 @@ if [ $? -eq 0 ]; then
 fi
 
 echo "Link the vimrc file"
-ln -s /home/yfleury/etc/dotfiles/vim/vimrc /home/yfleury/.vim/vimrc
+ln -s $HOME/etc/dotfiles/vim/vimrc $HOME/.vim/vimrc
 
 vim +PluginInstall +qall
-
