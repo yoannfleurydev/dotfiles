@@ -22,7 +22,9 @@ apt_install() {
   sudo apt-get update
   sudo apt-get upgrade
   echo "Installing useful softwares"
-  sudo apt-get install build-essential curl git python-setuptools ruby vim zsh -y
+  sudo apt-get install build-essential \
+    curl git python-setuptools ruby vim zsh \
+    i3lock imagemagick rofi -y
 }
 
 link_dotfiles() {

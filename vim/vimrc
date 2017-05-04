@@ -29,9 +29,6 @@ Plugin 'ctrlpvim/ctrlp.vim'
 " EditorConfig
 Plugin 'editorconfig/editorconfig-vim'
 
-" Markdown viewer
-Plugin 'suan/vim-instant-markdown'
-
 " Language plugins
 Plugin 'leafgarland/typescript-vim'
 Plugin 'IN3D/vim-raml'
