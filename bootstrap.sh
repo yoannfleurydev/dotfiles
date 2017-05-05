@@ -100,6 +100,10 @@ print_status() {
   fi
 }
 
+scripts_install() {
+  ln -s $HOME/etc/dotfiles/scripts/lock $HOME/bin
+}
+
 main() {
   apt_install
   git_install
