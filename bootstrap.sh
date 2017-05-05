@@ -42,6 +42,9 @@ link_dotfiles() {
 }
 
 zsh_plugins() {
+  # Set zsh as the default shell
+  chsh -s $(which zsh)
+
   # Color feedback about commands 
   mkdir -p $HOME/etc/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/etc/zsh-syntax-highlighting
@@ -113,6 +116,7 @@ main() {
   gem_install
   vim_install
   print_status 
+  script_install
 }
 
 main
