@@ -1,6 +1,18 @@
 # DOTFILES
 
+**Terminal**
+
+I use ZSH with agnoster prompt (with powerline patched font). I have customized
+the prompt to show if the last commit is a Work in Progress or not.
+
 ![Terminal](./screenshots/terminal.png)
+
+**Lockscreen**
+
+I use i3lock for the lockscreen. I have a custom script to enable multi-monitor
+lockscreen. You can check [the script](./scripts/lock) in this repository.
+
+![Lock sreen](./screenshots/lock.png)
 
 ## Purpose
 
