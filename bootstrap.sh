@@ -24,7 +24,7 @@ apt_install() {
   echo "Installing useful softwares"
   sudo apt-get install build-essential \
     curl git python-setuptools ruby vim zsh \
-    i3lock imagemagick rofi -y
+    i3lock imagemagick rofi rxvt-unicode scrot -y
 }
 
 link_dotfiles() {
@@ -73,6 +73,9 @@ brew_install() {
   brew install mycli
   # Fuzzy finder
   brew install fzf
+  
+  # Upgrade packages already installed
+  brew upgrade
 }
 
 gem_install() {
@@ -95,16 +98,23 @@ vim_install() {
   vim +PluginInstall +qall
 }
 
+scripts_install() {
+  ln -s $HOME/etc/dotfiles/scripts/lock $HOME/bin
+  ln -s $HOME/etc/dotfiles/assets/lock.png $HOME/.config/lock.png
+}
+
+powerline_fonts_install() {
+  git clone https://github.com/powerline/fonts.git
+  fonts/install.sh
+  rm -rf fonts
+}
+
 print_status() {
   if [ $RERUN -eq $TRUE ]; then
     $RERUN=$FALSE
     echo "Running the script again"
     ./$0
   fi
-}
-
-scripts_install() {
-  ln -s $HOME/etc/dotfiles/scripts/lock $HOME/bin
 }
 
 main() {
@@ -115,8 +125,9 @@ main() {
   brew_install
   gem_install
   vim_install
+  scripts_install
+  powerline_fonts_install
   print_status 
-  script_install
 }
 
 main
