@@ -17,6 +17,9 @@
   l = log --pretty=oneline --graph --abbrev-commit
   conflicts = diff --name-only --diff-filter=U
   untrack = rm --cached
+  stsh = stash --keep-index
+  staash = stash --include-untracked
+  staaash = stash --all
 
 [color "status"]
   added = green 
@@ -36,5 +39,5 @@
   default = simple
 
 [credential]
+  # Cache the http credentials
   helper = cache
-
