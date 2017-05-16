@@ -47,6 +47,11 @@ Be sure to have the following :
 * [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - a gitmoji 
   interactive client for using emojis on commits.
 
+## Scripts
+
+* **lock** : used as a lockscreen
+* **vol** : manage the volume
+
 ## Feedbacks
 
 Suggestions and improvements are welcome on the 

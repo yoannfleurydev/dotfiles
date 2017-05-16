@@ -99,8 +99,12 @@ vim_install() {
 }
 
 scripts_install() {
-  ln -s $HOME/etc/dotfiles/scripts/lock $HOME/bin
+  // Lock script
+  ln -s $HOME/etc/dotfiles/bin/lock $HOME/bin
   ln -s $HOME/etc/dotfiles/assets/lock.png $HOME/.config/lock.png
+
+  // Volume script
+  ln -s $HOME/etc/dotfiles/bin/vol $HOME/bin
 }
 
 powerline_fonts_install() {
