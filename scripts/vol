@@ -1,0 +1,15 @@
+#!/usr/bin/env bash
+#
+# Depends on: amixer, libnotify
+case "$1" in
+    "up")   amixer -q sset Master 5%+ ;;
+    "+")    amixer -q sset Master 5%+ ;;
+    "down") amixer -q sset Master 5%- ;;
+    "-")    amixer -q sset Master 5%- ;;
+    *) printf "%s\n" "Usage: ./vol up, ./vol down"; exit ;;
+esac
+
+current_vol="$(amixer sget Master | grep -o -E "[[:digit:]]+%")"
+
+notify-send -t 1 "Volume: ${current_vol/$'\n'*}"
+
