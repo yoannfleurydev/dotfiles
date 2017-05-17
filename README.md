@@ -51,6 +51,7 @@ Be sure to have the following :
 
 * **lock** : used as a lockscreen
 * **vol** : manage the volume
+* **gitweb** : open the remote repository web interface
 
 ## Feedbacks
 
