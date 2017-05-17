@@ -8,6 +8,7 @@
 TERM=screen
 EDITOR=vim
 VISUAL=vim
+LC_ALL="en_US.UTF-8"
 
 # -- JAVA RELATED --
 JAVA_HOME=$HOME/bin/java/jdk
