@@ -36,6 +36,7 @@ Plugin 'lumiliet/vim-twig'
 Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
+Plugin 'posva/vim-vue'
 
 " Better icons
 Plugin 'ryanoasis/vim-devicons'
