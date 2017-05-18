@@ -24,7 +24,8 @@ apt_install() {
   echo "Installing useful softwares"
   sudo apt-get install build-essential \
     curl git python-setuptools ruby vim zsh \
-    i3lock imagemagick rofi rxvt-unicode scrot -y
+    i3lock imagemagick rofi rxvt-unicode scrot \
+    libxcb-xinerama0-dev libxcb-randr0-dev -y
 }
 
 link_dotfiles() {
@@ -117,6 +118,15 @@ powerline_fonts_install() {
   rm -rf fonts
 }
 
+lemonbar_install() {
+  git clone https://github.com/LemonBoy/bar.git
+  cd bar
+  make
+  sudo make install
+  cd ..
+  rm -rf bar
+}
+
 print_status() {
   if [ $RERUN -eq $TRUE ]; then
     $RERUN=$FALSE
@@ -135,6 +145,7 @@ main() {
   vim_install
   scripts_install
   powerline_fonts_install
+  lemonbar_install
   print_status 
 }
 
