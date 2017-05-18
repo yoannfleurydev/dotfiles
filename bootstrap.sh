@@ -25,7 +25,8 @@ apt_install() {
   sudo apt-get install build-essential \
     curl git python-setuptools ruby vim zsh \
     i3lock imagemagick rofi rxvt-unicode scrot \
-    libxcb-xinerama0-dev libxcb-randr0-dev i3 i3-wm -y
+    libxcb-xinerama0-dev libxcb-randr0-dev i3 i3-wm \
+    feh -y
 }
 
 link_dotfiles() {
