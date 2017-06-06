@@ -69,6 +69,7 @@ set ttyfast                   " send more characters for redraws
 set mouse=a                   " enable mouse in all modes
 set ttymouse=xterm2           " mouse code for terminal
 set colorcolumn=81            " limit line-length to 80 characters
+set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨ " invisible
 
 " In Git commit message, let's use 72 characters line-length
 autocmd FileType gitcommit set colorcolumn=72
