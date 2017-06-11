@@ -5,10 +5,10 @@
 
 #{{{ Set up environment
 
-TERM=screen
-EDITOR=vim
-VISUAL=vim
-LC_ALL="en_US.UTF-8"
+export TERM="screen-256color"
+export EDITOR=vim
+export VISUAL=vim
+export LC_ALL="en_US.UTF-8"
 
 # -- JAVA RELATED --
 JAVA_HOME=$HOME/bin/java/jdk
@@ -20,7 +20,6 @@ CATALINA_HOME=$HOME/bin/tomcat
 # --
 
 # -- DEVELOPMENT RELATED --
-SYMFONY__TEMPLATING__HELPER__CODE__FILE_LINK_FORMAT='phpstorm://open?file=%f&line=%l'
 export GRAPHVIZ_DOT="/home/yfleury/.linuxbrew/bin/dot"
 # --
 
@@ -50,9 +49,15 @@ source ~/.zsh/prompt.zsh
 
 #{{{ ZSH Modules
 
-# Enable completion
-autoload -Uz compinit
-compinit
+# Enable autocompletion
+autoload -U compinit && compinit
+zmodload -i zsh/complist
+
+zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
+zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
+zstyle ':vcs_info:*' enable git
+
+
 
 fpath=(path/to/zsh-completions/src $fpath)
 
@@ -60,8 +65,10 @@ fpath=(path/to/zsh-completions/src $fpath)
 
 #{{{ OPTIONS
 
+# ===== DIRECTORIES
 # Auto change directory when typing the name of a directory
-setopt auto_cd
+setopt auto_cd           # if you type foo and it's not a command but a directory in your cdpath, zsh will go there
+setopt pushd_ignore_dups # don't push multiple copy
 
 # Will correct sl to ls (won't work if you install sl command :])
 setopt correct
@@ -121,6 +128,18 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 zstyle ':completion:*:rm:*' ignore-line yes # Ignore files already present in rm command
 zstyle ':completion:*:mv:*' ignore-line yes # Ignore files already present in mv command
 zstyle ':completion:*:cp:*' ignore-line yes # Ignore files already present in cp command
+
+#{{{ KEY BINDINGS
+
+bindkey '^R' history-incremental-search-backward
+bindkey '^A' beginning-of-line
+bindkey '^I' end-of-line
+
+#}}}
+
+#{{{ COLORS
+autoload colors; colors
+#}}}
 
 #{{{ PLUGINS
 
