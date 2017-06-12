@@ -73,7 +73,7 @@ set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨ " in
 autocmd FileType gitcommit set colorcolumn=72
 
 let g:airline_powerline_fonts = 1 " for the status bar to use powerline char 
-let g:airline_theme='papercolor'
+let g:airline_theme='term'
 
 "
 " Key mapping
