@@ -39,9 +39,6 @@ Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
 Plugin 'PotatoesMaster/i3-vim-syntax'
 
-" Better icons
-Plugin 'ryanoasis/vim-devicons'
-
 " Syntax checking plugin
 Plugin 'scrooloose/syntastic'
 
