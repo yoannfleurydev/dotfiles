@@ -1,11 +1,20 @@
 # DOTFILES
 
+**WM**
+
+I3 (gaps) is my Window Manager. I'm fond of this little gaps between windows. I use
+[wal](https://github.com/dylanaraps/wal) script to change the wallpaper and the 
+colorscheme of my softwares, like the `gnome-terminal` or `rofi`.
+
+![i3-gaps-01](./screenshots/colorscheme01.png)
+![i3-gaps-02](./screenshots/colorscheme02.png)
+![i3-gaps-03](./screenshots/colorscheme03.png)
+![i3-gaps-04](./screenshots/colorscheme04.png)
+
 **Terminal**
 
 I use ZSH with agnoster prompt (with powerline patched font). I have customized
-the prompt to show if the last commit is a Work in Progress or not.
-
-![Terminal](./screenshots/terminal.png)
+the prompt to show if the last commit is a Work in Progress or not. 
 
 **Lockscreen**
 
