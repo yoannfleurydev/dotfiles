@@ -37,6 +37,7 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
+Plugin 'PotatoesMaster/i3-vim-syntax'
 
 " Better icons
 Plugin 'ryanoasis/vim-devicons'
