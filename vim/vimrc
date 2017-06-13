@@ -8,6 +8,9 @@ call vundle#begin()
 " let Vundle manage Vundle, required
 Plugin 'VundleVim/Vundle.vim'
 
+" Utils
+Plugin 'tpope/vim-surround'
+
 " Git plugins
 Plugin 'tpope/vim-fugitive'
 Plugin 'airblade/vim-gitgutter'
@@ -15,9 +18,6 @@ Plugin 'airblade/vim-gitgutter'
 " Airline
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
-
-" Solarized
-Plugin 'altercation/vim-colors-solarized'
 
 " NERDTree
 Plugin 'scrooloose/nerdtree'
@@ -68,12 +68,14 @@ set mouse=a                   " enable mouse in all modes
 set ttymouse=xterm2           " mouse code for terminal
 set colorcolumn=81            " limit line-length to 80 characters
 set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨ " invisible
+set backspace=indent,eol,start " make backspace work like most other apps
 
 " In Git commit message, let's use 72 characters line-length
 autocmd FileType gitcommit set colorcolumn=72
 
 let g:airline_powerline_fonts = 1 " for the status bar to use powerline char 
 let g:airline_theme='term'
+let g:airline#extensions#tabline#enabled = 1
 
 "
 " Key mapping
@@ -87,3 +89,4 @@ nmap <C-n> :NERDTreeToggle<CR>  " Map Ctrl+n to toggle NERDTree
 
 " Next step fix a leafgarland/typescript-vim bug
 autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
+
