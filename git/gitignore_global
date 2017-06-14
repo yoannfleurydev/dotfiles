@@ -52,4 +52,6 @@ out/
 *.iml
 .vscode
 *.swp
+target/
+
 
