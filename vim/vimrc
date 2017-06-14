@@ -77,6 +77,11 @@ let g:airline_powerline_fonts = 1 " for the status bar to use powerline char
 let g:airline_theme='term'
 let g:airline#extensions#tabline#enabled = 1
 
+" In Insert mode, set the line's numbers
+" In the others, set the line's relative numbers
+autocmd InsertEnter * :set number
+autocmd InsertLeave * :set relativenumber
+
 "
 " Key mapping
 "
