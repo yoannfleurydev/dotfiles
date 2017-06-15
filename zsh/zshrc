@@ -7,6 +7,7 @@
 
 export TERM="screen-256color"
 export EDITOR=vim
+export BROWSER=firefox
 export VISUAL=vim
 export LC_ALL="en_US.UTF-8"
 
@@ -19,20 +20,16 @@ MVN_HOME=$HOME/bin/maven
 CATALINA_HOME=$HOME/bin/tomcat
 # --
 
-# -- DEVELOPMENT RELATED --
-export GRAPHVIZ_DOT="/home/yfleury/.linuxbrew/bin/dot"
-# --
-
 # -- PATH --
 PATH=$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
 # --
 
 # -- OTHER PATHS --
-MANPATH="/home/yfleury/.linuxbrew/share/man:$MANPATH"
-INFOPATH="/home/yfleury/.linuxbrew/share/info:$INFOPATH"
-XDG_DATA_DIRS="/home/yfleury/.linuxbrew/share:$XDG_DATA_DIRS"
-CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
-XDG_CONFIG_HOME=$HOME/.config
+export MANPATH="/home/yfleury/.linuxbrew/share/man:$MANPATH"
+export INFOPATH="/home/yfleury/.linuxbrew/share/info:$INFOPATH"
+export XDG_DATA_DIRS="/home/yfleury/.linuxbrew/share:$XDG_DATA_DIRS"
+export CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
+export XDG_CONFIG_HOME=$HOME/.config
 export GOPATH="$HOME/dev/go"
 # --
 
@@ -42,24 +39,7 @@ export GOPATH="$HOME/dev/go"
 
 autoload -Uz promptinit
 promptinit
-source ~/.zsh/prompt.zsh
-
-#}}}
-
-
-#{{{ ZSH Modules
-
-# Enable autocompletion
-autoload -U compinit && compinit
-zmodload -i zsh/complist
-
-zstyle ':vcs_info:*' actionformats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{3}|%F{1}%a%F{5}]%f '
-zstyle ':vcs_info:*' formats '%F{5}(%f%s%F{5})%F{3}-%F{5}[%F{2}%b%F{5}]%f '
-zstyle ':vcs_info:*' enable git
-
-
-
-fpath=(path/to/zsh-completions/src $fpath)
+source $HOME/.zsh/prompt.zsh
 
 #}}}
 
@@ -67,8 +47,10 @@ fpath=(path/to/zsh-completions/src $fpath)
 
 # ===== DIRECTORIES
 # Auto change directory when typing the name of a directory
-setopt auto_cd           # if you type foo and it's not a command but a directory in your cdpath, zsh will go there
-setopt pushd_ignore_dups # don't push multiple copy
+# if you type foo and it's not a command but a directory in your cdpath, zsh will go there
+setopt auto_cd
+# don't push multiple copy
+setopt pushd_ignore_dups
 
 # ===== AUTOCORRECT
 # Will correct sl to ls (won't work if you install sl command :])
@@ -98,35 +80,48 @@ setopt hist_verify
 # Imports new commands and appends typed commands to history
 setopt share_history
 
-# Keep 1000 lines of history within the shell and save it to ~/.zsh_history:
+setopt histignorealldups
+
+# Keep 10000 lines of history within the shell and save it to ~/.zsh_history:
 HISTSIZE=10000
 SAVEHIST=9000
 HISTFILE=~/.zsh_history
 
-# ===== COMPLETION
-# When completing from the middle of a word, move the cursor to the end of the word
-setopt always_to_end
-# Show completion menu on successive tab press. Need unsetopt menu_complete to work
-setopt auto_menu
-unsetopt menu_complete
-# Any parameter that is set to the absolute name of a directory immediately becomes a name for that directory
-setopt auto_name_dirs
-# Allow completion from within a word/phrase
-setopt complete_in_word
-
-# ===== PROMPT
-# Enable parameter expansion, command substitution, and arithmetic expansion in the prompt
-setopt prompt_subst
-# Only show the rprompt on the current prompt
-setopt transient_rprompt
+# Use emacs keybindings even if EDITOR is set to vi 
+bindkey -e
 
 #}}}
+
 
 #{{{ ALIAS
 
 source ~/.zsh/aliases.zsh
 
 #}}}
+
+#{{{ PLUGINS
+
+# ZSH syntax highlighting plugin
+if [[ -f $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
+  source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# ZSH k plugin (https://github.com/supercrabtree/k)
+if [[ -f $HOME/etc/h/k.sh ]]; then
+  source $HOME/etc/k/k.sh
+fi
+
+# ZSH autosuggestion plugin (https://github.com/zsh-users/zsh-autosuggestions)
+if [[ -f  $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+  source $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+#}}}
+
+#{{{ COMPLETION
+
+autoload -Uz compinit
+compinit
 
 zstyle ':completion:*' auto-description 'specify: %d'
 zstyle ':completion:*' completer _expand _complete _correct _approximate
@@ -146,37 +141,4 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-zstyle ':completion:*:rm:*' ignore-line yes # Ignore files already present in rm command
-zstyle ':completion:*:mv:*' ignore-line yes # Ignore files already present in mv command
-zstyle ':completion:*:cp:*' ignore-line yes # Ignore files already present in cp command
-
-#{{{ KEY BINDINGS
-
-bindkey '^R' history-incremental-search-backward
-bindkey '^A' beginning-of-line
-bindkey '^I' end-of-line
-
 #}}}
-
-#{{{ COLORS
-
-autoload colors; colors
-
-#}}}
-
-#{{{ PLUGINS
-
-# ZSH syntax highlighting plugin
-source $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
-
-# ZSH k plugin (https://github.com/supercrabtree/k)
-source $HOME/etc/k/k.sh
-
-# ZSH autosuggestion plugin (https://github.com/zsh-users/zsh-autosuggestions)
-source $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh
-
-#}}}
-
-# tabtab source for jhipster package
-# uninstall by removing these lines or running `tabtab uninstall jhipster`
-[[ -f /home/smartpanda/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh ]] && . /home/smartpanda/.config/yarn/global/node_modules/tabtab/.completions/jhipster.zsh
