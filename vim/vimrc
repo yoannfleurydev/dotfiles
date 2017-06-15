@@ -10,6 +10,7 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Utils
 Plugin 'tpope/vim-surround'
+Plugin 'airblade/vim-rooter'
 
 " Git plugins
 Plugin 'tpope/vim-fugitive'
