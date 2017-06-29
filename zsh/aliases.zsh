@@ -22,4 +22,8 @@ alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
 
 #}}}
 
-alias plantuml="java -jar $HOME/bin/plantuml.jar"
+#{{{ USEFUL Aliases
+
+alias weather="curl wttr.in"
+
+#}}}
