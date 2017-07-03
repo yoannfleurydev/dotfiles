@@ -41,3 +41,7 @@
 [credential]
   # Cache the http credentials
   helper = cache
+
+[includeIf "gitdir:~/work/"]
+  path = .gitconfig-work
+

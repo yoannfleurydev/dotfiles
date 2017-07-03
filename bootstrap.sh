@@ -33,21 +33,23 @@ link_dotfiles() {
   echo "Linking Dotfiles"
   mkdir -p $HOME/.zsh
   mkdir -p $HOME/.vim
-  ln -s $HOME/etc/dotfiles/zsh/zshrc $HOME/.zshrc
-  ln -s $HOME/etc/dotfiles/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
-  ln -s $HOME/etc/dotfiles/zsh/prompt.zsh $HOME/.zsh/prompt.zsh
-  ln -s $HOME/etc/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
-  ln -s $HOME/etc/dotfiles/vim/vimrc $HOME/.vim/vimrc
-  ln -s $HOME/etc/dotfiles/git/gitconfig $HOME/.gitconfig
-  ln -s $HOME/etc/dotfiles/git/gitignore_global $HOME/.gitignore_global
-  ln -s $HOME/etc/dotfiles/git/git_commit_template $HOME/.git_commit_template
+  ln -sf $HOME/etc/dotfiles/zsh/zshrc $HOME/.zshrc
+  ln -sf $HOME/etc/dotfiles/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
+  ln -sf $HOME/etc/dotfiles/zsh/prompt.zsh $HOME/.zsh/prompt.zsh
+  ln -sf $HOME/etc/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
+  ln -sf $HOME/etc/dotfiles/vim/vimrc $HOME/.vim/vimrc
+  ln -sf $HOME/etc/dotfiles/git/gitconfig $HOME/.gitconfig
+  ln -sf $HOME/etc/dotfiles/git/gitignore_global $HOME/.gitignore_global
+  ln -sf $HOME/etc/dotfiles/git/git_commit_template $HOME/.git_commit_template
+  ln -sf $HOME/etc/dotfiles/git/gitconfig-work $HOME/.gitconfig-work
+  ln -sf $HOME/etc/dotfiles/bin/sp $HOME/bin/sp
 }
 
 zsh_plugins() {
   # Set zsh as the default shell
   chsh -s $(which zsh)
 
-  # Color feedback about commands 
+  # Color feedback about commands
   mkdir -p $HOME/etc/zsh-syntax-highlighting
   git clone https://github.com/zsh-users/zsh-syntax-highlighting.git $HOME/etc/zsh-syntax-highlighting
 
@@ -75,7 +77,7 @@ brew_install() {
   brew install mycli
   # Fuzzy finder
   brew install fzf
-  
+
   # Upgrade packages already installed
   brew upgrade
 }
@@ -103,14 +105,14 @@ vim_install() {
 scripts_install() {
   # TODO Improve with a for loop
   # Lock script
-  ln -s $HOME/etc/dotfiles/bin/lock $HOME/bin
-  ln -s $HOME/etc/dotfiles/assets/lock.png $HOME/.config/lock.png
+  ln -sf $HOME/etc/dotfiles/bin/lock $HOME/bin
+  ln -sf $HOME/etc/dotfiles/assets/lock.png $HOME/.config/lock.png
 
   # Volume script
-  ln -s $HOME/etc/dotfiles/bin/vol $HOME/bin
+  ln -sf $HOME/etc/dotfiles/bin/vol $HOME/bin
 
   # Git web script
-  ln -s $HOME/etc/dotfiles/bin/gitweb $HOME/bin
+  ln -sf $HOME/etc/dotfiles/bin/gitweb $HOME/bin
 }
 
 powerline_fonts_install() {
@@ -147,7 +149,7 @@ main() {
   scripts_install
   powerline_fonts_install
   lemonbar_install
-  print_status 
+  print_status
 }
 
 main
