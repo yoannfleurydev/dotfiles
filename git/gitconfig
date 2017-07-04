@@ -4,10 +4,10 @@
 
 [core]
   editor = vim
-  excludesfile = /home/yfleury/.gitignore_global
+  excludesfile = ~/.gitignore_global
 
 [commit]
-  template = /home/yfleury/.git_commit_template
+  template = ~/.git_commit_template
 
 [alias]
   st = status -sb
@@ -42,6 +42,9 @@
   # Cache the http credentials
   helper = cache
 
+[init]
+  templatedir = ~/.git-templates
+
 [includeIf "gitdir:~/work/"]
-  path = .gitconfig-work
+  path = ~/.gitconfig-work
 

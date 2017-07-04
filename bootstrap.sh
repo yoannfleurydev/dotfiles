@@ -42,6 +42,7 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/git/gitignore_global $HOME/.gitignore_global
   ln -sf $HOME/etc/dotfiles/git/git_commit_template $HOME/.git_commit_template
   ln -sf $HOME/etc/dotfiles/git/gitconfig-work $HOME/.gitconfig-work
+  ln -sf $HOME/etc/dotfiles/git/git-templates $HOME/.git-templates
   ln -sf $HOME/etc/dotfiles/bin/sp $HOME/bin/sp
 }
 
