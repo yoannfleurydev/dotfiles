@@ -44,6 +44,7 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/git/gitconfig-work $HOME/.gitconfig-work
   ln -sf $HOME/etc/dotfiles/git/git-templates $HOME/.git-templates
   ln -sf $HOME/etc/dotfiles/bin/sp $HOME/bin/sp
+  ln -sf $HOME/etc/dotfiles/i3/config $HOME/.config/i3/config
 }
 
 zsh_plugins() {
