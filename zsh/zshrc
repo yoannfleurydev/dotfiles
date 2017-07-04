@@ -107,7 +107,7 @@ if [[ -f $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
 fi
 
 # ZSH k plugin (https://github.com/supercrabtree/k)
-if [[ -f $HOME/etc/h/k.sh ]]; then
+if [[ -f $HOME/etc/k/k.sh ]]; then
   source $HOME/etc/k/k.sh
 fi
 
