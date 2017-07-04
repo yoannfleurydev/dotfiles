@@ -10,16 +10,17 @@
   template = ~/.git_commit_template
 
 [alias]
-  st = status -sb
-  unstage = reset HEAD --
-  unmerged = branch -r --no-merged 
-  last = log -1 HEAD
-  l = log --pretty=oneline --graph --abbrev-commit
   conflicts = diff --name-only --diff-filter=U
-  untrack = rm --cached
+  fetch = fetch --prune
+  l = log --pretty=oneline --graph --abbrev-commit
+  last = log -1 HEAD
+  st = status -sb
   stsh = stash --keep-index
   staash = stash --include-untracked
   staaash = stash --all
+  unmerged = branch -r --no-merged 
+  unstage = reset HEAD --
+  untrack = rm --cached
 
 [color "status"]
   added = green 
