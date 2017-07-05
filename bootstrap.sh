@@ -115,6 +115,10 @@ scripts_install() {
 
   # Git web script
   ln -sf $HOME/etc/dotfiles/bin/gitweb $HOME/bin
+
+  # wal
+  git clone git@github.com:dylanaraps/wal.git $HOME/etc/wal
+  ln -sf $HOME/etc/wal/wal $HOME/bin/wal
 }
 
 powerline_fonts_install() {

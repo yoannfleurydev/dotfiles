@@ -9,7 +9,7 @@ set $mod Mod1
 # -----------------------------------
 
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+w exec "wal -i $HOME/Images/Wall"
+bindsym $mod+Shift+w exec "wal -i $HOME/Pictures/Wall"
 bindsym $mod+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $mod+Ctrl+Right exec "i3-msg move workspace to output right"
 
