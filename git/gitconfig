@@ -18,12 +18,13 @@
   stsh = stash --keep-index
   staash = stash --include-untracked
   staaash = stash --all
-  unmerged = branch -r --no-merged 
+  unmerged = branch -r --no-merged
   unstage = reset HEAD --
   untrack = rm --cached
+  standup = log --oneline --since=yesterday.midnight
 
 [color "status"]
-  added = green 
+  added = green
   changed = yellow
   untracked = red
 
@@ -50,6 +51,6 @@
   path = ~/.gitconfig-work
 
 [rerere]
-	enabled = true
-	autoupdate = true
+  enabled = true
+  autoupdate = true
 
