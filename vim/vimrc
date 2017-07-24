@@ -66,7 +66,6 @@ set number                    " line numbers
 set laststatus=2              " for the status bar to appear all the time
 set background=dark           " for the status bar to print correctly on gnome
 set tabstop=2 shiftwidth=2 expandtab
-set cursorline                " show the current line you're on
 set ttyfast                   " send more characters for redraws
 set mouse=a                   " enable mouse in all modes
 set ttymouse=xterm2           " mouse code for terminal
