@@ -2,9 +2,10 @@
 # <type>(<scope>): <subject>
 #
 # <body>
-# 
+#
 # <footer>
-# 
+#
 # Type : feat, fix, docs, style, refactor, perf, test, build, ci, chore
 # Body : Should include the motivation for the change and contrast this with previous behavior
 # Foot : Issues that this commit closes and the BREAKING CHANGES
+
