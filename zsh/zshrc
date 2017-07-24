@@ -14,6 +14,7 @@ export LC_ALL="en_US.UTF-8"
 # -- JAVA RELATED --
 JAVA_HOME=$HOME/bin/java/jdk
 GRADLE_HOME=$HOME/bin/java/gradle-3.1
+GRADLE_USER_HOME=$HOME/.gradle
 SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 ANDROID_HOME=$HOME/bin/android/sdk
 MVN_HOME=$HOME/bin/maven
@@ -96,6 +97,14 @@ bindkey -e
 #{{{ ALIAS
 
 source ~/.zsh/aliases.zsh
+
+#}}}
+
+#{{{ WORK
+
+if [[ -f $HOME/.zsh/work_configuration.zsh ]]; then
+  source $HOME/.zsh/work_configuration.zsh
+fi
 
 #}}}
 
