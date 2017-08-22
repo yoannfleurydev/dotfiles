@@ -23,8 +23,9 @@ Plugin 'junegunn/gv.vim'
 Plugin 'vim-airline/vim-airline'
 Plugin 'vim-airline/vim-airline-themes'
 
-" NERDTree
+" File extensions
 Plugin 'scrooloose/nerdtree'
+Plugin 'majutsushi/tagbar'
 
 " Find in path like
 Plugin 'rking/ag.vim'
@@ -57,10 +58,13 @@ set statusline+=%#warningmsg#
 set statusline+=%{SyntasticStatuslineFlag()}
 set statusline+=%*
 
+" SYNTASTIC CONFIGURATION
 let g:syntastic_always_populate_loc_list = 1
 let g:syntastic_auto_loc_list = 1
 let g:syntastic_check_on_open = 1
 let g:syntastic_check_on_wq = 0
+let g:syntastic_java_checkers=['javac']
+let g:syntastic_java_javac_config_file_enabled = 1
 
 set number                    " line numbers
 set laststatus=2              " for the status bar to appear all the time
@@ -79,7 +83,7 @@ colorscheme wal
 " In Git commit message, let's use 72 characters line-length
 autocmd FileType gitcommit set colorcolumn=72
 
-let g:airline_powerline_fonts = 1 " for the status bar to use powerline char 
+let g:airline_powerline_fonts = 1 " for the status bar to use powerline char
 let g:airline_theme='term'
 let g:airline#extensions#tabline#enabled = 1
 

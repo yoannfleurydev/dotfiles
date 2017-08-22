@@ -52,5 +52,8 @@ out/
 .vscode
 *.swp
 target/
+.syntastic_javac_config
 
-
+# Software files #
+##################
+.gissue.json

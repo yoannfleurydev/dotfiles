@@ -13,7 +13,7 @@ export LC_ALL="en_US.UTF-8"
 
 # -- JAVA RELATED --
 JAVA_HOME=$HOME/bin/java/jdk
-GRADLE_HOME=$HOME/bin/java/gradle-3.1
+GRADLE_HOME=$HOME/bin/gradle-4.0.2
 GRADLE_USER_HOME=$HOME/.gradle
 SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 ANDROID_HOME=$HOME/bin/android/sdk
@@ -151,3 +151,4 @@ zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #}}}
+
