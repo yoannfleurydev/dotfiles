@@ -14,7 +14,7 @@ bindsym $mod+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $mod+Ctrl+Right exec "i3-msg move workspace to output right"
 
 # Show rofi
-bindsym $mod+d exec rofi -show run 
+bindsym $mod+d exec rofi -show run
 bindsym $mod+w exec rofi -show window
 
 # Lock the screen
@@ -161,6 +161,10 @@ client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 exec --no-startup-id "wal -i $HOME/Images/Wall"
+
+bar {
+  i3bar_command i3bar
+}
 
 # vim:filetype=i3
 
