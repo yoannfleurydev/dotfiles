@@ -88,7 +88,7 @@ HISTSIZE=10000
 SAVEHIST=9000
 HISTFILE=~/.zsh_history
 
-# Use emacs keybindings even if EDITOR is set to vi 
+# Use emacs keybindings even if EDITOR is set to vi
 bindkey -e
 
 #}}}
@@ -152,3 +152,5 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 #}}}
 
+# Get the TMUX ID panes
+export TMUX_ID="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> /dev/null
