@@ -1,0 +1,11 @@
+URxvt.font: xft:Source Code Pro for Powerline:size=10
+URxvt.boldFont: xft:Source Code Pro for Powerline:size=10
+
+! ROFI
+rofi.fullscreen: true
+rofi.separator-style:   solid
+rofi.padding:           200
+rofi.hide-scrollbar:    true
+rofi.lines:             15
+rofi.bw:                0
+rofi.font: "Operator" medium 16
