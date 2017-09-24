@@ -66,6 +66,7 @@ let g:syntastic_check_on_wq = 0
 let g:syntastic_java_checkers=['javac']
 let g:syntastic_java_javac_config_file_enabled = 1
 
+set encoding=utf-8            " set the encoding
 set number                    " line numbers
 set laststatus=2              " for the status bar to appear all the time
 set background=dark           " for the status bar to print correctly on gnome
