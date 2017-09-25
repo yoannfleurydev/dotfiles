@@ -20,7 +20,7 @@ while read LINE
 do
   # If we are reading the line that contains the position information:
   if [[ $LINE =~ $DISPLAY_RE ]]; then
-    # Extract information and append some parameters to the ones that will 
+    # Extract information and append some parameters to the ones that will
     # be given to ImageMagick:
     WIDTH=${BASH_REMATCH[1]}
     HEIGHT=${BASH_REMATCH[2]}
@@ -39,6 +39,6 @@ convert $OUTPUT_IMAGE $PARAMS $OUTPUT_IMAGE
 
 # Lock the screen:
 xset dpms 120
-sp pause
+$HOME/bin/sp pause
 i3lock -i $OUTPUT_IMAGE -t -u -n
 
