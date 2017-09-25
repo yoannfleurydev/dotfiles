@@ -6,14 +6,15 @@
 #{{{ Set up environment
 
 export TERM="screen-256color"
+export TERMINAL=termite
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=chromium
 export VISUAL=vim
 export LC_ALL="en_US.UTF-8"
 
 # -- JAVA RELATED --
 JAVA_HOME=$HOME/bin/java/jdk
-GRADLE_HOME=$HOME/bin/gradle-4.0.2
+GRADLE_HOME=$HOME/bin/java/gradle
 GRADLE_USER_HOME=$HOME/.gradle
 SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 ANDROID_HOME=$HOME/bin/android/sdk

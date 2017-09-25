@@ -3,9 +3,9 @@ alias ev="$EDITOR ~/.vim/vimrc"
 alias et="$EDITOR ~/.tmux.conf"
 alias vi="vim"
 
-alias ls="ls --color=auto -a"
+alias ls="ls --color=auto"
 alias sl="ls --color=auto"
-alias ll="ls -alh --color=auto"
+alias ll="ls -Alh --color=auto"
 
 alias upgrade="apt update && apt upgrade && apt clean && apt autoremove"
 alias upgrade-all="upgrade && sudo n latest && sudo npm update -g"
@@ -28,7 +28,6 @@ alias git-merged='git branch --merged | egrep -v "(^\*|master|develop)" | xargs 
 alias weather="curl wttr.in"
 
 #}}}
-
 
 #{{{ GIT Aliases
 
