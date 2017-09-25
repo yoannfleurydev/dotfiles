@@ -162,13 +162,14 @@ client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-exec --no-startup-id "$HOME_BIN/wal -i $HOME/Images/Wall"
+exec --no-startup-id "$HOME_BIN/wal -i $HOME/Picture/Wall"
 
 bar {
   i3bar_command i3bar
 }
 
 exec --no-startup-id "xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1"
+# exec xrandr --output HDMI1 --auto --left-of HDMI2
 
 # vim:filetype=i3
 
