@@ -4,14 +4,14 @@
 # Set the ALT key to be the modifier key.
 set $mod Mod4
 
-set $HOME_BIN $HOME
+set $HOME_BIN $HOME/bin
 
 # -----------------------------------
 # CUSTOM KEY MAPPING
 # -----------------------------------
 
 bindsym $mod+Return exec i3-sensible-terminal
-bindsym $mod+Shift+w exec "$HOME_BIN/bin/wal -i $HOME/Pictures/Wall"
+bindsym $mod+Shift+w exec "$HOME_BIN/wal -i $HOME/Pictures/Wall"
 bindsym $mod+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $mod+Ctrl+Right exec "i3-msg move workspace to output right"
 
@@ -162,7 +162,7 @@ client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-exec --no-startup-id "$HOME_BIN/wal -i $HOME/Picture/Wall"
+exec --no-startup-id "$HOME_BIN/wal -i $HOME/Pictures/Wall"
 
 bar {
   i3bar_command i3bar
