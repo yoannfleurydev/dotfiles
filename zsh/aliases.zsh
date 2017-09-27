@@ -13,30 +13,22 @@ alias upgrade-all="upgrade && sudo n latest && sudo npm update -g"
 alias fucking="sudo"
 alias fuck="sudo"
 
-#{{{ GIT Aliases
+# GIT ALIASES {{{
 
 alias g="git"
 alias gpom="git push origin master"
 alias gp="git pull"
 alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
 alias git-merged='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
-
-#}}}
-
-#{{{ USEFUL Aliases
-
-alias weather="curl wttr.in"
-
-#}}}
-
-#{{{ GIT Aliases
+alias gpo="git push origin $(git symbolic-ref HEAD --short)"
 
 # VAR
 REGEX='^[0-9]+$'
 
 # Will create a new branch with name pass as argument from develop
 # It will also make sure that develop is up to date from origin
-workstart() {
+function workstart()
+{
   if ! [[ $1 =~ $REGEX ]]
   then
     BRANCH=$1
@@ -51,4 +43,11 @@ workstart() {
 
 alias workstart=workstart
 alias ws=workstart
-#}}}
+# }}}
+
+# USEFUL ALIASES {{{
+
+alias weather="curl wttr.in"
+
+# }}}
+

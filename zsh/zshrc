@@ -3,7 +3,7 @@
 # by Yoann Fleury <yoann.fleury@yahoo.com>
 # ----------------------------------------
 
-#{{{ Set up environment
+# ENVIRONMENT SETUP {{{
 
 export TERM="screen-256color"
 export TERMINAL=termite
@@ -13,17 +13,17 @@ export VISUAL=vim
 export LC_ALL="en_US.UTF-8"
 
 # -- JAVA RELATED --
-JAVA_HOME=$HOME/bin/java/jdk
-GRADLE_HOME=$HOME/bin/java/gradle
-GRADLE_USER_HOME=$HOME/.gradle
-SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
-ANDROID_HOME=$HOME/bin/android/sdk
-MVN_HOME=$HOME/bin/maven
-CATALINA_HOME=$HOME/bin/tomcat
+export JAVA_HOME=$HOME/bin/java/jdk
+export GRADLE_HOME=$HOME/bin/java/gradle
+export GRADLE_USER_HOME=$HOME/.gradle
+export SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
+export ANDROID_HOME=$HOME/bin/android/sdk
+export MVN_HOME=$HOME/bin/maven
+export CATALINA_HOME=$HOME/bin/tomcat
 # --
 
 # -- PATH --
-PATH=$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
+export PATH=$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
 # --
 
 # -- OTHER PATHS --
@@ -35,17 +35,17 @@ export XDG_CONFIG_HOME=$HOME/.config
 export GOPATH="$HOME/dev/go"
 # --
 
-#}}}
+# }}}
 
-#{{{ PROMPT
+# PROMPT {{{
 
 autoload -Uz promptinit
 promptinit
 source $HOME/.zsh/prompt.zsh
 
-#}}}
+# }}}
 
-#{{{ OPTIONS
+# OPTIONS {{{
 
 # ===== DIRECTORIES
 # Auto change directory when typing the name of a directory
@@ -92,24 +92,24 @@ HISTFILE=~/.zsh_history
 # Use emacs keybindings even if EDITOR is set to vi
 bindkey -e
 
-#}}}
+# }}}
 
 
-#{{{ ALIAS
+# ALIAS {{{
 
 source ~/.zsh/aliases.zsh
 
-#}}}
+# }}}
 
-#{{{ WORK
+# WORK {{{
 
 if [[ -f $HOME/.zsh/work_configuration.zsh ]]; then
   source $HOME/.zsh/work_configuration.zsh
 fi
 
-#}}}
+# }}}
 
-#{{{ PLUGINS
+# PLUGINS {{{
 
 # ZSH syntax highlighting plugin
 if [[ -f $HOME/etc/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh ]]; then
@@ -126,9 +126,9 @@ if [[ -f  $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
   source $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
-#}}}
+# }}}
 
-#{{{ COMPLETION
+# COMPLETION {{{
 
 autoload -Uz compinit
 compinit
@@ -151,7 +151,7 @@ zstyle ':completion:*' verbose true
 zstyle ':completion:*:*:kill:*:processes' list-colors '=(#b) #([0-9]#)*=0=01;31'
 zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
-#}}}
+# }}}
 
 # Get the TMUX ID panes
 export TMUX_ID="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> /dev/null
