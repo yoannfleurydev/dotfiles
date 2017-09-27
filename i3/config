@@ -15,18 +15,20 @@ bindsym $mod+Shift+w exec "$HOME_BIN/wal -i $HOME/Pictures/Wall"
 bindsym $mod+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $mod+Ctrl+Right exec "i3-msg move workspace to output right"
 
+# SPOTIFY MAPPING {{{
+
+bindsym Mod1+l exec "$HOME_BIN/sp next"
+bindsym Mod1+h exec "$HOME_BIN/sp previous"
+bindsym Mod1+space exec "$HOME_BIN/sp play"
+
+# }}}
+
 # Show rofi
 bindsym $mod+d exec rofi -show run
 bindsym $mod+w exec rofi -show window
 
 # Lock the screen
 bindsym $mod+l exec $HOME_BIN/lock
-
-# Spotify control
-bindcode $mod+83 exec $HOME_BIN/sp previous
-bindcode $mod+85 exec $HOME_BIN/sp next
-bindcode $mod+84 exec $HOME_BIN/sp pause
-bindcode $mod+90 exec $HOME_BIN/sp play
 
 # -----------------------------------
 
@@ -168,8 +170,8 @@ bar {
   i3bar_command i3bar
 }
 
-exec --no-startup-id "xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1"
-# exec xrandr --output HDMI1 --auto --left-of HDMI2
+# exec --no-startup-id "xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1"
+exec xrandr --output HDMI1 --auto --left-of HDMI2
 
 # vim:filetype=i3
 
