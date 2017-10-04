@@ -20,7 +20,12 @@ alias gpom="git push origin master"
 alias gp="git pull"
 alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
 alias git-merged='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
-alias gpo="git push origin $(git symbolic-ref HEAD --short)"
+
+function git_push_origin()
+{
+  BRANCH=$(git symbolic-ref HEAD --short)
+  git push origin $BRANCH
+}
 
 # VAR
 REGEX='^[0-9]+$'
@@ -43,6 +48,8 @@ function workstart()
 
 alias workstart=workstart
 alias ws=workstart
+alias git_push_origin=git_push_origin
+alias gpo=git_push_origin
 # }}}
 
 # USEFUL ALIASES {{{
@@ -51,3 +58,28 @@ alias weather="curl wttr.in"
 
 # }}}
 
+# UTILITIES {{{
+
+function extract {
+    echo Extracting $1 ...
+    if [ -f $1 ] ; then
+        case $1 in
+            *.tar.bz2)   tar xjf $1  ;;
+            *.tar.gz)    tar xzf $1  ;;
+            *.bz2)       bunzip2 $1  ;;
+            *.rar)       rar x $1    ;;
+            *.gz)        gunzip $1   ;;
+            *.tar)       tar xf $1   ;;
+            *.tbz2)      tar xjf $1  ;;
+            *.tgz)       tar xzf $1  ;;
+            *.zip)       unzip $1   ;;
+            *.Z)         uncompress $1  ;;
+            *.7z)        7z x $1  ;;
+            *)        echo "'$1' cannot be extracted via extract()" ;;
+        esac
+    else
+        echo "'$1' is not a valid file"
+    fi
+}
+
+# }}}

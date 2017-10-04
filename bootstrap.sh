@@ -63,6 +63,9 @@ zsh_plugins() {
   # k is the new ls
   mkdir -p $HOME/etc/k
   git clone git@github.com:supercrabtree/k.git $HOME/etc/k
+
+  mkdir -p $HOME/etc/z
+  git clone git@github.com:rupa/z.git $HOME/etc/z
 }
 
 brew_install() {

@@ -122,8 +122,12 @@ if [[ -f $HOME/etc/k/k.sh ]]; then
 fi
 
 # ZSH autosuggestion plugin (https://github.com/zsh-users/zsh-autosuggestions)
-if [[ -f  $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
+if [[ -f $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh ]]; then
   source $HOME/etc/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+if [[ -f $HOME/etc/z/z.sh ]]; then
+  source $HOME/etc/z/z.sh
 fi
 
 # }}}
