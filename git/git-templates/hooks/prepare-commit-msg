@@ -1,17 +1,34 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
+# If the environment variable exist, use it. If not,
+# set the branches to skip here.
 if [ -z "$BRANCHES_TO_SKIP" ]; then
   BRANCHES_TO_SKIP=(master develop test)
 fi
 
+# Get the current branch name
 BRANCH_NAME=$(git symbolic-ref --short HEAD)
 BRANCH_NAME="${BRANCH_NAME##*/}"
+
+# Get the type of the commit based on the branch name
 TYPE=$(echo "$BRANCH_NAME" | cut -d'-' -f1)
+
+# Get the issue of the commit based on the branch name
 ISSUE=$(echo "$BRANCH_NAME" | cut -d'-' -f2)
+
+# If the issue match digits, add a # character to it
+REGEX='^[0-9]+$'
+if ! [[ $ISSUE =~ $REGEX ]]
+then
+  ISSUE=$ISSUE
+else
+  ISSUE="#$ISSUE"
+fi
 
 BRANCH_EXCLUDED=$(printf "%s\n" "${BRANCHES_TO_SKIP[@]}" | grep -c "^$BRANCH_NAME$")
 BRANCH_IN_COMMIT=$(grep -c "\[$BRANCH_NAME\]" $1)
 
 if [ -n "$BRANCH_NAME" ] && ! [[ $BRANCH_EXCLUDED -eq 1 ]] && ! [[ $BRANCH_IN_COMMIT -ge 1 ]]; then
-  sed -i.bak -e "1s/^/$TYPE(#$ISSUE): /" $1
+  sed -i.bak -e "1s/^/$TYPE($ISSUE): /" $1
 fi
+
