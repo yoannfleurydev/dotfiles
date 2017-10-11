@@ -4,7 +4,7 @@ PRIMARY_FG=black
 # Characters
 SEGMENT_SEPARATOR="\ue0b0"
 PLUSMINUS="\u00b1"
-BRANCH="\ue0a0"
+BRANCH_ICON="\ue0a0"
 DETACHED="\u27a6"
 CROSS="\u2718"
 LIGHTNING="\u26a1"
@@ -68,7 +68,7 @@ prompt_git() {
       ref="${ref} "
     fi
     if [[ "${ref/.../}" == "$ref" ]]; then
-      ref="$BRANCH $ref"
+      ref="$BRANCH_ICON $ref"
     else
       ref="$DETACHED ${ref/.../}"
     fi
