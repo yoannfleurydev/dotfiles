@@ -20,6 +20,7 @@ alias gpom="git push origin master"
 alias gp="git pull"
 alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
 alias git-merged='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
+alias git-statuses='find . -path "*/.git" -maxdepth 2 -print -execdir git status ";"'
 
 function git_push_origin()
 {

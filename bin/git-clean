@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+
+LOCAL_BRANCHES=$(git branch --merged develop | grep -v -e 'develop' -e '\*' | tr -d ' ')
+
+if [[ -n "$LOCAL_BRANCHES" ]]; then
+  for BRANCH in $LOCAL_BRANCHES; do
+    git branch -d "$BRANCH"
+  done
+fi
+
+git remote prune origin
+
