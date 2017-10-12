@@ -6,6 +6,14 @@ set $mod Mod4
 
 set $HOME_BIN $HOME/bin
 
+# APPARENCE {{{
+
+client.focused          #FF0000 #00FF00 #0000FF #000000
+client.focused_inactive #FF0000 #00FF00 #0000FF #000000
+client.unfocused        #FF0000 #00FF00 #0000FF #000000
+
+# }}}
+
 # -----------------------------------
 # CUSTOM KEY MAPPING
 # -----------------------------------
@@ -168,9 +176,9 @@ client.placeholder      $bg     $bg     $fg  $bg       $bg
 
 exec --no-startup-id "$HOME_BIN/wal -i $HOME/Pictures/Wall"
 
-bar {
-  i3bar_command i3bar
-}
+# bar {
+#   i3bar_command i3bar
+# }
 
 # exec --no-startup-id "xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1"
 exec xrandr --output HDMI1 --auto --left-of HDMI2
