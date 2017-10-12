@@ -2,9 +2,9 @@
 
 **WM**
 
-I3 (gaps) is my Window Manager. I'm fond of this little gaps between windows. I use
-[wal](https://github.com/dylanaraps/wal) script to change the wallpaper and the
-colorscheme of my softwares, like the `gnome-terminal` or `rofi`.
+I3 (gaps) is my Window Manager. I'm fond of this little gaps between windows. I
+use [pywal](https://github.com/dylanaraps/pywal) script to change the wallpaper
+and the colorscheme of my softwares, like `termite`, `i3` or `rofi`.
 
 ![i3-gaps-01](./screenshots/colorscheme01.png)
 ![i3-gaps-02](./screenshots/colorscheme02.png)
@@ -58,6 +58,8 @@ Be sure to have the following :
   interactive client for using emojis on commits.
 * [z](https://github.com/rupa/z) - tracks your most used directories, based on
   'frecency'.
+* [pywal](https://github.com/dylanaraps/pywal) - 🎨 Generate and change
+  colorschemes on the fly. A 'wal' rewrite in Python 3.
 
 ## Scripts
 
