@@ -2,26 +2,18 @@
 # Yoann Fleury
 
 # Set the ALT key to be the modifier key.
-set $mod Mod4
+set $MOD Mod4
 
 set $HOME_BIN $HOME/bin
-
-# APPARENCE {{{
-
-client.focused          #FF0000 #00FF00 #0000FF #000000
-client.focused_inactive #FF0000 #00FF00 #0000FF #000000
-client.unfocused        #FF0000 #00FF00 #0000FF #000000
-
-# }}}
 
 # -----------------------------------
 # CUSTOM KEY MAPPING
 # -----------------------------------
 
-bindsym $mod+Return exec termite
-bindsym $mod+Shift+w exec "$HOME_BIN/wal -i $HOME/Pictures/Wall"
-bindsym $mod+Ctrl+Left exec "i3-msg move workspace to output left"
-bindsym $mod+Ctrl+Right exec "i3-msg move workspace to output right"
+bindsym $MOD+Return exec termite
+bindsym $MOD+Shift+w exec "wal -i $HOME/Pictures/Wall"
+bindsym $MOD+Ctrl+Left exec "i3-msg move workspace to output left"
+bindsym $MOD+Ctrl+Right exec "i3-msg move workspace to output right"
 
 # SPOTIFY MAPPING {{{
 
@@ -34,99 +26,99 @@ bindsym Mod1+space exec "$HOME_BIN/sp play"
 # }}}
 
 # Show rofi
-bindsym $mod+d exec rofi -show run
-bindsym $mod+w exec rofi -show window
+bindsym $MOD+d exec rofi -show run
+bindsym $MOD+w exec rofi -show window
 
 # Lock the screen
-bindsym $mod+l exec $HOME_BIN/lock
+bindsym $MOD+l exec $HOME_BIN/lock
 
 # -----------------------------------
 
-# Use Mouse+$mod to drag floating windows to their wanted position
-floating_modifier $mod
+# Use Mouse+$MOD to drag floating windows to their wanted position
+floating_modifier $MOD
 
 # kill focused window
-bindsym $mod+Shift+a kill
+bindsym $MOD+Shift+a kill
 
 # change focus
-bindsym $mod+j focus left
-bindsym $mod+k focus down
-bindsym $mod+m focus right
+bindsym $MOD+j focus left
+bindsym $MOD+k focus down
+bindsym $MOD+m focus right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Left focus left
-bindsym $mod+Down focus down
-bindsym $mod+Up focus up
-bindsym $mod+Right focus right
+bindsym $MOD+Left focus left
+bindsym $MOD+Down focus down
+bindsym $MOD+Up focus up
+bindsym $MOD+Right focus right
 
 # move focused window
-bindsym $mod+Shift+j move left
-bindsym $mod+Shift+k move down
-bindsym $mod+Shift+l move up
-bindsym $mod+Shift+m move right
+bindsym $MOD+Shift+j move left
+bindsym $MOD+Shift+k move down
+bindsym $MOD+Shift+l move up
+bindsym $MOD+Shift+m move right
 
 # alternatively, you can use the cursor keys:
-bindsym $mod+Shift+Left move left
-bindsym $mod+Shift+Down move down
-bindsym $mod+Shift+Up move up
-bindsym $mod+Shift+Right move right
+bindsym $MOD+Shift+Left move left
+bindsym $MOD+Shift+Down move down
+bindsym $MOD+Shift+Up move up
+bindsym $MOD+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $mod+h split h
+bindsym $MOD+h split h
 
 # split in vertical orientation
-bindsym $mod+v split v
+bindsym $MOD+v split v
 
 # enter fullscreen mode for the focused container
-bindsym $mod+f fullscreen
+bindsym $MOD+f fullscreen
 
 # change container layout (stacked, tabbed, toggle split)
-bindsym $mod+s layout stacking
-bindsym $mod+z layout tabbed
-bindsym $mod+e layout toggle split
+bindsym $MOD+s layout stacking
+bindsym $MOD+z layout tabbed
+bindsym $MOD+e layout toggle split
 
 # toggle tiling / floating
-bindsym $mod+Shift+space floating toggle
+bindsym $MOD+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-bindsym $mod+space focus mode_toggle
+bindsym $MOD+space focus mode_toggle
 
 # focus the parent container
-bindsym $mod+q focus parent
+bindsym $MOD+q focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
+#bindsym $MOD+d focus child
 
 # switch to workspace
-bindsym $mod+ampersand  workspace 1
-bindsym $mod+eacute     workspace 2
-bindsym $mod+quotedbl   workspace 3
-bindsym $mod+apostrophe workspace 4
-bindsym $mod+parenleft  workspace 5
-bindsym $mod+minus      workspace 6
-bindsym $mod+egrave     workspace 7
-bindsym $mod+underscore workspace 8
-bindsym $mod+ccedilla   workspace 9
-bindsym $mod+agrave     workspace 10
+bindsym $MOD+ampersand  workspace 1
+bindsym $MOD+eacute     workspace 2
+bindsym $MOD+quotedbl   workspace 3
+bindsym $MOD+apostrophe workspace 4
+bindsym $MOD+parenleft  workspace 5
+bindsym $MOD+minus      workspace 6
+bindsym $MOD+egrave     workspace 7
+bindsym $MOD+underscore workspace 8
+bindsym $MOD+ccedilla   workspace 9
+bindsym $MOD+agrave     workspace 10
 
 # move focused container to workspace
-bindsym $mod+Shift+ampersand move container to workspace 1
-bindsym $mod+Shift+eacute move container to workspace 2
-bindsym $mod+Shift+quotedbl move container to workspace 3
-bindsym $mod+Shift+apostrophe move container to workspace 4
-bindsym $mod+Shift+5 move container to workspace 5
-bindsym $mod+Shift+minus move container to workspace 6
-bindsym $mod+Shift+egrave move container to workspace 7
-bindsym $mod+Shift+underscore move container to workspace 8
-bindsym $mod+Shift+ccedilla move container to workspace 9
-bindsym $mod+Shift+agrave move container to workspace 10
+bindsym $MOD+Shift+ampersand move container to workspace 1
+bindsym $MOD+Shift+eacute move container to workspace 2
+bindsym $MOD+Shift+quotedbl move container to workspace 3
+bindsym $MOD+Shift+apostrophe move container to workspace 4
+bindsym $MOD+Shift+5 move container to workspace 5
+bindsym $MOD+Shift+minus move container to workspace 6
+bindsym $MOD+Shift+egrave move container to workspace 7
+bindsym $MOD+Shift+underscore move container to workspace 8
+bindsym $MOD+Shift+ccedilla move container to workspace 9
+bindsym $MOD+Shift+agrave move container to workspace 10
 
 # reload the configuration file
-bindsym $mod+Shift+c reload
+bindsym $MOD+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
-bindsym $mod+Shift+r restart
+bindsym $MOD+Shift+r restart
 # exit i3 (logs you out of your X session)
-bindsym $mod+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
+bindsym $MOD+Shift+e exec "i3-nagbar -t warning -m 'You pressed the exit shortcut. Do you really want to exit i3? This will end your X session.' -b 'Yes, exit i3' 'i3-msg exit'"
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
@@ -152,7 +144,7 @@ mode "resize" {
         bindsym Escape mode "default"
 }
 
-bindsym $mod+r mode "resize"
+bindsym $MOD+r mode "resize"
 
 new_window pixel 3
 
@@ -167,14 +159,14 @@ gaps outer 5
 set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 
-# class                 border  backgr. text indicator child_border
-client.focused          $bg     $bg     $fg  $bg       $bg
+# class                 border  backgr. text    indicator child_border
+client.focused          #FFFFFF #FFFFFF #FFFFFF #FFFFFF   #FFFFFF
 client.focused_inactive $bg     $bg     $fg  $bg       $bg
 client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-exec --no-startup-id "$HOME_BIN/wal -i $HOME/Pictures/Wall"
+exec --no-startup-id "wal -i $HOME/Pictures/Wall"
 
 # bar {
 #   i3bar_command i3bar
