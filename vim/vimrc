@@ -15,24 +15,24 @@ Plugin 'enricobacis/vim-airline-clock' " clock in vim-airline
 Plugin 'dylanaraps/wal'                " colorscheme based on wal script
 
 " Git plugins
-Plugin 'tpope/vim-fugitive'
-Plugin 'airblade/vim-gitgutter'
-Plugin 'junegunn/gv.vim'
+Plugin 'tpope/vim-fugitive'            " git commands in vim
+Plugin 'airblade/vim-gitgutter'        " git diff for the current file
+Plugin 'junegunn/gv.vim'               " git commit browser
 
 " Airline
-Plugin 'vim-airline/vim-airline'
-Plugin 'vim-airline/vim-airline-themes'
+Plugin 'vim-airline/vim-airline'        " vim status line
+Plugin 'vim-airline/vim-airline-themes' " theme for the vim status line
 
 " File extensions
-Plugin 'scrooloose/nerdtree'
+Plugin 'scrooloose/nerdtree'            " file explorer in vim
 Plugin 'majutsushi/tagbar'
 
 " Find in path like
-Plugin 'rking/ag.vim'
-Plugin 'ctrlpvim/ctrlp.vim'
+Plugin 'rking/ag.vim'                   " the silver searcher implementation
+Plugin 'ctrlpvim/ctrlp.vim'             " fuzzy finder
 
-" EditorConfig
-Plugin 'editorconfig/editorconfig-vim'
+" EditorConfig, Linters
+Plugin 'editorconfig/editorconfig-vim'  " editorconfig
 
 " Language plugins
 Plugin 'leafgarland/typescript-vim'
@@ -42,44 +42,45 @@ Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
-Plugin 'PotatoesMaster/i3-vim-syntax'
+Plugin 'PotatoesMaster/i3-vim-syntax'  " i3wm syntax highlight
 
 " Syntax checking plugin
-Plugin 'scrooloose/syntastic'
+Plugin 'w0rp/ale'                     " asynchronous linter
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
 
+syntax on
 syntax enable
 
-" Syntastic configuration
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-" SYNTASTIC CONFIGURATION
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
-let g:syntastic_java_checkers=['javac']
-let g:syntastic_java_javac_config_file_enabled = 1
-
-set encoding=utf-8            " set the encoding
-set number                    " line numbers
-set laststatus=2              " for the status bar to appear all the time
-set background=dark           " for the status bar to print correctly on gnome
-set tabstop=2 shiftwidth=2 expandtab
-set ttyfast                   " send more characters for redraws
-set mouse=a                   " enable mouse in all modes
-set ttymouse=xterm2           " mouse code for terminal
-set colorcolumn=81            " limit line-length to 80 characters
-set listchars=tab:→\ ,eol:↲,nbsp:␣,trail:•,extends:⟩,precedes:⟨ " invisible
+set autoread                   " reload files when changed on disk
+set background=dark            " for the status bar to print correctly on gnome
 set backspace=indent,eol,start " make backspace work like most other apps
-set autoread
+set colorcolumn=81             " limit line-length to 80 characters
+set encoding=utf-8             " set the encoding
+set incsearch                  " search as you type
+set laststatus=2               " for the status bar to appear all the time
+set list                       " enable invisibles
+set listchars=space:·,tab:▸\ ,trail:▫,extends:>,precedes:<,nbsp:+,eol:¬
+set mouse=a                    " enable mouse in all modes
+set number                     " line numbers
+set ruler                      " show were you are
+set scrolloff=3                " show context above/below cursorline
+set smartcase                  " case-sensitive searc hif any caps
+set tabstop=2 shiftwidth=2 expandtab
+set ttyfast                    " send more characters for redraws
+set ttymouse=xterm2            " mouse code for terminal
+
+" Enable persistent undo so that undo history persists across vim sessions
+set undofile
+set undodir=~/.vim/undo
 
 colorscheme wal
+
+" Highlight trailing whitespaces
+highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
+match ExtraWhitespace /\s\+$\|\t/
 
 " In Git commit message, let's use 72 characters line-length
 autocmd FileType gitcommit set colorcolumn=72
