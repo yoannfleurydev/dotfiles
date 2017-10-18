@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Start Page</title>
+</head>
+<body>
+    <nav class="menu">
+        <div class="menu-item">
+            <span class="menu-item-title">Social</span>
+            <div class="menu-item-content">
+                <a href="https://twitter.com">Twitter</a>
+                <a href="https://reddit.com">Reddit</a>
+            </div>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-title">Code</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-title">Productivity</span>
+        </div>
+        <div class="menu-item">
+            <span class="menu-item-title">Video</span>
+        </div>
+    </nav>
+    <section id="clock">
+        <div id="hours"></div>
+        <span class="clock-separator">:</span>
+        <div id="minutes"></div>
+        <span class="clock-separator">:</span>
+        <div id="seconds"></div>
+    </section>
+
+    <script>
+        // TODO :
+        // Set up style to use wal generated colors.
+        // Style clock
+        // Add more informations on the homepage
+
+        function refreshClock() {
+            const clock   = document.getElementById("clock");
+            const hours   = document.getElementById("hours");
+            const minutes = document.getElementById("minutes");
+            const seconds = document.getElementById("seconds");
+
+            const date = new Date();
+
+            hours.innerHTML   = date.toLocaleTimeString().split(':')[0];
+            minutes.innerHTML = date.toLocaleTimeString().split(':')[1];
+            seconds.innerHTML = date.toLocaleTimeString().split(':')[2];
+        }
+
+        setInterval(refreshClock, 1000);
+    </script>
+</body>
+</html>
