@@ -1,6 +1,7 @@
 alias ez="$EDITOR ~/.zshrc"
 alias ev="$EDITOR ~/.vim/vimrc"
 alias et="$EDITOR ~/.tmux.conf"
+alias ei="$EDITOR ~/.config/i3/config"
 alias vi="vim"
 
 alias ls="ls --color=auto"
