@@ -39,6 +39,7 @@ export XDG_DATA_DIRS="/home/yfleury/.linuxbrew/share:$XDG_DATA_DIRS"
 export CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 export XDG_CONFIG_HOME=$HOME/.config
 export GOPATH="$HOME/dev/go"
+fpath=(~/.zsh/completion $fpath)
 # --
 
 # }}}
