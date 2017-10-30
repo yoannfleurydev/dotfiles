@@ -1,0 +1,13 @@
+#!/usr/bin/env bash
+
+FORMAT="* %h %s"
+
+if [[ -z $1 ]]; then
+  TAG=$(git describe master --tags --abbrev=0)
+  echo "CHANGELOG from ${TAG}"
+else
+  TAG=$1
+fi
+
+git log --pretty="format:${FORMAT}" ${TAG}..
+
