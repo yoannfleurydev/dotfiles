@@ -1,13 +1,31 @@
 #!/usr/bin/env bash
 
+# Yoann Fleury @yoannfleurydev
+#
+# Use this script to generate the changelog from the latest tag to the current
+# commit
+
+# USAGE :
+# git-changelog
+# git-changelog v0.0.1
+# git-changelog >> CHANGELOG.md
+# git-changelog v0.0.1 >> CHANGELOG.md
+
+# The output format for the git log command
 FORMAT="* %h %s"
 
+# Get the latest update from the remote
+git fetch
+
+# If no parameter is given, get the latest tag of the master branch
+# Else the tag will be the parameter
 if [[ -z $1 ]]; then
-  TAG=$(git describe master --tags --abbrev=0)
+  TAG=$(git describe origin/master --tags --abbrev=0)
   echo "CHANGELOG from ${TAG}"
 else
   TAG=$1
 fi
 
+# Log the CHANGELOG
 git log --pretty="format:${FORMAT}" ${TAG}..
 
