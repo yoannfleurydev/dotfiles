@@ -14,6 +14,10 @@ alias upgrade-all="upgrade && sudo n latest && sudo npm update -g"
 alias fucking="sudo"
 alias fuck="sudo"
 
+# DOCKER {{{
+alias dockerc="docker-compose"
+# }}}
+
 # GIT ALIASES {{{
 
 alias g="git"
