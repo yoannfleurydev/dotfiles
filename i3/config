@@ -10,8 +10,8 @@ set $HOME_BIN $HOME/bin
 # CUSTOM KEY MAPPING
 # -----------------------------------
 
-bindsym $MOD+Return exec termite
-bindsym $MOD+Shift+w exec "wal -i $HOME/Pictures/Wall"
+bindsym $MOD+Return exec i3-sensible-terminal
+bindsym $MOD+Shift+w exec "wal -i $HOME/Pictures/Wall -t"
 bindsym $MOD+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $MOD+Ctrl+Right exec "i3-msg move workspace to output right"
 
@@ -166,14 +166,14 @@ client.unfocused        $bg     $bg     $fg  $bg       $bg
 client.urgent           $bg     $bg     $fg  $bg       $bg
 client.placeholder      $bg     $bg     $fg  $bg       $bg
 
-exec --no-startup-id "wal -i $HOME/Pictures/Wall"
+exec --no-startup-id "wal -i $HOME/Pictures/Wall -t"
 
 # bar {
 #   i3bar_command i3bar
 # }
 
 # exec --no-startup-id "xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1"
-exec xrandr --output HDMI1 --auto --left-of HDMI2
+exec xrandr --output HDMI-2 --auto --left-of HDMI-1
 
 # vim:filetype=i3
 
