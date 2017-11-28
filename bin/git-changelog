@@ -27,5 +27,5 @@ else
 fi
 
 # Log the CHANGELOG
-git log --pretty="format:${FORMAT}" ${TAG}..
+git log --no-merges --pretty="format:${FORMAT}" ${TAG}..
 
