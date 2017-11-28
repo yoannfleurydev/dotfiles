@@ -166,3 +166,7 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 
 # Get the TMUX ID panes
 export TMUX_ID="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> /dev/null
+
+# COLORSCHEME {{{
+(wal -r &)
+# }}}
