@@ -52,6 +52,7 @@ function workstart()
   git checkout -b $BRANCH
 }
 
+alias gradle=./gradlew
 alias workstart=workstart
 alias ws=workstart
 alias git_push_origin=git_push_origin

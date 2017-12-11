@@ -9,6 +9,7 @@ DETACHED="\u27a6"
 CROSS="\u2718"
 LIGHTNING="\u26a1"
 GEAR="\u2699"
+RSEGMENT_SEPATATOR="\ue0b2"
 
 # Begin a segment
 # Takes two arguments, background and foreground. Both can be omitted,
@@ -99,6 +100,10 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
 }
 
+right_prompt() {
+  echo "${RSEGMENT_SEPARATOR} %t"
+}
+
 ## Main prompt
 prompt_agnoster_main() {
   RETVAL=$?
@@ -113,6 +118,7 @@ prompt_agnoster_main() {
 prompt_agnoster_precmd() {
   vcs_info
   PROMPT='%{%f%b%k%}'$(prompt_agnoster_main)' '
+  RPROMPT=$(right_prompt)
 }
 
 prompt_agnoster_setup() {
