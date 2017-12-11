@@ -60,6 +60,8 @@ Be sure to have the following :
   'frecency'.
 * [pywal](https://github.com/dylanaraps/pywal) - 🎨 Generate and change
   colorschemes on the fly. A 'wal' rewrite in Python 3.
+* [fzf](https://github.com/junegunn/fzf) - 🌸 A command-line fuzzy finder
+* [fpp](https://github.com/facebook/PathPicker) - Facebook Path Picker
 
 ## Scripts
 

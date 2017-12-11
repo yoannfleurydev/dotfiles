@@ -23,7 +23,7 @@ function main() {
     fi
   fi
 
-  xdg-open $url > /dev/null 2>&1
+  firefox $url > /dev/null 2>&1
 }
 
 main
