@@ -43,6 +43,7 @@ Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'
 Plugin 'posva/vim-vue'
 Plugin 'PotatoesMaster/i3-vim-syntax'  " i3wm syntax highlight
+Plugin 'pangloss/vim-javascript'       " javascript improvement
 
 " Syntax checking plugin
 Plugin 'w0rp/ale'                     " asynchronous linter
@@ -64,6 +65,7 @@ set laststatus=2               " for the status bar to appear all the time
 set list                       " enable invisibles
 set listchars=space:·,tab:▸\ ,trail:▫,extends:>,precedes:<,nbsp:+,eol:¬
 set mouse=a                    " enable mouse in all modes
+set noshowmode                 " Hide the default mode text
 set number                     " line numbers
 set ruler                      " show were you are
 set scrolloff=3                " show context above/below cursorline
@@ -106,4 +108,19 @@ nmap <C-n> :NERDTreeToggle<CR>  " Map Ctrl+n to toggle NERDTree
 
 " Next step fix a leafgarland/typescript-vim bug
 autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
+
+" ALE Configuration
+" INLINE LINTING/TYPE CHECKING/FORMATTING
+let g:ale_linters = {
+\  'javascript': ['eslint', 'flow', 'prettier'],
+\}
+let g:ale_fixers = {
+\  'javascript': ['eslint', 'prettier'],
+\}
+let g:ale_javascript_prettier_options = '--no-semi --single-quote --trailing-comma es5'
+let g:ale_fix_on_save = 1
+let g:ale_sign_column_always = 1
+
+" NERDTree Configuration
+let NERDTreeShowHidden=1
 
