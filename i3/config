@@ -114,6 +114,8 @@ bindsym $MOD+Shift+ccedilla move container to workspace 9
 bindsym $MOD+Shift+agrave move container to workspace 10
 
 assign [class="jetbrains-idea"] 3
+assign [class="Spotify"]        4
+assign [class="Insomnia"]       8
 
 # reload the configuration file
 bindsym $MOD+Shift+c reload
@@ -162,11 +164,11 @@ set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 
 # class                 border  backgr. text    indicator child_border
-client.focused          #FFFFFF #FFFFFF #FFFFFF #FFFFFF   #FFFFFF
-client.focused_inactive $bg     $bg     $fg  $bg       $bg
-client.unfocused        $bg     $bg     $fg  $bg       $bg
-client.urgent           $bg     $bg     $fg  $bg       $bg
-client.placeholder      $bg     $bg     $fg  $bg       $bg
+client.focused          $fg     $fg     $bg     $fg       $fg
+client.focused_inactive $bg     $bg     $fg     $bg       $bg
+client.unfocused        $bg     $bg     $fg     $bg       $bg
+client.urgent           $bg     $bg     $fg     $bg       $bg
+client.placeholder      $bg     $bg     $fg     $bg       $bg
 
 exec --no-startup-id "wal -i $HOME/Pictures/Wall -t"
 
