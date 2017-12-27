@@ -53,6 +53,7 @@ function workstart()
 }
 
 alias gradle=./gradlew
+alias gw=./gradlew
 alias workstart=workstart
 alias ws=workstart
 alias git_push_origin=git_push_origin
