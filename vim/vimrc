@@ -105,6 +105,14 @@ autocmd InsertLeave * :set relativenumber
 
 imap kj <Esc>                   " Map kj as a new escape key
 nmap <C-n> :NERDTreeToggle<CR>  " Map Ctrl+n to toggle NERDTree
+nnoremap n nzz                  " Show next matched string at center of screen
+nnoremap N Nzz                  " Show previous matched string at center
+
+" Purity
+noremap <Up> <Nop>
+noremap <Down> <Nop>
+noremap <Left> <Nop>
+noremap <Right> <Nop>
 
 " Next step fix a leafgarland/typescript-vim bug
 autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
