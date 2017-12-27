@@ -27,6 +27,19 @@ prompt_segment() {
   [[ -n $3 ]] && print -n $3
 }
 
+prompt_right_segment() {
+  local bg fg
+  [[ -n $1 ]] && bg="%K{$1}" || bg="%k"
+  [[ -n $2 ]] && fg="%F{$2}" || fg="%f"
+  if [[ $CURRENT_BG != 'NONE' && $1 != $CURRENT_BG ]]; then
+    print -n "%{$fg%}$RSEGMENT_SEPARATOR%{$bg%F{$CURRENT_BG}%}"
+  else
+    print -n "%{$fg%}%{$bg%}"
+  fi
+  CURRENT_BG=$1
+  [[ -n $3 ]] && print -n $3
+}
+
 # End the prompt, closing any open segments
 prompt_end() {
   if [[ -n $CURRENT_BG ]]; then
@@ -52,7 +65,9 @@ prompt_context() {
 
 # Git: branch/detached head, dirty status
 prompt_git() {
+  (( $+commands[git] )) || return
   local color ref
+
   is_dirty() {
     test -n "$(git status --porcelain --ignore-submodules)"
   }
@@ -100,8 +115,18 @@ prompt_status() {
   [[ -n "$symbols" ]] && prompt_segment $PRIMARY_FG default " $symbols "
 }
 
-right_prompt() {
-  echo "${RSEGMENT_SEPARATOR} %t"
+prompt_clock() {
+  prompt_right_segment blue $PRIMARY_FG " %t"
+}
+
+function zle-line-init zle-keymap-select {
+  VIM_PROMPT="%{$fg_bold[yellow]%} [% NORMAL]% %{$reset_color%}"
+  RPS1="${${KEYMAP/vicmd/$VIM_PROMPT}/(main|viins)/} $(prompt_agnoster_right)"
+  zle reset-prompt
+}
+
+prompt_agnoster_right() {
+  prompt_clock
 }
 
 ## Main prompt
@@ -118,7 +143,7 @@ prompt_agnoster_main() {
 prompt_agnoster_precmd() {
   vcs_info
   PROMPT='%{%f%b%k%}'$(prompt_agnoster_main)' '
-  RPROMPT=$(right_prompt)
+  RPROMPT=$(prompt_agnoster_right)
 }
 
 prompt_agnoster_setup() {
@@ -136,3 +161,8 @@ prompt_agnoster_setup() {
 }
 
 prompt_agnoster_setup "$@"
+
+# bindkey -v special code to get the mode correctly activated
+zle -N zle-line-init
+zle -N zle-keymap-select
+
