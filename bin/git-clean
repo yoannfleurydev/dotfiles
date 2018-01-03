@@ -1,6 +1,10 @@
 #!/usr/bin/env bash
 
-LOCAL_BRANCHES=$(git branch --merged develop | grep -v -e 'develop' -e '\*' | tr -d ' ')
+MERGE_BRANCH=${1:-'develop'}
+
+git fetch
+
+LOCAL_BRANCHES=$(git branch --merged ${MERGE_BRANCH} | grep -v -e '${MERGE_BRANCH}' -e '\*' | tr -d ' ')
 
 if [[ -n "$LOCAL_BRANCHES" ]]; then
   for BRANCH in $LOCAL_BRANCHES; do
