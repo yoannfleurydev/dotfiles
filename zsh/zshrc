@@ -20,6 +20,7 @@ export SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 export ANDROID_HOME=$HOME/bin/android/sdk
 export MVN_HOME=$HOME/bin/maven
 export CATALINA_HOME=$HOME/bin/tomcat
+export KAFKA_HOME=$HOME/bin/kafka
 # --
 
 # -- PATH --
@@ -172,5 +173,6 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export TMUX_ID="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> /dev/null
 
 # COLORSCHEME {{{
-(wal -r &)
+(cat ~/.cache/wal/sequences &)
+source ~/.cache/wal/colors-tty.sh
 # }}}
