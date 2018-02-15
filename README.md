@@ -4,7 +4,7 @@
 
 I3 (gaps) is my Window Manager. I'm fond of this little gaps between windows. I
 use [pywal](https://github.com/dylanaraps/pywal) script to change the wallpaper
-and the colorscheme of my softwares, like `termite`, `i3` or `rofi`.
+and the colorscheme of my softwares, like `gnome-terminal`, `i3` or `rofi`.
 
 ![i3-gaps-01](./screenshots/colorscheme01.png)
 ![i3-gaps-02](./screenshots/colorscheme02.png)
@@ -13,7 +13,7 @@ and the colorscheme of my softwares, like `termite`, `i3` or `rofi`.
 
 **Terminal**
 
-I use ZSH with agnoster prompt (with powerline patched font). I have customized
+I use ZSH with Agnoster prompt (with powerline patched font). I have customized
 the prompt to show if the last commit is a Work in Progress or not.
 
 **Lockscreen**
@@ -62,6 +62,9 @@ Be sure to have the following :
   colorschemes on the fly. A 'wal' rewrite in Python 3.
 * [fzf](https://github.com/junegunn/fzf) - 🌸 A command-line fuzzy finder
 * [fpp](https://github.com/facebook/PathPicker) - Facebook Path Picker
+* [ctags](http://ctags.sourceforge.net/) - Generate an indexof names found in
+  source and header files of various programming language. Useful for tags
+  feature in Vim.
 
 ## Scripts
 
