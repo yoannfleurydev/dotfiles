@@ -53,6 +53,7 @@ out/
 *.swp
 target/
 .syntastic_javac_config
+tags
 
 # Software files #
 ##################
