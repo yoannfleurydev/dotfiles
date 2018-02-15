@@ -8,7 +8,7 @@
 export TERM="screen-256color"
 export TERMINAL=termite
 export EDITOR=vim
-export BROWSER=chromium
+export BROWSER=firefox
 export VISUAL=vim
 export LC_ALL="en_US.UTF-8"
 
@@ -16,7 +16,6 @@ export LC_ALL="en_US.UTF-8"
 export JAVA_HOME=$HOME/bin/java/jdk
 export GRADLE_HOME=$HOME/bin/java/gradle
 export GRADLE_USER_HOME=$HOME/.gradle
-export SPRING_HOME=$HOME/bin/java/spring-1.4.1.RELEASE
 export ANDROID_HOME=$HOME/bin/android/sdk
 export MVN_HOME=$HOME/bin/maven
 export CATALINA_HOME=$HOME/bin/tomcat
@@ -24,7 +23,7 @@ export KAFKA_HOME=$HOME/bin/kafka
 # --
 
 # -- PATH --
-export PATH=$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$SPRING_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
+export PATH=$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
 
 if hash yarn 2>/dev/null; then
   export PATH=$PATH:$(yarn global bin)
@@ -34,12 +33,8 @@ fi
 
 
 # -- OTHER PATHS --
-export MANPATH="/home/yfleury/.linuxbrew/share/man:$MANPATH"
-export INFOPATH="/home/yfleury/.linuxbrew/share/info:$INFOPATH"
-export XDG_DATA_DIRS="/home/yfleury/.linuxbrew/share:$XDG_DATA_DIRS"
 export CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 export XDG_CONFIG_HOME=$HOME/.config
-export GOPATH="$HOME/dev/go"
 fpath=(~/.zsh/completion $fpath)
 # --
 
