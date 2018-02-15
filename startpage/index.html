@@ -85,9 +85,17 @@
             color: var(--color8);
         }
 
-        #search {
-            display: flex;
-            color: var(--color1);
+        input {
+            margin-top: 1em;
+            padding: 1.2em;
+            color: var(--foreground);
+            background: var(--color2);
+            outline: none;
+            border: none;
+        }
+
+        input[type="text"] {
+            width: 80%;
         }
 
         #clock {
@@ -162,7 +170,7 @@
         <section id="search">
             <form action="https://duckduckgo.com/" method="GET">
                 <input type="text" name="q" id="q">
-                <input type="button" value="Search">
+                <input type="submit" value="Search">
             </form>
         </section>
     </main>
