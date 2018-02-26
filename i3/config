@@ -154,7 +154,7 @@ bindsym $MOD+r mode "resize"
 
 new_window pixel 3
 
-gaps inner 0
+gaps inner 10
 gaps outer 0
 
 # Set colors from Xresources
