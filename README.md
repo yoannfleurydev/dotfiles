@@ -65,6 +65,8 @@ Be sure to have the following :
 * [ctags](http://ctags.sourceforge.net/) - Generate an indexof names found in
   source and header files of various programming language. Useful for tags
   feature in Vim.
+* [xclip](https://github.com/astrand/xclip) - Command line interface to the X11
+  clipboard
 
 ## Scripts
 
