@@ -73,6 +73,7 @@ set smartcase                  " case-sensitive searc hif any caps
 set tabstop=2 shiftwidth=2 expandtab
 set ttyfast                    " send more characters for redraws
 set ttymouse=xterm2            " mouse code for terminal
+set wildignore+=*.class
 
 " Enable persistent undo so that undo history persists across vim sessions
 set undofile
