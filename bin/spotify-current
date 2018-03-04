@@ -1,6 +1,9 @@
 #!/usr/bin/env bash
 
-eval $(sp eval)
+EVAL=$(${HOME}/bin/sp eval)
 
-echo "🎵 ${SPOTIFY_TITLE} | ${SPOTIFY_ARTIST}"
+if [ $? -eq 0 ]; then
+  eval ${EVAL}
+  echo "🎵 ${SPOTIFY_TITLE} | ${SPOTIFY_ARTIST}"
+fi
 
