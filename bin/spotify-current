@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+
+eval $(sp eval)
+
+echo "🎵 ${SPOTIFY_TITLE} | ${SPOTIFY_ARTIST}"
+
