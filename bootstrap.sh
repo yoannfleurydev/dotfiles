@@ -1,22 +1,5 @@
 #!/usr/bin/env bash
 
-######## VAR #######
-FALSE=0
-TRUE=1
-RERUN=$FALSE
-####################
-
-git_install() {
-  if !hash git 2>/dev/null; then
-    echo "Installing Git"
-    sudo apt-get update
-    sudo apt-get install git -y
-  fi
-
-  echo "Updating Dotfiles"
-  git pull origin master
-}
-
 apt_install() {
   echo "Updating softwares using APT"
   sudo apt-get update
@@ -27,6 +10,11 @@ apt_install() {
     i3lock imagemagick rofi rxvt-unicode scrot \
     libxcb-xinerama0-dev libxcb-randr0-dev i3 i3-wm \
     feh w3m-img -y
+}
+
+arch_install() {
+  yaourt -Syu --aur
+  yaourt -S vim git zsh rofi xclip feh ranger
 }
 
 link_dotfiles() {
@@ -119,33 +107,12 @@ scripts_install() {
 
   # Git web script
   ln -sf $HOME/etc/dotfiles/bin/gitweb $HOME/bin
-
-  # wal
-  git clone git@github.com:dylanaraps/wal.git $HOME/etc/wal
-  ln -sf $HOME/etc/wal/wal $HOME/bin/wal
 }
 
 powerline_fonts_install() {
   git clone https://github.com/powerline/fonts.git
   fonts/install.sh
   rm -rf fonts
-}
-
-lemonbar_install() {
-  git clone https://github.com/LemonBoy/bar.git
-  cd bar
-  make
-  sudo make install
-  cd ..
-  rm -rf bar
-}
-
-print_status() {
-  if [ $RERUN -eq $TRUE ]; then
-    $RERUN=$FALSE
-    echo "Running the script again"
-    ./$0
-  fi
 }
 
 main() {
@@ -162,5 +129,4 @@ main() {
   print_status
 }
 
-main
 
