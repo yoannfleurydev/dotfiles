@@ -116,8 +116,6 @@ bindsym $MOD+Shift+agrave move container to workspace 10
 assign [class="jetbrains-idea"] 3
 assign [class="Spotify"]        4
 assign [class="Insomnia"]       8
-for_window [class="Gnome-terminal"] border pixel 0
-
 
 # reload the configuration file
 bindsym $MOD+Shift+c reload
