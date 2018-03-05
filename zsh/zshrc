@@ -168,10 +168,13 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 export TMUX_ID="$((`tmux display -pt "${TMUX_PANE:?}" "#{pane_index}"` + 1))" 2> /dev/null
 
 # COLORSCHEME {{{
-if [[ -f ~/.cache/wal/sequences ]]; then
-  (cat ~/.cache/wal/sequences &)
-fi
-if [[ -f ~/.cache/wal/colors-tty.sh ]]; then
-  source ~/.cache/wal/colors-tty.sh
+ps -o 'cmd=' -p $(ps -o 'ppid=' -p $$) | grep -v 'idea' &> /dev/null
+if [ $? -eq 0 ]; then
+  if [[ -f ~/.cache/wal/sequences ]]; then
+    (cat ~/.cache/wal/sequences &)
+  fi
+  if [[ -f ~/.cache/wal/colors-tty.sh ]]; then
+    source ~/.cache/wal/colors-tty.sh
+  fi
 fi
 # }}}
