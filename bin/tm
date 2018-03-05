@@ -1,0 +1,32 @@
+#!/bin/sh
+# This script is taken from https://github.com/nicknisi/dotfiles/blob/6f2bfd121d0f61d6be79a4d75d222f9a0a04adeb/bin/tm
+
+# Abort if we're already inside a TMUX session
+[ "$TMUX" == "" ] || exit 0
+# Startup a "default" session if non currently exists
+# tmux has-session -t _default || tmux new-session -s _default -d
+
+# Present menu for user to choose which workspace to open
+PS3="Please choose your session: "
+options=($(tmux list-sessions -F "#S" 2>/dev/null) "New Session" "zsh")
+echo "Available sessions"
+echo "------------------"
+echo " "
+select opt in "${options[@]}"
+do
+  case $opt in
+    "New Session")
+      read -p "Enter new session name: " SESSION_NAME
+      tmux new -s "$SESSION_NAME"
+      break
+      ;;
+    "zsh")
+      zsh --login
+      break;;
+    *)
+      tmux attach-session -t $opt
+      break
+      ;;
+  esac
+done
+
