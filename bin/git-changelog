@@ -35,6 +35,8 @@ while [[ $# -gt 0 ]]; do
     -h|--help)
        cat <<EOF
 GIT CHANGELOG
+
+Usage: git-changelog [OPTION]...
 EOF
       exit
       ;;
@@ -45,21 +47,12 @@ EOF
   esac
 done
 
-
 DESCRIBED_BRANCH=${DESCRIBED_BRANCH:-'develop'}
 FORMAT=${FORMAT:-'* %h %s'}
 TAG=${TAG:-$(git describe ${DESCRIBED_BRANCH} --tags --abbrev=0)}
 
 # Get the latest update from the remote
 git fetch
-
-# If no parameter is given, get the latest tag of the develop branch
-# Else the tag will be the parameter
-if [[ -z $2 ]]; then
-  TAG=
-else
-  TAG=$2
-fi
 
 # Log the CHANGELOG
 echo "CHANGELOG from ${TAG}"
