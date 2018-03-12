@@ -9,15 +9,15 @@
 
 # USAGE :
 # git-changelog
-# git-changelog develop v0.0.1
+# git-changelog --branch develop --tags v0.0.1
 # git-changelog >> CHANGELOG.md
-# git-changelog develop v0.0.1 >> CHANGELOG.md
+# git-changelog  --branch develop --tags v0.0.1 >> CHANGELOG.md
 
 ARGV=()
 while [[ $# -gt 0 ]]; do
   key="$1"
   case $key in
-    -b|--branche)
+    -b|--branch)
       DESCRIBED_BRANCH="$2"
       shift
       shift
@@ -34,9 +34,22 @@ while [[ $# -gt 0 ]]; do
       ;;
     -h|--help)
        cat <<EOF
-GIT CHANGELOG
+NAME
+    git-changelog - a stupid changelog generator
 
-Usage: git-changelog [OPTION]...
+SYNOPSIS
+    git-changelog [-t|--tags vX.Y.Z][-f|--format format][-b|--branch branch]
+                  [-h|--help]
+
+OPTIONS
+    -t --tag <tag>
+        Print the changelog from this tag. If the option is not given, the last
+        tag will be used
+    -b --branch <branch>
+        Select the branch to describe.
+    -f --format <format>
+        Print the changelog using the pretty format: https://git-scm.com/docs/pretty-formats
+        'format:<string>'
 EOF
       exit
       ;;
@@ -47,12 +60,12 @@ EOF
   esac
 done
 
+# Get the latest update from the remote
+git fetch
+
 DESCRIBED_BRANCH=${DESCRIBED_BRANCH:-'develop'}
 FORMAT=${FORMAT:-'* %h %s'}
 TAG=${TAG:-$(git describe ${DESCRIBED_BRANCH} --tags --abbrev=0)}
-
-# Get the latest update from the remote
-git fetch
 
 # Log the CHANGELOG
 echo "CHANGELOG from ${TAG}"
