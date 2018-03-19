@@ -30,7 +30,7 @@ bindsym $MOD+d exec rofi -show run
 bindsym $MOD+w exec rofi -show window
 
 # Lock the screen
-bindsym $MOD+l exec $HOME_BIN/lock
+bindsym $MOD+Shift+g exec $HOME_BIN/lock
 
 # -----------------------------------
 
@@ -41,9 +41,10 @@ floating_modifier $MOD
 bindsym $MOD+Shift+a kill
 
 # change focus
-bindsym $MOD+j focus left
-bindsym $MOD+k focus down
-bindsym $MOD+m focus right
+bindsym $MOD+h focus left
+bindsym $MOD+j focus down
+bindsym $MOD+k focus up
+bindsym $MOD+l focus right
 
 # alternatively, you can use the cursor keys:
 bindsym $MOD+Left focus left
@@ -52,10 +53,10 @@ bindsym $MOD+Up focus up
 bindsym $MOD+Right focus right
 
 # move focused window
-bindsym $MOD+Shift+j move left
-bindsym $MOD+Shift+k move down
-bindsym $MOD+Shift+l move up
-bindsym $MOD+Shift+m move right
+bindsym $MOD+Shift+h move left
+bindsym $MOD+Shift+j move down
+bindsym $MOD+Shift+k move up
+bindsym $MOD+Shift+l move right
 
 # alternatively, you can use the cursor keys:
 bindsym $MOD+Shift+Left move left
@@ -64,7 +65,7 @@ bindsym $MOD+Shift+Up move up
 bindsym $MOD+Shift+Right move right
 
 # split in horizontal orientation
-bindsym $MOD+h split h
+bindsym $MOD+g split h
 
 # split in vertical orientation
 bindsym $MOD+v split v
