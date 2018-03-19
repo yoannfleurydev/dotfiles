@@ -44,7 +44,6 @@ fpath=(~/.zfunctions $fpath)
 
 autoload -Uz promptinit; promptinit
 prompt pure
-source $HOME/etc/dotfiles/zsh/pure/pure.zsh
 
 # }}}
 
