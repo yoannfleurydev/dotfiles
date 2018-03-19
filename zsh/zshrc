@@ -35,16 +35,16 @@ fi
 # -- OTHER PATHS --
 export CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 export XDG_CONFIG_HOME=$HOME/.config
-fpath=(~/.zsh/completion $fpath)
+fpath=(~/.zfunctions $fpath)
 # --
 
 # }}}
 
 # PROMPT {{{
 
-autoload -Uz promptinit
-promptinit
-source $HOME/.zsh/prompt.zsh
+autoload -Uz promptinit; promptinit
+prompt pure
+source $HOME/etc/dotfiles/zsh/pure/pure.zsh
 
 # }}}
 
