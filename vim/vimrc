@@ -11,7 +11,6 @@ Plugin 'VundleVim/Vundle.vim'
 " Utils
 Plugin 'tpope/vim-surround'            " surround word/sentence with quotes
 Plugin 'airblade/vim-rooter'           " auto-define the root of project
-Plugin 'enricobacis/vim-airline-clock' " clock in vim-airline
 Plugin 'dylanaraps/wal'                " colorscheme based on wal script
 
 " Git plugins
@@ -35,15 +34,12 @@ Plugin 'ctrlpvim/ctrlp.vim'             " fuzzy finder
 Plugin 'editorconfig/editorconfig-vim'  " editorconfig
 
 " Language plugins
-Plugin 'leafgarland/typescript-vim'
-Plugin 'IN3D/vim-raml'
-Plugin 'lumiliet/vim-twig'
-Plugin 'tpope/vim-cucumber'
 Plugin 'tpope/vim-markdown'
-Plugin 'mattn/emmet-vim'
-Plugin 'posva/vim-vue'
+Plugin 'mattn/emmet-vim'               " Emmet for Vim
+Plugin 'posva/vim-vue'                 " VueJS support
 Plugin 'PotatoesMaster/i3-vim-syntax'  " i3wm syntax highlight
 Plugin 'pangloss/vim-javascript'       " javascript improvement
+Plugin 'mxw/vim-jsx'                   " JSX support
 
 " Syntax checking plugin
 Plugin 'w0rp/ale'                     " asynchronous linter
@@ -64,15 +60,13 @@ set incsearch                  " search as you type
 set laststatus=2               " for the status bar to appear all the time
 set list                       " enable invisibles
 set listchars=space:·,tab:▸\ ,trail:▫,extends:>,precedes:<,nbsp:+,eol:¬
-set mouse=a                    " enable mouse in all modes
 set noshowmode                 " Hide the default mode text
 set number                     " line numbers
 set ruler                      " show were you are
 set scrolloff=3                " show context above/below cursorline
 set smartcase                  " case-sensitive searc hif any caps
-set tabstop=2 shiftwidth=2 expandtab
+set softtabstop=4 shiftwidth=4 expandtab
 set ttyfast                    " send more characters for redraws
-set ttymouse=xterm2            " mouse code for terminal
 set wildignore+=*.class
 
 " Enable persistent undo so that undo history persists across vim sessions
@@ -89,7 +83,7 @@ match ExtraWhitespace /\s\+$\|\t/
 autocmd FileType gitcommit set colorcolumn=72
 
 let g:airline_powerline_fonts = 1 " for the status bar to use powerline char
-let g:airline_theme='term'
+let g:airline_theme='molokai'
 let g:airline#extensions#tabline#enabled = 1
 
 " In Insert mode, set the line's numbers
@@ -106,8 +100,6 @@ autocmd InsertLeave * :set relativenumber
 
 imap kj <Esc>                   " Map kj as a new escape key
 nmap <C-n> :NERDTreeToggle<CR>  " Map Ctrl+n to toggle NERDTree
-nnoremap n nzz                  " Show next matched string at center of screen
-nnoremap N Nzz                  " Show previous matched string at center
 
 " Purity
 noremap <Up> <Nop>
@@ -115,21 +107,21 @@ noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
 
-" Next step fix a leafgarland/typescript-vim bug
-autocmd BufNewFile,BufRead *.ts,*.tsx setlocal filetype=typescript
-
 " ALE Configuration
 " INLINE LINTING/TYPE CHECKING/FORMATTING
-let g:ale_linters = {
-\  'javascript': ['eslint', 'flow', 'prettier'],
-\}
-let g:ale_fixers = {
-\  'javascript': ['eslint', 'prettier'],
-\}
-let g:ale_javascript_prettier_options = '--no-semi --single-quote --trailing-comma es5'
-let g:ale_fix_on_save = 1
+let g:ale_linters = {}
+let g:ale_linters['javascript'] = ['prettier']
+let g:ale_fixers = {}
+let g:ale_fixers['javascript'] = ['prettier']
 let g:ale_sign_column_always = 1
+let g:ale_lint_on_save = 1
+let g:ale_lint_on_text_changed = 0
+let g:ale_fix_on_save = 1
+let g:ale_javascript_prettier_use_local_config = 1
+
 
 " NERDTree Configuration
 let NERDTreeShowHidden=1
 
+" vim-jsx Configuration
+let g:jsx_ext_required = 0
