@@ -156,6 +156,9 @@ new_window pixel 3
 gaps inner 10
 gaps outer 0
 
+# MOUSE
+focus_follows_mouse no
+
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use
 # from the generated scheme.
