@@ -2,11 +2,11 @@ alias ez="$EDITOR ~/.zshrc"
 alias ev="$EDITOR ~/.vim/vimrc"
 alias et="$EDITOR ~/.tmux.conf"
 alias ei="$EDITOR ~/.config/i3/config"
-alias vi="vim"
+alias vi="$EDITOR"
 
 alias ls="ls --color=auto"
 alias sl="ls --color=auto"
-alias ll="ls -Alh --color=auto"
+alias ll="exa -abghl --git --color=automatic"
 
 alias upgrade="apt update && apt upgrade && apt clean && apt autoremove"
 alias upgrade-all="upgrade && sudo n latest && sudo npm update -g"
@@ -88,6 +88,17 @@ function extract {
     else
         echo "'$1' is not a valid file"
     fi
+}
+
+# Hack to color man output
+man() {
+    LESS_TERMCAP_md=$'\e[01;31m' \
+    LESS_TERMCAP_me=$'\e[0m' \
+    LESS_TERMCAP_se=$'\e[0m' \
+    LESS_TERMCAP_so=$'\e[01;44;33m' \
+    LESS_TERMCAP_ue=$'\e[0m' \
+    LESS_TERMCAP_us=$'\e[01;32m' \
+    command man "$@"
 }
 
 # }}}
