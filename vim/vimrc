@@ -12,6 +12,7 @@ Plugin 'VundleVim/Vundle.vim'
 Plugin 'tpope/vim-surround'            " surround word/sentence with quotes
 Plugin 'airblade/vim-rooter'           " auto-define the root of project
 Plugin 'dylanaraps/wal'                " colorscheme based on wal script
+Plugin 'ludovicchabant/vim-gutentags'  " ctags
 
 " Git plugins
 Plugin 'tpope/vim-fugitive'            " git commands in vim
