@@ -62,7 +62,7 @@ alias gpo=git_push_origin
 
 # USEFUL ALIASES {{{
 
-alias weather="curl wttr.in"
+alias weather="curl wttr.in/Rouen"
 
 # }}}
 

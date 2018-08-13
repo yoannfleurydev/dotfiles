@@ -23,7 +23,7 @@ export KAFKA_HOME=$HOME/bin/kafka
 # --
 
 # -- PATH --
-export PATH=$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:$HOME/dev/go/bin
+export PATH=$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:/usr/local/go/bin:$HOME/go/bin
 
 if hash yarn 2>/dev/null; then
   export PATH=$PATH:$(yarn global bin)
