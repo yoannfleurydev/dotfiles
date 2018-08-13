@@ -54,6 +54,8 @@ out/
 target/
 .syntastic_javac_config
 tags
+tags.lock
+tags.temp
 
 # Software files #
 ##################

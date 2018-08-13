@@ -37,9 +37,6 @@
   # Automatically correct and execute mistyped commands
   autocorrect = 1
 
-[push]
-  default = simple
-
 [credential]
   # Cache the http credentials
   helper = cache
