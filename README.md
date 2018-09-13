@@ -28,12 +28,12 @@ lockscreen. You can check [the script](./scripts/lock) in this repository.
 Configuration files used by many softwares on UNIX systems. Use at your own
 risk.
 
-* editorconfig
-* git
-* i3
-* tmux
-* vim
-* zsh
+- editorconfig
+- git
+- i3
+- tmux
+- vim
+- zsh
 
 ## Requirements
 
@@ -42,41 +42,44 @@ Set zsh as your login shell :
 `chsh -s $(which zsh)`
 
 Be sure to have the following :
-* A basic shell to run the scripts.
-* A patched [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for devicons in
+
+- A basic shell to run the scripts.
+- A patched [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for devicons in
   Vim
+- Initialized submodules for pure prompt to work
+  - `git submodule init`
+  - `git submodule update --recursive --remote`
 
 ## Command Line Interface softwares
 
-* [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) -
+- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) -
   similar to ack but faster
-* [tig](https://github.com/jonas/tig) - text mode interface for git
-* [ranger](https://github.com/ranger/ranger) - a VIM-inspired file manager
-* [k](https://github.com/supercrabtree/k) - ls alternative
-* [mycli](https://github.com/dbcli/mycli) - cli mysql client written in python
-* [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - a gitmoji
+- [tig](https://github.com/jonas/tig) - text mode interface for git
+- [ranger](https://github.com/ranger/ranger) - a VIM-inspired file manager
+- [k](https://github.com/supercrabtree/k) - ls alternative
+- [mycli](https://github.com/dbcli/mycli) - cli mysql client written in python
+- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - a gitmoji
   interactive client for using emojis on commits.
-* [z](https://github.com/rupa/z) - tracks your most used directories, based on
+- [z](https://github.com/rupa/z) - tracks your most used directories, based on
   'frecency'.
-* [pywal](https://github.com/dylanaraps/pywal) - 🎨 Generate and change
+- [pywal](https://github.com/dylanaraps/pywal) - 🎨 Generate and change
   colorschemes on the fly. A 'wal' rewrite in Python 3.
-* [fzf](https://github.com/junegunn/fzf) - 🌸 A command-line fuzzy finder
-* [fpp](https://github.com/facebook/PathPicker) - Facebook Path Picker
-* [ctags](http://ctags.sourceforge.net/) - Generate an indexof names found in
+- [fzf](https://github.com/junegunn/fzf) - 🌸 A command-line fuzzy finder
+- [fpp](https://github.com/facebook/PathPicker) - Facebook Path Picker
+- [ctags](http://ctags.sourceforge.net/) - Generate an indexof names found in
   source and header files of various programming language. Useful for tags
   feature in Vim.
-* [xclip](https://github.com/astrand/xclip) - Command line interface to the X11
+- [xclip](https://github.com/astrand/xclip) - Command line interface to the X11
   clipboard
 
 ## Scripts
 
-* **lock** : used as a lockscreen
-* **vol** : manage the volume
-* **gitweb** : open the remote repository web interface
-* **sp** : control spotify in command line interface
+- **lock** : used as a lockscreen
+- **vol** : manage the volume
+- **gitweb** : open the remote repository web interface
+- **sp** : control spotify in command line interface
 
 ## Feedbacks
 
 Suggestions and improvements are welcome on the
 [issue panel](https://github.com/yoannfleurydev/dotfiles/issues/new) !
-
