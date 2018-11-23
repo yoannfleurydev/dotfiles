@@ -8,13 +8,13 @@
 export TERM="screen-256color"
 export TERMINAL=termite
 export EDITOR=vim
-export BROWSER=firefox
+export BROWSER=google-chrome-stable
 export VISUAL=vim
 export LC_ALL="en_US.UTF-8"
 
 # -- JAVA RELATED --
 export JAVA_HOME=$HOME/bin/java/jdk
-export GRADLE_HOME=$HOME/bin/java/gradle
+export GRADLE_HOME=$HOME/bin/gradle
 export GRADLE_USER_HOME=$HOME/.gradle
 export ANDROID_HOME=$HOME/bin/android/sdk
 export MVN_HOME=$HOME/bin/maven
@@ -22,8 +22,10 @@ export CATALINA_HOME=$HOME/bin/tomcat
 export KAFKA_HOME=$HOME/bin/kafka
 # --
 
+export FLUTTER_HOME=$HOME/bin/flutter
+
 # -- PATH --
-export PATH=$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:/usr/local/go/bin:$HOME/go/bin
+export PATH=$FLUTTER_HOME/bin:$HOME/.gem/ruby/2.5.0/bin:$HOME/bin:$HOME/.linuxbrew/bin:$PATH:$HOME/.local/bin:$JAVA_HOME/bin:$HOME/bin/java/aspectj1.8/bin:$GRADLE_HOME/bin:$ANDROID_HOME/tools:$ANDROID_HOME/platform-tools:$MVN_HOME/bin:/usr/local/go/bin:$HOME/go/bin
 
 if hash yarn 2>/dev/null; then
   export PATH=$PATH:$(yarn global bin)
@@ -36,6 +38,9 @@ fi
 export CLASSPATH=$HOME/bin/java/aspectj1.8/lib/aspectjst.jar
 export XDG_CONFIG_HOME=$HOME/.config
 fpath=(~/.zfunctions $fpath)
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
 # --
 
 # }}}
