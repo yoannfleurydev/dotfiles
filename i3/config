@@ -1,17 +1,30 @@
 # i3 config file
 # Yoann Fleury
+# Any question about this configuration file ? Ask me to @yoannfleurydev on
+# Twitter and I will answer with pleasure.
 
-# Set the ALT key to be the modifier key.
+# Set the META key to be the modifier key.
 set $MOD Mod4
 
+# Here, I set another variable for i3wm to avoid writing $HOME/bin multiple
+# times
 set $HOME_BIN $HOME/bin
 
 # -----------------------------------
 # CUSTOM KEY MAPPING
 # -----------------------------------
 
+# Use modifier key and enter to open terminal. i3-sensible-terminal is a
+# wrapper, if you set the $TERMINAL environment variable, it will open
+# the defined terminal.
 bindsym $MOD+Return exec i3-sensible-terminal
+
+# This line will map [MOD Shift w] to a script that change the wallpaper
+# and change the colorscheme based on it. Check pywal for more informations
 bindsym $MOD+Shift+w exec "wal -i $HOME/Pictures/Wall -t"
+
+# Use modifier key and Control and left or right to move the workspace on the
+# left or the right screen output if there is at least two output
 bindsym $MOD+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $MOD+Ctrl+Right exec "i3-msg move workspace to output right"
 
@@ -29,7 +42,9 @@ bindsym Mod1+space exec "$HOME_BIN/sp play"
 bindsym $MOD+d exec rofi -show run
 bindsym $MOD+w exec rofi -show window
 
-# Lock the screen
+# Lock the screen using a custom script that take a screenshot of the current
+# display and then pixelise it to hide sensitive data. Check the script for
+# more information
 bindsym $MOD+Shift+g exec $HOME_BIN/lock
 
 # -----------------------------------
@@ -114,10 +129,6 @@ bindsym $MOD+Shift+underscore move container to workspace 8
 bindsym $MOD+Shift+ccedilla move container to workspace 9
 bindsym $MOD+Shift+agrave move container to workspace 10
 
-assign [class="jetbrains-idea"] 3
-assign [class="Spotify"]        4
-assign [class="Insomnia"]       8
-
 # reload the configuration file
 bindsym $MOD+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -151,8 +162,28 @@ mode "resize" {
 
 bindsym $MOD+r mode "resize"
 
+# Custom bindings to set the display
+# The scripts in ~/.screenlayout are generated using arandr
+# We set the text that will be displayed in the bar
+set $displayMode "Set display mode [w]ork [l]aptop [h]ome"
+# Keystroke to show the message and enter in the $displayMode
+bindsym $MOD+x mode $displayMode
+# When display mode is active, do the following on key press:
+mode $displayMode {
+    bindsym w exec ~/.screenlayout/work-remote.sh; \
+                mode "default"
+    bindsym h exec ~/.screenlayout/home-display.sh; \
+                mode "default"
+    bindsym l exec ~/.screenlayout/laptop-display.sh; \
+                mode "default"
+
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+
 new_window pixel 3
 
+# Works only with i3-gaps
 gaps inner 10
 gaps outer 0
 
@@ -176,12 +207,12 @@ client.placeholder      $bg     $bg     $fg     $bg       $bg
 
 exec --no-startup-id "wal -i $HOME/Pictures/Wall -t"
 
-# bar {
-#   i3bar_command i3bar
-# }
+bar {
+  i3bar_command i3bar
+}
 
-# exec --no-startup-id "xrandr --output eDP1 --auto --output HDMI1 --auto --right-of eDP1"
-exec xrandr --output HDMI-2 --auto --left-of HDMI-1
+# Execute my main screenlayout, generated using the arandr software
+exec --no-startup-id "$HOME/.screenlayout/main.sh"
 
 # vim:filetype=i3
 

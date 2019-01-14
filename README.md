@@ -49,6 +49,8 @@ Be sure to have the following :
 - Initialized submodules for pure prompt to work
   - `git submodule init`
   - `git submodule update --recursive --remote`
+- `arandr` installed to generate your `~/.screenlayout` scripts that will be
+  prompted by i3wm on <kbd>MOD</kbd>+<kbd>x</kbd>
 
 ## Command Line Interface softwares
 
