@@ -182,7 +182,8 @@ mode $displayMode {
 }
 
 # Register the lock script in a variable so we avoid repetition.
-set $lock lock && sleep 1
+set $lock $HOME_BIN/lock && sleep 1
+# Here, I use bindings as a prompt to control the system
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
     bindsym l exec --no-startup-id $lock, mode "default"
@@ -196,8 +197,7 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
-
-bindsym $mod+Pause mode "$mode_system"
+bindsym $MOD+Pause mode "$mode_system"
 
 new_window pixel 3
 
@@ -217,13 +217,12 @@ set_from_resource $fg i3wm.color7 #f0f0f0
 set_from_resource $bg i3wm.color2 #f0f0f0
 
 # class                 border  backgr. text    indicator child_border
-client.focused          $fg     $fg     $bg     $fg       $fg
+client.focused          $bg     $bg     $fg     $bg       $bg
 client.focused_inactive $bg     $bg     $fg     $bg       $bg
 client.unfocused        $bg     $bg     $fg     $bg       $bg
 client.urgent           $bg     $bg     $fg     $bg       $bg
 client.placeholder      $bg     $bg     $fg     $bg       $bg
-
-exec --no-startup-id "wal -i $HOME/Pictures/Wall -t"
+client.background       $bg
 
 bar {
   i3bar_command i3bar
@@ -231,6 +230,8 @@ bar {
 
 # Execute my main screenlayout, generated using the arandr software
 exec --no-startup-id "$HOME/.screenlayout/main.sh"
+# Excecute the random wallpaper selection and set it.
+exec --no-startup-id "wal -i $HOME/Pictures/Wall -t"
 
 # vim:filetype=i3
 
