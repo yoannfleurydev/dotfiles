@@ -26,6 +26,25 @@ fn get_command_output(command: &str) -> String {
     );
 }
 
+#[cfg(target_os = "linux")]
+fn run(browser: &str, url: &str) {
+    Command::new("sh")
+        .arg(browser)
+        .arg(url)
+        .output()
+        .expect("failed to execute process");
+}
+
+#[cfg(target_os = "windows")]
+fn run(browser: &str, url: &str) {
+    Command::new("cmd")
+        .arg("/C")
+        .arg(browser)
+        .arg(url)
+        .output()
+        .expect("failed to execute process");
+}
+
 #[cfg(target_os = "windows")]
 fn get_command_output(command: &str) -> String {
     let output = Command::new("cmd")
@@ -61,7 +80,7 @@ fn main() {
     let re = Regex::new(r".*@(.*):(.*)\.git").unwrap();
     let caps = re.captures(remote.as_str()).unwrap();
 
-    let domain = caps.get(1).map_or("gitlab.com", |m| m.as_str());
+    let domain = caps.get(1).map_or("github.com", |m| m.as_str());
     let repository = caps.get(2).map_or("", |m| m.as_str());
 
     let url = format!(
@@ -70,12 +89,10 @@ fn main() {
         repository = repository
     );
 
-    println!("{}", url);
-
     let key: &str = "BROWSER";
 
     match env::var(key) {
-        Ok(val) => println!("{}: {:?}", key, val),
+        Ok(browser) => run(browser.as_str(), url.as_str()),
         Err(e) => panic!("Couldn't interpret {}: {}", key, e),
     }
 }
