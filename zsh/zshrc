@@ -6,7 +6,7 @@
 # ENVIRONMENT SETUP {{{
 
 export TERM="screen-256color"
-export TERMINAL=termite
+export TERMINAL=gnome-terminal
 export EDITOR=vim
 export BROWSER=google-chrome-stable
 export VISUAL=vim
