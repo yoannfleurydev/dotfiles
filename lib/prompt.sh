@@ -25,3 +25,7 @@ prompt() {
   fi
 }
 
+echo "Nothing to run, prompt.sh is a function declaration file";
+echo "To use this file, source the prompt.sh script";
+echo "Then, use it in you script like:";
+echo "    prompt 'Question' 'Text if yes' 'Text if no' 'Callback function to be executed if yes'";
