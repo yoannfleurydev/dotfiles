@@ -10,6 +10,8 @@
   template = ~/.git_commit_template
 
 [alias]
+  amend = commit --amend
+  amend-no-edit = commit --amend --no-edit
   conflicts = diff --name-only --diff-filter=U
   fetch = fetch --prune
   l = log --pretty=oneline --graph --abbrev-commit
