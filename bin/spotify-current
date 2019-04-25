@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# This script is used by tmux to show the current song title and artist I'm
+# listening. It invokes the sp script using the eval parameter.
+
 EVAL=$(${HOME}/bin/sp eval)
 
 if [ $? -eq 0 ]; then
