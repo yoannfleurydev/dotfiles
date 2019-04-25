@@ -1,5 +1,4 @@
-set nocompatible              " required
-filetype off                  " required
+filetype off " required by Vundle, no more explanation to give
 
 " set the runtime path to include Vundle and initialize
 set rtp+=~/.vim/bundle/Vundle.vim
@@ -13,6 +12,7 @@ Plugin 'tpope/vim-surround'            " surround word/sentence with quotes
 Plugin 'airblade/vim-rooter'           " auto-define the root of project
 Plugin 'dylanaraps/wal'                " colorscheme based on wal script
 Plugin 'ludovicchabant/vim-gutentags'  " ctags
+Plugin 'Valloric/YouCompleteMe'        " autocompletion
 
 " Git plugins
 Plugin 'tpope/vim-fugitive'            " git commands in vim
@@ -41,6 +41,7 @@ Plugin 'posva/vim-vue'                 " VueJS support
 Plugin 'PotatoesMaster/i3-vim-syntax'  " i3wm syntax highlight
 Plugin 'pangloss/vim-javascript'       " javascript improvement
 Plugin 'mxw/vim-jsx'                   " JSX support
+Plugin 'dag/vim-fish'                  " fish shell support
 
 " Syntax checking plugin
 Plugin 'w0rp/ale'                     " asynchronous linter
@@ -49,32 +50,8 @@ Plugin 'w0rp/ale'                     " asynchronous linter
 call vundle#end()            " required
 filetype plugin indent on    " required
 
-syntax on
-syntax enable
-
-set autoread                   " reload files when changed on disk
-set background=dark            " for the status bar to print correctly on gnome
-set backspace=indent,eol,start " make backspace work like most other apps
-set colorcolumn=81             " limit line-length to 80 characters
-set encoding=utf-8             " set the encoding
-set incsearch                  " search as you type
-set laststatus=2               " for the status bar to appear all the time
-set list                       " enable invisibles
-set listchars=space:·,tab:▸\ ,trail:▫,extends:>,precedes:<,nbsp:+,eol:¬
-set noshowmode                 " Hide the default mode text
-set number                     " line numbers
-set ruler                      " show were you are
-set scrolloff=3                " show context above/below cursorline
-set smartcase                  " case-sensitive searc hif any caps
-set softtabstop=4 shiftwidth=4 expandtab
-set ttyfast                    " send more characters for redraws
-set wildignore+=*.class
-
-" Enable persistent undo so that undo history persists across vim sessions
-set undofile
-set undodir=~/.vim/undo
-
-colorscheme wal
+source ~/etc/dotfiles/vim/main-config.vim
+source ~/etc/dotfiles/vim/ctrlp-config.vim
 
 " Highlight trailing whitespaces
 highlight ExtraWhitespace ctermbg=darkgreen guibg=darkgreen
@@ -126,3 +103,9 @@ let NERDTreeShowHidden=1
 
 " vim-jsx Configuration
 let g:jsx_ext_required = 0
+
+" YouCompleteMe
+let g:ycm_min_num_of_chars_for_completion = 4
+let g:ycm_min_num_identifier_candidate_chars = 4
+let g:ycm_enable_diagnostic_highlighting = 0
+
