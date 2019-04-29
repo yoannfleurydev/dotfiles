@@ -1,24 +1,23 @@
 #!/usr/bin/env bash
 
-apt_install() {
-  echo "Updating softwares using APT"
-  sudo apt-get update
-  sudo apt-get upgrade
-  echo "Installing useful softwares"
-  sudo apt-get install build-essential \
-    curl git python-setuptools ruby vim zsh \
-    i3lock imagemagick rofi rxvt-unicode scrot \
-    libxcb-xinerama0-dev libxcb-randr0-dev i3 i3-wm \
-    feh w3m-img -y
-}
+# Source the library that enables simple prompt for the user to understand
+# what the script will do and if they want to really run the functions
+source ./lib/prompt.sh
 
+# Install packages using arch linux package manager.
 arch_install() {
-  yaourt -Syu --aur
-  yaourt -S vim git zsh rofi xclip feh ranger
+  pacman -S yay
+  yay -S vim git zsh rofi xclip feh ranger otf-fira-code tig the_silver_searcher\
+      arandr highlight fish tmux ctags jq rofimoji-git fzf
 }
 
+# Create default directories in home (bin, dev, etc, tmp, work)
+mkdirectories() {
+  mkdir $HOME/{bin,dev,etc,tmp,work} -p
+}
+
+# Link all the dotfiles
 link_dotfiles() {
-  echo "Linking Dotfiles"
   mkdir -p $HOME/.zsh
   mkdir -p $HOME/.vim
   ln -sf $HOME/etc/dotfiles/zsh/zshrc $HOME/.zshrc
@@ -32,8 +31,10 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/git/gitconfig-work $HOME/.gitconfig-work
   ln -sf $HOME/etc/dotfiles/git/git-templates $HOME/.git-templates
   ln -sf $HOME/etc/dotfiles/bin/sp $HOME/bin/sp
-  ln -sf $HOME/etc/dotfiles/i3/config $HOME/.config/i3/config
+  ln -sf $HOME/etc/dotfiles/bin/spotify-current $HOME/bin/spotify-current
+  ln -sf $HOME/etc/dotfiles/i3 $HOME/.config/i3
   ln -sf $HOME/etc/dotfiles/Xresources $HOME/.Xresources
+  ln -sf $HOME/etc/dotfiles/config/rofi $HOME/.config/rofi
 }
 
 zsh_plugins() {
@@ -54,33 +55,6 @@ zsh_plugins() {
 
   mkdir -p $HOME/etc/z
   git clone git@github.com:rupa/z.git $HOME/etc/z
-}
-
-brew_install() {
-  ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Linuxbrew/install/master/install)"
-
-  # GitHub contributions graph like
-  brew install git-cal
-  # Git command line client
-  brew install tig
-  # Find in path command
-  brew install the_silver_searcher
-  # Vim like file explorer
-  brew install ranger
-  # MySQL command line client with completion and syntax highlight
-  brew install mycli
-  # Fuzzy finder
-  brew install fzf
-
-  # Upgrade packages already installed
-  brew upgrade
-}
-
-gem_install() {
-  # Emoji in terminal
-  sudo gem install terminal-emojify
-  # Use lolcat to colorize command outputs
-  sudo gem install lolcat
 }
 
 vim_install() {
@@ -109,24 +83,13 @@ scripts_install() {
   ln -sf $HOME/etc/dotfiles/bin/gitweb $HOME/bin
 }
 
-powerline_fonts_install() {
-  git clone https://github.com/powerline/fonts.git
-  fonts/install.sh
-  rm -rf fonts
-}
-
 main() {
-  apt_install
-  git_install
-  link_dotfiles
+  prompt "Create defaults folders (bin, dev, etc, tmp)" "Creating..." "Not creating" mkdirectories
+  prompt "Is pacman available" "Installing dependencies" "Not installing" arch_install
+  prompt "Link the dotfiles" "Linking dotfiles" "Not linking dotfiles" link_dotfiles
   zsh_plugins
-  brew_install
-  gem_install
-  vim_install
+  prompt "Install vim plugins" "Installing Vim plugins" "Not installing" vim_install
   scripts_install
-  powerline_fonts_install
-  lemonbar_install
-  print_status
 }
 
-
+main
