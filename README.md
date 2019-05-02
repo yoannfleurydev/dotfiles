@@ -44,8 +44,6 @@ Set zsh as your login shell :
 Be sure to have the following :
 
 - A basic shell to run the scripts.
-- A patched [Nerd Font](https://github.com/ryanoasis/nerd-fonts) for devicons in
-  Vim
 - Initialized submodules for pure prompt to work
   - `git submodule init`
   - `git submodule update --recursive --remote`
@@ -54,14 +52,11 @@ Be sure to have the following :
 
 ## Command Line Interface softwares
 
-- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) -
+- [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) -
   similar to ack but faster
 - [tig](https://github.com/jonas/tig) - text mode interface for git
 - [ranger](https://github.com/ranger/ranger) - a VIM-inspired file manager
 - [k](https://github.com/supercrabtree/k) - ls alternative
-- [mycli](https://github.com/dbcli/mycli) - cli mysql client written in python
-- [gitmoji-cli](https://github.com/carloscuesta/gitmoji-cli) - a gitmoji
-  interactive client for using emojis on commits.
 - [z](https://github.com/rupa/z) - tracks your most used directories, based on
   'frecency'.
 - [pywal](https://github.com/dylanaraps/pywal) - 🎨 Generate and change
