@@ -5,10 +5,10 @@
 source ./lib/prompt.sh
 
 # Install packages using arch linux package manager.
+# Pacman will install yay which is useful to install community packages
 arch_install() {
   pacman -S yay
-  yay -S vim git zsh rofi xclip feh ranger otf-fira-code tig the_silver_searcher\
-      arandr highlight fish tmux ctags jq rofimoji-git fzf vifm
+  yay -S $(cat packages_arch.txt)
 }
 
 # Create default directories in home (bin, dev, etc, tmp, work)
