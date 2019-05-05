@@ -8,7 +8,7 @@ source ./lib/prompt.sh
 arch_install() {
   pacman -S yay
   yay -S vim git zsh rofi xclip feh ranger otf-fira-code tig the_silver_searcher\
-      arandr highlight fish tmux ctags jq rofimoji-git fzf
+      arandr highlight fish tmux ctags jq rofimoji-git fzf vifm
 }
 
 # Create default directories in home (bin, dev, etc, tmp, work)
@@ -20,6 +20,7 @@ mkdirectories() {
 link_dotfiles() {
   mkdir -p $HOME/.zsh
   mkdir -p $HOME/.vim
+  ln -sf $HOME/etc/dotfiles/config/fish/ $HOME/.config/fish
   ln -sf $HOME/etc/dotfiles/zsh/zshrc $HOME/.zshrc
   ln -sf $HOME/etc/dotfiles/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
   ln -sf $HOME/etc/dotfiles/zsh/prompt.zsh $HOME/.zsh/prompt.zsh
@@ -35,6 +36,12 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/i3 $HOME/.config/i3
   ln -sf $HOME/etc/dotfiles/Xresources $HOME/.Xresources
   ln -sf $HOME/etc/dotfiles/config/rofi $HOME/.config/rofi
+}
+
+set_shell() {
+    echo "Which shell do you want ? (bash/zsh/fish)"
+    read input
+    chsh -s $(which $input)
 }
 
 zsh_plugins() {
@@ -74,20 +81,17 @@ scripts_install() {
   # TODO Improve with a for loop
   # Lock script
   ln -sf $HOME/etc/dotfiles/bin/lock $HOME/bin
-  ln -sf $HOME/etc/dotfiles/assets/lock.png $HOME/.config/lock.png
 
   # Volume script
   ln -sf $HOME/etc/dotfiles/bin/vol $HOME/bin
-
-  # Git web script
-  ln -sf $HOME/etc/dotfiles/bin/gitweb $HOME/bin
 }
 
 main() {
   prompt "Create defaults folders (bin, dev, etc, tmp)" "Creating..." "Not creating" mkdirectories
   prompt "Is pacman available" "Installing dependencies" "Not installing" arch_install
   prompt "Link the dotfiles" "Linking dotfiles" "Not linking dotfiles" link_dotfiles
-  zsh_plugins
+  prompt "Set a new shell" "Setting new shell" "Pass" set_shell
+  prompt "Install zsh plugins" "Installing zsh plugins" "Not installing" zsh_plugins
   prompt "Install vim plugins" "Installing Vim plugins" "Not installing" vim_install
   scripts_install
 }
