@@ -3,15 +3,32 @@
 # Any question about this configuration file ? Ask me to @yoannfleurydev on
 # Twitter and I will answer with pleasure.
 
-# Set the META key to be the modifier key.
+# -----------------------------------
+# VARIABLES
+# -----------------------------------
+
+# Set the SUPER key to be the modifier key. (Mod1=<Alt>, Mod4=<Super>)
+set $ALT Mod1
 set $MOD Mod4
 
 # Here, I set another variable for i3wm to avoid writing $HOME/bin multiple
-# times
+# times, so if it change, I just have to change it here.
 set $HOME_BIN $HOME/bin
 
 # -----------------------------------
-# CUSTOM KEY MAPPING
+# BORDER STYLE
+# -----------------------------------
+
+# Configure border style for new window and new float window
+new_window pixel 1
+new_float normal
+hide_edge_borders none
+
+# Use Mouse+$MOD to drag floating windows to their wanted position
+floating_modifier $MOD
+
+# -----------------------------------
+# CUSTOM KEY MAPPING SECTION
 # -----------------------------------
 
 # Use modifier key and enter to open terminal. i3-sensible-terminal is a
@@ -19,25 +36,32 @@ set $HOME_BIN $HOME/bin
 # the defined terminal.
 bindsym $MOD+Return exec i3-sensible-terminal
 
-# This line will map [MOD Shift w] to a script that change the wallpaper
-# and change the colorscheme based on it. Check pywal for more informations
-bindsym $MOD+Shift+w exec "wal -i $HOME/Pictures/Wall -t -o $HOME/etc/dotfiles/bin/wal-set"
+# ROFI, with show run and show window
+bindsym $MOD+d exec rofi -show run
+bindsym $MOD+w exec rofi -show window
+
+# morc_menu is a simple menu, useful to search for software by categories
+bindsym $MOD+m exec --no-startup-id morc_menu
+
+# Kill the focused window
+bindsym $MOD+Shift+a kill
 
 # Use modifier key and Control and left or right to move the workspace on the
 # left or the right screen output if there is at least two output
 bindsym $MOD+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $MOD+Ctrl+Right exec "i3-msg move workspace to output right"
 
-# SPOTIFY MAPPING {{{
+# -----------------------------------
+# SOUND KEY MAPPING
+# -----------------------------------
+exec --no-startup-id volumeicon
+bindsym $ALT+j exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
+bindsym $ALT+k exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
+bindsym $ALT+h exec playerctl previous
+bindsym $ALT+l exec playerctl next
+bindsym $ALT+space exec playerctl play
+bindsym $ALT+m exec i3-sensible-terminal -e "alsamixer"
 
-# Mod1 is commonly the alt key.
-bindsym Mod1+h exec "$HOME_BIN/sp previous"
-bindsym Mod1+j exec pactl set-sink-volume @DEFAULT_SINK@ -5%
-bindsym Mod1+k exec pactl set-sink-volume @DEFAULT_SINK@ +5%
-bindsym Mod1+l exec "$HOME_BIN/sp next"
-bindsym Mod1+space exec "$HOME_BIN/sp play"
-
-# With Media Keys
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
@@ -45,25 +69,14 @@ bindsym XF86AudioPlay exec playerctl play
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
+# / SOUND KEY MAPPING
 
-# }}}
 
-# Show rofi
-bindsym $MOD+d exec rofi -show run
-bindsym $MOD+w exec rofi -show window
 
 # Lock the screen using a custom script that take a screenshot of the current
 # display and then pixelise it to hide sensitive data. Check the script for
 # more information
 bindsym $MOD+Shift+g exec $HOME_BIN/lock
-
-# -----------------------------------
-
-# Use Mouse+$MOD to drag floating windows to their wanted position
-floating_modifier $MOD
-
-# kill focused window
-bindsym $MOD+Shift+a kill
 
 # change focus
 bindsym $MOD+h focus left
@@ -89,10 +102,8 @@ bindsym $MOD+Shift+Down move down
 bindsym $MOD+Shift+Up move up
 bindsym $MOD+Shift+Right move right
 
-# split in horizontal orientation
+# Split
 bindsym $MOD+g split h
-
-# split in vertical orientation
 bindsym $MOD+v split v
 
 # enter fullscreen mode for the focused container
@@ -209,11 +220,6 @@ mode "$mode_system" {
 }
 bindsym $MOD+Pause mode "$mode_system"
 
-new_window pixel 3
-
-# Works only with i3-gaps
-gaps inner 10
-gaps outer 0
 
 # MOUSE
 focus_follows_mouse no
@@ -234,14 +240,55 @@ client.urgent           $bg     $bg     $fg     $bg       $bg
 client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
 
+# -----------------------------------
+# BAR SECTION
+# -----------------------------------
+
 bar {
   i3bar_command i3bar
+  status_command i3status
+  position bottom
+  strip_workspace_numbers yes
+
+  # Disable the left click on workspace, but the click on the bar will laucnh
+  # morc_menu
+  bindsym button1 nop
+  bindsym --release button1 exec --no-startup-id morc_menu
+  # Disable the scroll (4:up, 5:down) to change workspace
+  bindsym button4 nop
+  bindsym button5 nop
+
+  colors {
+    background #1D1F28
+    statusline #FDFDFD
+    separator  #C574DD
+
+    # Customization of the bar colors
+    #                 #BORDER #BACKGR #TEXTTT
+    focused_workspace #FDFDFD #C574DD #282A36
+    binding_mode      #FDFDFD #F37F97 #FDFDFD
+    urgent_workspace  #FDFDFD #F37F97 #282A36
+  }
 }
+
+# Key mapping to hide and reveal i3status bar
+bindsym $MOD+Shift+m bar mode toggle
 
 # Execute my main screenlayout, generated using the arandr software
 exec --no-startup-id "$HOME/.screenlayout/main.sh"
-# Excecute the random wallpaper selection and set it.
-exec --no-startup-id "wal -i $HOME/Pictures/Wall -t"
+
+# -----------------------------------
+# I3WM-GAPS SPECIFIC SETTINGS
+# -----------------------------------
+gaps inner 16
+gaps outer -2
+
+# Smart Gaps (gaps used if only more than one container on the workspace)
+smart_gaps on
+# Smart Borders (draw borders around container only if it is not the only
+# container on this workspace). on|no_gaps (on=always activate and no_gaps=only
+# activate if the gap sizee to the edge of the screen is 0)
+smart_borders on
 
 # vim:filetype=i3
 
