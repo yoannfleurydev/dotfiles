@@ -30,4 +30,10 @@ set -x XDG_CONFIG_HOME $HOME/.config
 set -x PATH $HOME/.cargo/bin $MVN_HOME/bin $ANDROID_HOME/platform-tools $ANDROID_HOME/tools $GRADLE_HOME/bin $HOME/.local/bin $FLUTTER_HOME/bin $JAVA_HOME/bin $HOME/bin $HOME/.npm-global/bin $PATH
 #}}}
 
-source ~/.config/fish/aliases.fish
+source ~/etc/dotfiles/config/fish/aliases.fish
+
+# Load the non versionned work fish script if it exist.
+if test -e ~/etc/dotfiles/config/fish/work.fish
+    source ~/etc/dotfiles/config/fish/work.fish
+end
+

@@ -5,6 +5,7 @@ SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
 SETUVAR _fish_abbr_ds:docker\x20stop\x20\x28docker\x20ps\x20\x2dq\x29
 SETUVAR _fish_abbr_keycloak__start:/home/yfleury/bin/keycloak\x2d4\x2e8\x2e1\x2eFinal/bin/standalone\x2esh
+SETUVAR _fish_abbr_nrbs:npm\x20run\x20build\x20\x26\x26\x20npm\x20run\x20start
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
