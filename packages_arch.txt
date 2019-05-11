@@ -1,44 +1,30 @@
-# The VI Improved text editor
-vim
-# Git is a Code Versionning System
-git
-# ZSH is an alternative Shell
-zsh
-# Rofi is an alternative to dmenu
-rofi
-# xclip is useful to copy command output
-xclip
-# Image preview and background manager
-feh
-# File manager in command line
-ranger
-# Fira Code font (with ligature)
-otf-fira-code
-# Utility in command line for Git
-tig
-# Utility to search in command line
-the_silver_searcher
-# GUI to help with multiple monitors
 arandr
-# Useful for color in ranger
-highlight
-# Non POSIX Shell, but with many useful features
-fish
-# Terminal multiplexer
-tmux
-# Reference generator useful for VIM
 ctags
-# Command line tool to play with JSON
-jq
-# ROFI extension to picj Emoji
-rofimoji-git
-# Fuzzy Finder in CLI
+discord
+feh
+fish
 fzf
-# A complete feature menu for simple environments
+git
+google-chrome
+highlight
+i3-gaps
+insomnia
+jq
 morc_menu
-# File manager in command line, inspired by VIM
-vifm
-# PlayerCTL is a common utility  to control multiple players (Spotify included)
-playerctl
-# Noto Font by Google for Emoji
+nautilus
 noto-fonts-emoji
+otf-fira-code
+playerctl
+polybar
+ranger
+rofi
+rofimoji-git
+spotify
+the_silver_searcher
+tig
+tmux
+vifm
+vim
+visual-studio-code-bin
+xclip
+zsh
