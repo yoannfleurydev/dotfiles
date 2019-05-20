@@ -12,6 +12,7 @@ insomnia
 jq
 morc_menu
 nautilus
+notification-daemon
 noto-fonts-emoji
 otf-fira-code
 playerctl
