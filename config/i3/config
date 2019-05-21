@@ -50,6 +50,8 @@ bindsym $MOD+Shift+a kill
 # left or the right screen output if there is at least two output
 bindsym $MOD+Ctrl+Left exec "i3-msg move workspace to output left"
 bindsym $MOD+Ctrl+Right exec "i3-msg move workspace to output right"
+bindsym $MOD+Ctrl+Up exec "i3-msg move workspace to output up"
+bindsym $MOD+Ctrl+Down exec "i3-msg move workspace to output down"
 
 # -----------------------------------
 # SOUND KEY MAPPING
