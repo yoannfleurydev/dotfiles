@@ -22,7 +22,7 @@ Xft.lcdfilter: lcddefault
 xcursor.theme:            Vanilla-DMZ
 xscreensaver.fade:   false
 xscreensaver.unfade: false
-!
+
 *background:   #1D1F28
 *foreground:   #FDFDFD
 *cursorColor:  #C574DD

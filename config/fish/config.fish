@@ -12,7 +12,7 @@ eval (direnv hook fish)
 set HOME_BIN $HOME/bin
 set -x TERMINAL gnome-terminal
 set -x EDITOR vim
-set -x BROWSER google-chrome-stable
+set -x BROWSER firefox
 set -x VISUAL vim
 set -x LC_ALL "en_US.UTF-8"
 

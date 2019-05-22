@@ -56,24 +56,21 @@ bindsym $MOD+Ctrl+Down exec "i3-msg move workspace to output down"
 # -----------------------------------
 # SOUND KEY MAPPING
 # -----------------------------------
-exec --no-startup-id volumeicon
 bindsym $ALT+j exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ -5%
 bindsym $ALT+k exec --no-startup-id pactl set-sink-volume @DEFAULT_SINK@ +5%
 bindsym $ALT+h exec playerctl previous
 bindsym $ALT+l exec playerctl next
-bindsym $ALT+space exec playerctl play
+bindsym $ALT+space exec playerctl play-pause
 bindsym $ALT+m exec i3-sensible-terminal -e "alsamixer"
 
 bindsym XF86AudioRaiseVolume exec --no-startup-id pactl set-sink-volume 0 +5%
 bindsym XF86AudioLowerVolume exec --no-startup-id pactl set-sink-volume 0 -5%
 bindsym XF86AudioMute exec --no-startup-id pactl set-sink-mute 0 toggle
-bindsym XF86AudioPlay exec playerctl play
+bindsym XF86AudioPlay exec playerctl play-pause
 bindsym XF86AudioPause exec playerctl pause
 bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 # / SOUND KEY MAPPING
-
-
 
 # Lock the screen using a custom script that take a screenshot of the current
 # display and then pixelise it to hide sensitive data. Check the script for
@@ -206,6 +203,7 @@ mode $displayMode {
 
 # Register the lock script in a variable so we avoid repetition.
 set $lock $HOME_BIN/lock && sleep 1
+
 # Here, I use bindings as a prompt to control the system
 set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
@@ -220,11 +218,11 @@ mode "$mode_system" {
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
+
 bindsym $MOD+Pause mode "$mode_system"
 
-
-# MOUSE
-focus_follows_mouse no
+# Should the focus of the window follow the mouse cursor
+focus_follows_mouse yes
 
 # Set colors from Xresources
 # Change 'color7' and 'color2' to whatever colors you want i3 to use
@@ -243,10 +241,17 @@ client.placeholder      $bg     $bg     $fg     $bg       $bg
 client.background       $bg
 
 # -----------------------------------
+# FLOATING MODE FOR SPECIFIC APP
+# -----------------------------------
+for_window [title="alsamixer"] floating enable border pixel 1
+for_window [class="Galculator"] floating enable border pixel 1
+
+# -----------------------------------
 # BAR SECTION
 # -----------------------------------
 
 bar {
+  mode hide
   i3bar_command i3bar
   status_command i3status
   position bottom
@@ -276,9 +281,6 @@ bar {
 # Key mapping to hide and reveal i3status bar
 bindsym $MOD+Shift+m bar mode toggle
 
-# Execute my main screenlayout, generated using the arandr software
-exec --no-startup-id "$HOME/.screenlayout/main.sh"
-
 # -----------------------------------
 # I3WM-GAPS SPECIFIC SETTINGS
 # -----------------------------------
@@ -291,6 +293,17 @@ smart_gaps on
 # container on this workspace). on|no_gaps (on=always activate and no_gaps=only
 # activate if the gap sizee to the edge of the screen is 0)
 smart_borders on
+
+# -----------------------------------
+# FINAL DECLARATION
+# -----------------------------------
+# Run polybar on startup
+exec_always --no-startup-id $HOME/etc/dotfiles/bin/polybar_run.sh
+
+# Execute my main screenlayout, generated using the arandr software
+exec --no-startup-id "$HOME/.screenlayout/main.sh"
+
+exec --no-startup-id feh --bg-fill $HOME/etc/dotfiles/wall.jpg
 
 # vim:filetype=i3
 

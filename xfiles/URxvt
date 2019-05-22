@@ -7,6 +7,7 @@
 ! CONFIG FILE
 
 URxvt.geometry: 74x27
-URxvt.font: xft:Fira Code Regular:size=10
-URxvt.boldFont: xft:Fira Code Regular:size=10
-
+URxvt.font: xft:Fira Code:size=12
+URxvt.boldFont: xft:Fira Code:size=12
+URxvt.scrollBar: off
+URxvt.internalBorder: 16
