@@ -250,33 +250,33 @@ for_window [class="Galculator"] floating enable border pixel 1
 # BAR SECTION
 # -----------------------------------
 
-bar {
-  mode hide
-  i3bar_command i3bar
-  status_command i3status
-  position bottom
-  strip_workspace_numbers yes
-
-  # Disable the left click on workspace, but the click on the bar will laucnh
-  # morc_menu
-  bindsym button1 nop
-  bindsym --release button1 exec --no-startup-id morc_menu
-  # Disable the scroll (4:up, 5:down) to change workspace
-  bindsym button4 nop
-  bindsym button5 nop
-
-  colors {
-    background #1D1F28
-    statusline #FDFDFD
-    separator  #C574DD
-
-    # Customization of the bar colors
-    #                 #BORDER #BACKGR #TEXTTT
-    focused_workspace #FDFDFD #C574DD #282A36
-    binding_mode      #FDFDFD #F37F97 #FDFDFD
-    urgent_workspace  #FDFDFD #F37F97 #282A36
-  }
-}
+#bar {
+#  mode hide
+#  i3bar_command i3bar
+#  status_command i3status
+#  position bottom
+#  strip_workspace_numbers yes
+#
+#  # Disable the left click on workspace, but the click on the bar will laucnh
+#  # morc_menu
+#  bindsym button1 nop
+#  bindsym --release button1 exec --no-startup-id morc_menu
+#  # Disable the scroll (4:up, 5:down) to change workspace
+#  bindsym button4 nop
+#  bindsym button5 nop
+#
+#  colors {
+#    background #1D1F28
+#    statusline #FDFDFD
+#    separator  #C574DD
+#
+#    # Customization of the bar colors
+#    #                 #BORDER #BACKGR #TEXTTT
+#    focused_workspace #FDFDFD #C574DD #282A36
+#    binding_mode      #FDFDFD #F37F97 #FDFDFD
+#    urgent_workspace  #FDFDFD #F37F97 #282A36
+#  }
+#}
 
 # Key mapping to hide and reveal i3status bar
 bindsym $MOD+Shift+m bar mode toggle
