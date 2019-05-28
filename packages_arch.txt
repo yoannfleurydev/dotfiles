@@ -1,4 +1,5 @@
 arandr
+alacritty
 ctags
 discord
 feh
