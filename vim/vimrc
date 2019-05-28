@@ -42,6 +42,7 @@ Plugin 'PotatoesMaster/i3-vim-syntax'  " i3wm syntax highlight
 Plugin 'pangloss/vim-javascript'       " javascript improvement
 Plugin 'mxw/vim-jsx'                   " JSX support
 Plugin 'dag/vim-fish'                  " fish shell support
+Plugin 'leafgarland/typescript-vim'    " typescript support
 
 " Syntax checking plugin
 Plugin 'w0rp/ale'                     " asynchronous linter
