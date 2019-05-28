@@ -149,6 +149,10 @@ bindsym $MOD+Shift+underscore move container to workspace 8
 bindsym $MOD+Shift+ccedilla move container to workspace 9
 bindsym $MOD+Shift+agrave move container to workspace 10
 
+set $SPOTIFY 8
+assign [class="Spotify"] $SPOTIFY
+for_window [class="Spotify"] move to workspace $SPOTIFY
+
 # reload the configuration file
 bindsym $MOD+Shift+c reload
 # restart i3 inplace (preserves your layout/session, can be used to upgrade i3)
@@ -243,6 +247,7 @@ client.background       $bg
 # -----------------------------------
 # FLOATING MODE FOR SPECIFIC APP
 # -----------------------------------
+# Title because alsamixer will be launched in a terminal
 for_window [title="alsamixer"] floating enable border pixel 1
 for_window [class="Galculator"] floating enable border pixel 1
 
