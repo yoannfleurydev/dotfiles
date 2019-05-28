@@ -12,6 +12,7 @@ insomnia
 jq
 morc_menu
 nautilus
+networkmanager_dmenu
 notification-daemon
 noto-fonts-emoji
 otf-fira-code
@@ -24,6 +25,7 @@ spotify
 the_silver_searcher
 tig
 tmux
+ttf-font-awesome-4
 vifm
 vim
 visual-studio-code-bin
