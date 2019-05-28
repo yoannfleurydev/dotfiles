@@ -6,11 +6,13 @@
 !
 ! CONFIG FILE
 
-rofi.fullscreen: true
+rofi.fullscreen:        true
+rofi.color-enabled:     true
 rofi.separator-style:   solid
 rofi.padding:           200
 rofi.hide-scrollbar:    true
 rofi.lines:             15
 rofi.bw:                0
-rofi.font: "Fira Code Regular" medium 16
+rofi.run-command: fish -c '{cmd}'
+rofi.run-list-command: 'fish -c functions'
 
