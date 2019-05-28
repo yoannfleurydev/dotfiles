@@ -44,9 +44,9 @@ border-color = ${colors.background-alt}
 module-margin-left = 1
 module-margin-right = 2
 
-font-0 = fixed:pixelsize=10;1
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;1
+font-0 = System San Francisco Display:size=10;2
+font-1 = FontAwesome:size=11;3
+font-2 = NotoColorEmoji:scale=6;4
 
 modules-left = i3
 modules-center = music
@@ -139,8 +139,16 @@ label = %output%
 
 [module/xbacklight]
 type = internal/xbacklight
-format = <label>
-label = BL %percentage%%
+format = <label> <ramp>
+label = %percentage%%
+
+
+; Only applies if <ramp> is used
+ramp-0 = 🌑
+ramp-1 = 🌒
+ramp-2 = 🌓
+ramp-3 = 🌔
+ramp-4 = 🌕
 
 [module/cpu]
 type = internal/cpu
