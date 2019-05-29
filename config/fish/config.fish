@@ -10,7 +10,7 @@ end
 eval (direnv hook fish)
 
 set HOME_BIN $HOME/bin
-set -x TERMINAL gnome-terminal
+set -x TERMINAL alacritty
 set -x EDITOR vim
 set -x BROWSER firefox
 set -x VISUAL vim
