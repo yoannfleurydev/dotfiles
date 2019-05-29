@@ -1,6 +1,7 @@
 arandr
 alacritty
 ctags
+compton
 discord
 feh
 fish

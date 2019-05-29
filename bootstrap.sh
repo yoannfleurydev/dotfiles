@@ -37,6 +37,7 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/Xresources $HOME/.Xresources
   ln -sf $HOME/etc/dotfiles/config/rofi $HOME/.config/rofi
   ln -sf $HOME/etc/dotfiles/config/alacritty $HOME/.config/alacritty
+  ln -sf $HOME/etc/dotfiles/config/compton $HOME/.config/compton
 }
 
 set_shell() {

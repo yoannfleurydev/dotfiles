@@ -309,6 +309,10 @@ exec_always --no-startup-id $HOME/etc/dotfiles/bin/polybar_run.sh
 exec --no-startup-id "$HOME/.screenlayout/main.sh"
 
 exec --no-startup-id feh --bg-fill $HOME/etc/dotfiles/wall.jpg
+# Useful for pamac-manager to ask for password
+exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+exec --no-startup-id compton
+
 
 # vim:filetype=i3
 
