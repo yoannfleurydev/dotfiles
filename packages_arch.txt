@@ -11,6 +11,7 @@ highlight
 i3-gaps
 insomnia
 jq
+lxappearance
 morc_menu
 nautilus
 networkmanager_dmenu
@@ -27,6 +28,7 @@ the_silver_searcher
 tig
 tmux
 ttf-font-awesome-4
+ttf-font-awesome
 vifm
 vim
 visual-studio-code-bin
