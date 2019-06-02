@@ -31,13 +31,16 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/git/git_commit_template $HOME/.git_commit_template
   ln -sf $HOME/etc/dotfiles/git/gitconfig-work $HOME/.gitconfig-work
   ln -sf $HOME/etc/dotfiles/git/git-templates $HOME/.git-templates
+  # TODO Is the sp script used now ?
   ln -sf $HOME/etc/dotfiles/bin/sp $HOME/bin/sp
+  # TODO Check if I can remove this line
   ln -sf $HOME/etc/dotfiles/bin/spotify-current $HOME/bin/spotify-current
-  ln -sf $HOME/etc/dotfiles/i3 $HOME/.config/i3
+
+  ln -sf $HOME/etc/dotfiles/i3 $HOME/.config/
   ln -sf $HOME/etc/dotfiles/Xresources $HOME/.Xresources
-  ln -sf $HOME/etc/dotfiles/config/rofi $HOME/.config/rofi
-  ln -sf $HOME/etc/dotfiles/config/alacritty $HOME/.config/alacritty
-  ln -sf $HOME/etc/dotfiles/config/compton $HOME/.config/compton
+  ln -sf $HOME/etc/dotfiles/config/rofi $HOME/.config/
+  ln -sf $HOME/etc/dotfiles/config/alacritty $HOME/.config/
+  ln -sf $HOME/etc/dotfiles/config/compton $HOME/.config/
 }
 
 set_shell() {

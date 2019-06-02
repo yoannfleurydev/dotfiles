@@ -289,8 +289,8 @@ ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
 type = custom/menu
-label-active-font = 1
 format-spacing = 1
+format-margin = 2
 label-open = 
 label-open-foreground = ${colors.alert}
 label-close = 
