@@ -34,11 +34,12 @@ floating_modifier $MOD
 # Use modifier key and enter to open terminal. i3-sensible-terminal is a
 # wrapper, if you set the $TERMINAL environment variable, it will open
 # the defined terminal.
-bindsym $MOD+Return exec i3-sensible-terminal
+bindsym $MOD+Return exec alacritty
 
 # ROFI, with show run and show window
 bindsym $MOD+d exec rofi -show run
 bindsym $MOD+w exec rofi -show window
+bindsym $MOD+space exec rofi -show drun
 
 # morc_menu is a simple menu, useful to search for software by categories
 bindsym $MOD+m exec --no-startup-id morc_menu
@@ -115,9 +116,6 @@ bindsym $MOD+e layout toggle split
 
 # toggle tiling / floating
 bindsym $MOD+Shift+space floating toggle
-
-# change focus between tiling / floating windows
-bindsym $MOD+space focus mode_toggle
 
 # focus the parent container
 bindsym $MOD+q focus parent
