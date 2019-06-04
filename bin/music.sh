@@ -1,11 +1,10 @@
-#!/bin/bash
+#!/usr/bin/env bash
 
 getTitle() {
   artist=$(playerctl metadata artist)
-  album=$(playerctl metadata album)
   title=$(playerctl metadata title)
 
-  echo "${*:-%artist% - %title%}" | sed "s/%artist%/$artist/g;s/%title%/$title/g;s/%album%/$album/g"i | sed 's/&/\\&/g'
+  echo "${title} | ${artist}"
 }
 
 isPlaying() {
