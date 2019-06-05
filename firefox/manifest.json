@@ -1,0 +1,32 @@
+{
+  "manifest_version": 2,
+  "version": "1.0",
+  "name": "lovelace",
+  "theme": {
+    "images": {
+      "additional_backgrounds": [
+        "images/bg-000-5672c42860d5b06e1058dc477397f3ef.svg"
+      ]
+    },
+    "properties": {
+      "additional_backgrounds_alignment": [
+        "top"
+      ],
+      "additional_backgrounds_tiling": [
+        "repeat"
+      ]
+    },
+    "colors": {
+      "toolbar": "rgb(40, 42, 54)",
+      "toolbar_text": "rgb(253, 253, 253)",
+      "accentcolor": "rgb(29, 31, 40)",
+      "textcolor": "rgb(253, 253, 253)",
+      "toolbar_field": "rgb(65, 68, 88)",
+      "toolbar_field_text": "rgb(253, 253, 253)",
+      "tab_line": "rgb(197, 116, 221)",
+      "popup": "rgb(40, 42, 54)",
+      "popup_text": "rgb(190, 190, 193)",
+      "tab_loading": "rgb(197, 116, 221)"
+    }
+  }
+}
