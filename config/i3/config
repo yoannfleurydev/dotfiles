@@ -150,6 +150,7 @@ bindsym $MOD+Shift+agrave move container to workspace 10
 set $SPOTIFY 8
 assign [class="Spotify"] $SPOTIFY
 for_window [class="Spotify"] move to workspace $SPOTIFY
+for_window [class=".*"] title_format " %title"
 
 # reload the configuration file
 bindsym $MOD+Shift+c reload
@@ -226,20 +227,23 @@ bindsym $MOD+Pause mode "$mode_system"
 # Should the focus of the window follow the mouse cursor
 focus_follows_mouse yes
 
+font pango:Fira Code 10
+
 # Set colors from Xresources
-# Change 'color7' and 'color2' to whatever colors you want i3 to use
-# from the generated scheme.
 # NOTE: The '#f0f0f0' in the lines below is the color i3 will use if
 # it fails to get colors from Xresources for some reason.
-set_from_resource $fg i3wm.color7 #f0f0f0
-set_from_resource $bg i3wm.color2 #f0f0f0
+set_from_resource $fg i3wm.foreground #f0f0f0
+set_from_resource $bg i3wm.background #000000
+set_from_resource $bgalt i3wm.color8  #646464
+set_from_resource $urgent i3wm.color1 #ff0000
+set_from_resource $primary i3wm.cursorColor #FF00FF
 
-# class                 border  backgr. text    indicator child_border
-client.focused          $bg     $bg     $fg     $bg       $bg
-client.focused_inactive $bg     $bg     $fg     $bg       $bg
-client.unfocused        $bg     $bg     $fg     $bg       $bg
-client.urgent           $bg     $bg     $fg     $bg       $bg
-client.placeholder      $bg     $bg     $fg     $bg       $bg
+# class                 border  backgr. text     indicator child_border
+client.focused          $bg     $bg     $primary $bg       $primary
+client.focused_inactive $bg     $bg     $fg      $bg       $primary
+client.unfocused        $bgalt  $bgalt  $fg      $bg       $primary
+client.urgent           $bg     $bg     $fg      $bg       $primary
+client.placeholder      $bg     $bg     $fg      $bg       $primary
 client.background       $bg
 
 # -----------------------------------
