@@ -41,6 +41,7 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/config/rofi $HOME/.config/
   ln -sf $HOME/etc/dotfiles/config/alacritty $HOME/.config/
   ln -sf $HOME/etc/dotfiles/config/compton $HOME/.config/
+  ln -sf $HOME/etc/dotfiles/config/morc_menu $HOME/.config/
 }
 
 set_shell() {
