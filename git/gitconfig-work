@@ -1,7 +1,6 @@
 [user]
-  email = yoann.fleury@smartpanda.com
+  email = yoann.fleury@saagie.com
   name = Yoann Fleury
-  signingkey = C1FC18E6B594DC45
 
 [init]
   templatedir = ~/etc/git.d/git-templates
