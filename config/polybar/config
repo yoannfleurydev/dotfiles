@@ -227,7 +227,7 @@ battery = BAT0
 adapter = AC
 full-at = 98
 
-format-charging = <label-charging> <animation-charging>
+format-charging = <label-charging> <ramp-capacity> <animation-charging>
 
 format-discharging = <label-discharging> <ramp-capacity> <animation-discharging>
 
@@ -236,8 +236,8 @@ format-full-prefix-foreground = ${colors.foreground-alt}
 
 ramp-capacity-0 = 😱
 ramp-capacity-1 = 🤔
-ramp-capacity-2 = 👌
-ramp-capacity-3 = 👍
+ramp-capacity-2 = 😉
+ramp-capacity-3 = 😎
 ramp-capacity-foreground = ${colors.foreground-alt}
 
 animation-charging-0 = 🔼
