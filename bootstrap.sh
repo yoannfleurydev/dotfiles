@@ -36,7 +36,7 @@ link_dotfiles() {
   # TODO Check if I can remove this line
   ln -sf $HOME/etc/dotfiles/bin/spotify-current $HOME/bin/spotify-current
 
-  ln -sf $HOME/etc/dotfiles/i3 $HOME/.config/
+  ln -sf $HOME/etc/dotfiles/config/i3 $HOME/.config/
   ln -sf $HOME/etc/dotfiles/Xresources $HOME/.Xresources
   ln -sf $HOME/etc/dotfiles/config/rofi $HOME/.config/
   ln -sf $HOME/etc/dotfiles/config/alacritty $HOME/.config/
