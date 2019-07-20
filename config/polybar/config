@@ -198,14 +198,13 @@ type = internal/date
 interval = 5
 
 ; Day and month, no need of year
-date = %d-%m
+date = %d-%m 📅
 
 ; Hour and minutes, no need of seconds
-time = %H:%M
+time = %H:%M 🕛
 
 format-prefix = 
 format-prefix-foreground = ${colors.foreground-alt}
-format-underline = ${xrdb:color4}
 
 label = %date% %time%
 
@@ -225,54 +224,43 @@ ramp-volume-2 = 🔊
 [module/battery]
 type = internal/battery
 battery = BAT0
-adapter = AC0
+adapter = AC
 full-at = 98
 
-format-charging = <animation-charging> <label-charging>
-format-charging-underline = #ffb52a
+format-charging = <label-charging> <animation-charging>
 
-format-discharging = <animation-discharging> <label-discharging>
-format-discharging-underline = ${self.format-charging-underline}
+format-discharging = <label-discharging> <ramp-capacity> <animation-discharging>
 
 format-full-prefix = " "
 format-full-prefix-foreground = ${colors.foreground-alt}
-format-full-underline = ${self.format-charging-underline}
 
-ramp-capacity-0 = 
-ramp-capacity-1 = 
-ramp-capacity-2 = 
+ramp-capacity-0 = 😱
+ramp-capacity-1 = 🤔
+ramp-capacity-2 = 👌
+ramp-capacity-3 = 👍
 ramp-capacity-foreground = ${colors.foreground-alt}
 
-animation-charging-0 = 
-animation-charging-1 = 
-animation-charging-2 = 
+animation-charging-0 = 🔼
+animation-charging-1 = ⏫
 animation-charging-foreground = ${colors.foreground-alt}
-animation-charging-framerate = 750
+animation-charging-framerate = 2000
 
-animation-discharging-0 = 
-animation-discharging-1 = 
-animation-discharging-2 = 
+animation-discharging-0 = 🔽
+animation-discharging-1 = ⏬
 animation-discharging-foreground = ${colors.foreground-alt}
-animation-discharging-framerate = 750
+animation-discharging-framerate = 2000
 
 [module/temperature]
 type = internal/temperature
-thermal-zone = 0
+thermal-zone = 10
 warn-temperature = 60
 
-format = <ramp> <label>
-format-underline = #f50a4d
-format-warn = <ramp> <label-warn>
-format-warn-underline = ${self.format-underline}
+format = <label>
+format-warn = <label-warn>
 
-label = %temperature-c%
-label-warn = %temperature-c%
-label-warn-foreground = ${colors.secondary}
-
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
-ramp-foreground = ${colors.foreground-alt}
+label = %temperature-c% 🌡️
+label-warn = %temperature-c% 🌡️
+label-warn-background = ${colors.alert}
 
 [module/powermenu]
 type = custom/menu
@@ -283,13 +271,15 @@ label-open-foreground = ${colors.alert}
 label-close = 
 label-close-foreground = ${colors.alert}
 label-separator = |
-label-separator-foreground = ${colors.secondary}
+label-separator-foreground = ${colors.alert}
 
 menu-0-0 = reboot
 menu-0-0-foreground = ${colors.foreground}
+menu-0-0-background = ${colors.alert}
 menu-0-0-exec = reboot
 menu-0-1 = power off
 menu-0-1-foreground = ${colors.foreground}
+menu-0-1-background = ${colors.alert}
 menu-0-1-exec = poweroff
 
 [settings]
