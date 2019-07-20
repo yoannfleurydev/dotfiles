@@ -2,6 +2,7 @@ arandr
 alacritty
 ctags
 compton
+direnv
 discord
 feh
 fish
@@ -10,6 +11,7 @@ git
 google-chrome
 highlight
 i3-gaps
+i3lock
 insomnia
 jq
 lxappearance
@@ -24,6 +26,7 @@ polybar
 ranger
 rofi
 rofimoji-git
+scrot
 spotify
 the_silver_searcher
 tig
