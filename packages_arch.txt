@@ -37,4 +37,6 @@ vifm
 vim
 visual-studio-code-bin
 xclip
+xorg-backlight
+xorg-xev
 zsh

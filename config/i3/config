@@ -73,6 +73,13 @@ bindsym XF86AudioNext exec playerctl next
 bindsym XF86AudioPrev exec playerctl previous
 # / SOUND KEY MAPPING
 
+# -----------------------------------
+# BACKLIGHT
+# -----------------------------------
+bindsym XF86MonBrightnessUp exec xbacklight -inc 10
+bindsym XF86MonBrightnessDown exec xbacklight -dec 10
+# / BACKLIGHT
+
 # Lock the screen using a custom script that take a screenshot of the current
 # display and then pixelise it to hide sensitive data. Check the script for
 # more information
