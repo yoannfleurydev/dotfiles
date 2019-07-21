@@ -2,57 +2,53 @@
 
 **WM**
 
-I3 (gaps) is my Window Manager. I'm fond of this little gaps between windows. I
-use [pywal](https://github.com/dylanaraps/pywal) script to change the wallpaper
-and the colorscheme of my softwares, like `gnome-terminal`, `i3` or `rofi`.
+I3 (gaps) is my Window Manager. I'm fond of this little gaps between windows.
 
-![i3-gaps-01](./screenshots/colorscheme01.png)
-![i3-gaps-02](./screenshots/colorscheme02.png)
-![i3-gaps-03](./screenshots/colorscheme03.png)
-![i3-gaps-04](./screenshots/colorscheme04.png)
+![Clean](./screenshots/clean.png)
+![Dirty](./screenshots/dirty.png)
 
 **Terminal**
 
-I use ZSH with Agnoster prompt (with powerline patched font). I have customized
-the prompt to show if the last commit is a Work in Progress or not.
+Alacritty is my main terminal, it is written in Rust and is very fast. As a
+shell, I use FISH, that I find fast too and that has great default integrations.
 
 **Lockscreen**
 
 I use i3lock for the lockscreen. I have a custom script to enable multi-monitor
 lockscreen. You can check [the script](./scripts/lock) in this repository.
 
-![Lock sreen](./screenshots/lock.png)
+![Lock sreen](./screenshots/lockscreen.png)
 
 ## Purpose
 
 Configuration files used by many softwares on UNIX systems. Use at your own
 risk.
 
+- alacritty (terminal configuration)
+- cava (terminal visualizer)
+- compton
 - editorconfig
-- git
-- i3
-- tmux
-- vim
-- zsh
+- fish
+- git (code versionning)
+- i3 (windows manager)
+- morc-menu
+- polybar
+- rofi
+- tmux (terminal multiplexer)
+- vim (terminal editor)
 
 ## Requirements
 
-Set zsh as your login shell :
+Set fish as your login shell :
 
-`chsh -s $(which zsh)`
+`chsh -s $(which fish)`
 
-Be sure to have the following :
-
-- A basic shell to run the scripts.
-- Initialized submodules for pure prompt to work
-  - `git submodule init`
-  - `git submodule update --recursive --remote`
 - `arandr` installed to generate your `~/.screenlayout` scripts that will be
   prompted by i3wm on <kbd>MOD</kbd>+<kbd>x</kbd>
 
 ## Command Line Interface softwares
 
-- [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) -
+- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) -
   similar to ack but faster
 - [tig](https://github.com/jonas/tig) - text mode interface for git
 - [ranger](https://github.com/ranger/ranger) - a VIM-inspired file manager
