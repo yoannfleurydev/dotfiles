@@ -80,6 +80,11 @@ bindsym XF86MonBrightnessUp exec xbacklight -inc 10
 bindsym XF86MonBrightnessDown exec xbacklight -dec 10
 # / BACKLIGHT
 
+# -----------------------------------
+# SCREENSHOT
+# -----------------------------------
+bindsym Control+Print exec gnome-screenshot -i
+
 # Lock the screen using a custom script that take a screenshot of the current
 # display and then pixelise it to hide sensitive data. Check the script for
 # more information
