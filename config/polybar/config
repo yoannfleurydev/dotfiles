@@ -79,9 +79,9 @@ type = internal/xkeyboard
 blacklist-0 = num lock
 
 format = <label-indicator>
-format-prefix = "⌨ "
-format-prefix-background = ${colors.secondary}
-format-prefix-underline = ${colors.secondary}
+format-suffix = "⌨ "
+format-suffix-background = ${colors.secondary}
+format-suffix-underline = ${colors.secondary}
 
 label-indicator-padding = 2
 label-indicator-background = ${colors.secondary}
