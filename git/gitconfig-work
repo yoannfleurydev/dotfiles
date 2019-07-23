@@ -2,5 +2,3 @@
   email = yoann.fleury@saagie.com
   name = Yoann Fleury
 
-[init]
-  templatedir = ~/etc/git.d/git-templates

@@ -43,11 +43,8 @@
   # Cache the http credentials
   helper = cache
 
-[init]
-  templatedir = ~/.git-templates
-
-[includeIf "gitdir:~/work/"]
-  path = ~/.gitconfig-work
+[includeIf "gitdir:~/work/**"]
+    path = ~/etc/dotfiles/git/gitconfig-work
 
 [rerere]
   enabled = true
