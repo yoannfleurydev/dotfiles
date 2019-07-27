@@ -220,21 +220,20 @@ mode $displayMode {
 set $lock $HOME_BIN/lock && sleep 1
 
 # Here, I use bindings as a prompt to control the system
-set $mode_system System (l) lock, (e) logout, (s) suspend, (h) hibernate, (r) reboot, (Shift+s) shutdown
+set $mode_system System (l) lock, (e) logout, (s) suspend, (r) reboot, (Shift+s) shutdown
 mode "$mode_system" {
-    bindsym l exec --no-startup-id $lock, mode "default"
+    bindsym l exec --no-startup-id $HOME_BIN/lock, mode "default"
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
-    bindsym s exec --no-startup-id $lock && systemctl suspend, mode "default"
-    bindsym h exec --no-startup-id $lock && systemctl hibernate, mode "default"
+    bindsym s exec --no-startup-id $HOME_BIN/lock && sleep 1 && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff -i, mode "default"
+    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
     bindsym Escape mode "default"
 }
 
-bindsym $MOD+Pause mode "$mode_system"
+bindsym $MOD+Escape mode "$mode_system"
 
 # Should the focus of the window follow the mouse cursor
 focus_follows_mouse yes
