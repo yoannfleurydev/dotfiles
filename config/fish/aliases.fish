@@ -1,37 +1,13 @@
-alias ef="$EDITOR ~/.config/fish/config.fish"
-alias ev="$EDITOR ~/.vim/vimrc"
-alias et="$EDITOR ~/.tmux.conf"
-alias ei="$EDITOR ~/.config/i3/config"
-alias vi="$EDITOR"
-
-alias ls="ls --color=auto"
-alias sl="ls --color=auto"
-
-alias fucking="sudo"
-alias fuck="sudo"
-
 # GIT ALIASES {{{
-
-alias g="git"
-alias gpom="git push origin master"
-alias gp="git pull"
 alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
 alias git-merged='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
-alias git-statuses='find . -path "*/.git" -maxdepth 2 -print -execdir git status ";"'
 
 function git_push_origin
   set BRANCH (git symbolic-ref HEAD --short)
   git push origin $BRANCH
 end
 
-alias gw="./gradlew"
 alias gpo="git_push_origin"
-# }}}
-
-# USEFUL ALIASES {{{
-
-alias weather="curl wttr.in/Amiens"
-
 # }}}
 
 # UTILITIES {{{

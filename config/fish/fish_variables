@@ -3,7 +3,17 @@
 SETUVAR __fish_init_2_39_8:\x1d
 SETUVAR __fish_init_2_3_0:\x1d
 SETUVAR __fish_init_3_x:\x1d
+SETUVAR _fish_abbr_ef:vim\x20\x7e/etc/dotfiles/config/fish/config\x2efish
+SETUVAR _fish_abbr_ei:vim\x20\x7e/\x2econfig/i3/config
+SETUVAR _fish_abbr_et:vim\x20\x7e/\x2etmux\x2econf
+SETUVAR _fish_abbr_ev:vim\x20\x7e/\x2evim/vimrc
+SETUVAR _fish_abbr_git_2D_statuses:find\x20\x2e\x20\x2dmaxdepth\x202\x20\x2dpath\x20\x22\x2a/\x2egit\x22\x20\x2dexecdir\x20git\x20status\x20\x22\x3b\x22
+SETUVAR _fish_abbr_gp:git\x20pull
+SETUVAR _fish_abbr_gpom:git\x20push\x20origin\x20master
+SETUVAR _fish_abbr_gw:\x2e/gradlew
+SETUVAR _fish_abbr_sl:ls\x20\x2d\x2dcolor\x3dauto
 SETUVAR _fish_abbr_vpn:cd\x20/home/yfleury/etc/vpn/\x20\x26\x26\x20sudo\x20openvpn\x20\x2d\x2dconfig\x20client\x2eovpn
+SETUVAR _fish_abbr_weather:curl\x20wttr\x2ein/Amiens
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
