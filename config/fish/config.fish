@@ -16,7 +16,7 @@ set -x BROWSER firefox
 set -x VISUAL vim
 set -x LC_ALL "en_US.UTF-8"
 
-set -x JAVA_HOME $HOME_BIN/java/jdk1.8.0_212
+set -x JAVA_HOME $HOME_BIN/java/jdk8u222-b10
 set -x GRADLE_HOME $HOME_BIN/gradle
 set -x GRADLE_USER_HOME $HOME/.gradle
 set -x ANDROID_HOME $HOME_BIN/android/sdk
@@ -41,3 +41,4 @@ end
 
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/yfleury/bin/google-cloud-sdk/path.fish.inc' ]; . '/home/yfleury/bin/google-cloud-sdk/path.fish.inc'; end
+if test -f /home/yfleury/.autojump/share/autojump/autojump.fish; . /home/yfleury/.autojump/share/autojump/autojump.fish; end

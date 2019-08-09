@@ -12,8 +12,9 @@ SETUVAR _fish_abbr_gp:git\x20pull
 SETUVAR _fish_abbr_gpom:git\x20push\x20origin\x20master
 SETUVAR _fish_abbr_gw:\x2e/gradlew
 SETUVAR _fish_abbr_sl:ls\x20\x2d\x2dcolor\x3dauto
-SETUVAR _fish_abbr_vpn:cd\x20/home/yfleury/etc/vpn/\x20\x26\x26\x20sudo\x20openvpn\x20\x2d\x2dconfig\x20client\x2eovpn
+SETUVAR _fish_abbr_vpn:cd\x20/home/yfleury/etc/vpn/\x20\x26\x26\x20tmux\x20rename\x2dwindow\x20vpn\x20\x26\x26\x20sudo\x20openvpn\x20\x2d\x2dconfig\x20client\x2eovpn
 SETUVAR _fish_abbr_weather:curl\x20wttr\x2ein/Amiens
+SETUVAR _fish_abbr_yarn_2D_install:yarn\x20\x26\x26\x20notify\x2dsend\x20\x27Installation\x20done\x27
 SETUVAR fish_color_autosuggestion:555\x1ebrblack
 SETUVAR fish_color_cancel:\x2dr
 SETUVAR fish_color_command:005fd7
