@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+
+# Current path
+current_path="$(tmux display-message -p -F "#{pane_current_path}")"
+
+# get the current branch
+function get_branch {
+  value=$(cd $current_path; git rev-parse --abbrev-ref HEAD)
+  echo $value
+}
+
+# # Determine if we are in a git repo
+# function is_git_repo {
+#   if [ -d $current_path/.git ]; then
+#     return 1
+#   elif [ $(cd $current_path; git rev-parse --is-inside-work-tree) ]; then
+#     return 1
+#   else
+#     return 0
+#   fi;
+# }
+
+# if is_git_repo; then
+#   get_branch
+# else
+#   echo no branch
+# fi
+
+# Determine if we are in a git repo
+if [ -d $current_path/.git ]; then
+  get_branch
+elif [ $(cd $current_path; git rev-parse --is-inside-work-tree) ]; then
+  get_branch
+else
+  echo "no git"
+fi;
