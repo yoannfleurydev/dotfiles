@@ -326,6 +326,9 @@ exec --no-startup-id feh --bg-fill $HOME/etc/dotfiles/wall.jpg
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id compton
 exec --no-startup-id blueman-tray
+# https://github.com/bulletmark/libinput-gestures
+exec --no-startup-id libinput-gestures-setup start
+
 
 
 # vim:filetype=i3
