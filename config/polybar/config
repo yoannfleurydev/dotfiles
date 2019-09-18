@@ -232,6 +232,7 @@ format-charging = <label-charging> <ramp-capacity> <animation-charging>
 format-discharging = <label-discharging> <ramp-capacity> <animation-discharging>
 
 ramp-capacity-0 = 😱
+ramp-capacity-0-background = #900
 ramp-capacity-1 = 🤔
 ramp-capacity-2 = 😉
 ramp-capacity-3 = 😎
