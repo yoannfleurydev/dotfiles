@@ -42,3 +42,5 @@ end
 # The next line updates PATH for the Google Cloud SDK.
 if [ -f '/home/yfleury/bin/google-cloud-sdk/path.fish.inc' ]; . '/home/yfleury/bin/google-cloud-sdk/path.fish.inc'; end
 if test -f /home/yfleury/.autojump/share/autojump/autojump.fish; . /home/yfleury/.autojump/share/autojump/autojump.fish; end
+
+eval (starship init fish)
