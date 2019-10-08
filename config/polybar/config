@@ -50,7 +50,7 @@ font-2 = NotoColorEmoji:scale=8;4
 
 modules-left = i3
 modules-center = music
-modules-right = xkeyboard xbacklight pulseaudio wlan eth battery temperature date powermenu
+modules-right = xkeyboard xbacklight pulseaudio wlan eth battery temperature date powermenu github
 
 tray-position = right
 tray-padding = 2
@@ -279,6 +279,23 @@ menu-0-1 = power off
 menu-0-1-foreground = ${colors.foreground}
 menu-0-1-background = ${colors.alert}
 menu-0-1-exec = poweroff
+
+[module/github]
+type = internal/github
+
+; Accessing an access token stored in file
+token = ${file:/home/yfleury/.github_polybar_token}
+
+; Whether empty notifications should be displayed or not
+empty-notifications = true
+
+; Number of seconds in between requests
+interval = 60
+
+; Github API URL (unreleased)
+; Default: https://api.github.com/
+api-url = https://hub.example.org/api/v3/
+label = GH: %notifications%
 
 [settings]
 screenchange-reload = true

@@ -45,7 +45,7 @@ Plugin 'dag/vim-fish'                  " fish shell support
 Plugin 'leafgarland/typescript-vim'    " typescript support
 
 " Syntax checking plugin
-Plugin 'w0rp/ale'                     " asynchronous linter
+Plugin 'dense-analysis/ale'           " asynchronous linter
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -88,14 +88,16 @@ noremap <Right> <Nop>
 
 " ALE Configuration
 " INLINE LINTING/TYPE CHECKING/FORMATTING
-let g:ale_linters = {}
-let g:ale_linters['javascript'] = ['prettier']
-let g:ale_fixers = {}
-let g:ale_fixers['javascript'] = ['prettier']
+let g:ale_fixers = {
+\   'markdown': ['prettier'],
+\   'javascript': ['prettier'],
+\   'css': ['prettier'],
+\}
+let g:ale_fix_on_save = 1
 let g:ale_sign_column_always = 1
 let g:ale_lint_on_save = 1
+let g:ale_linters_explicit = 1
 let g:ale_lint_on_text_changed = 0
-let g:ale_fix_on_save = 1
 let g:ale_javascript_prettier_use_local_config = 1
 
 
