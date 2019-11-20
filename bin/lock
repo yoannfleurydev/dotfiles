@@ -16,7 +16,7 @@ PARAMS=""
 OUTPUT_IMAGE="/tmp/lockscreen.png"
 
 # Take screenshot:
-scrot -z $OUTPUT_IMAGE
+scrot -zo $OUTPUT_IMAGE
 
 # Get dimensions of the lock image:
 LOCK_IMAGE_INFO=`identify $LOCK`
