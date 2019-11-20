@@ -48,15 +48,11 @@ Set fish as your login shell :
 
 ## Command Line Interface softwares
 
-- [the_silver_searcher](https://github.com/ggreer/the_silver_searcher) -
+- [gitweb](https://github.com/yoannfleurydev/gitweb)
+- [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) -
   similar to ack but faster
 - [tig](https://github.com/jonas/tig) - text mode interface for git
 - [ranger](https://github.com/ranger/ranger) - a VIM-inspired file manager
-- [k](https://github.com/supercrabtree/k) - ls alternative
-- [z](https://github.com/rupa/z) - tracks your most used directories, based on
-  'frecency'.
-- [pywal](https://github.com/dylanaraps/pywal) - 🎨 Generate and change
-  colorschemes on the fly. A 'wal' rewrite in Python 3.
 - [fzf](https://github.com/junegunn/fzf) - 🌸 A command-line fuzzy finder
 - [fpp](https://github.com/facebook/PathPicker) - Facebook Path Picker
 - [ctags](http://ctags.sourceforge.net/) - Generate an indexof names found in
@@ -67,10 +63,10 @@ Set fish as your login shell :
 
 ## Scripts
 
-- **lock** : used as a lockscreen
-- **vol** : manage the volume
-- **gitweb** : open the remote repository web interface
-- **sp** : control spotify in command line interface
+- **lock** : use i3lock and custom logic to lock the computer screen
+- **vol** : controle the volume in command line
+- **sp** : control spotify in command line interface useful to use with i3 keys
+  mapping.
 
 ## Feedbacks
 
