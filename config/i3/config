@@ -329,7 +329,8 @@ exec --no-startup-id blueman-tray
 # https://github.com/bulletmark/libinput-gestures
 exec --no-startup-id libinput-gestures-setup start
 
-
+# Script that will prompt the user when the battery is low.
+exec --no-startup-id i3-battery-popup
 
 # vim:filetype=i3
 

@@ -10,6 +10,7 @@ fzf
 git
 google-chrome
 highlight
+i3-battery-popup-git
 i3-gaps
 i3lock
 insomnia
@@ -31,6 +32,7 @@ scrot
 spotify
 the_silver_searcher
 tig
+tk
 tmux
 ttf-cascadia-code
 ttf-font-awesome-4
