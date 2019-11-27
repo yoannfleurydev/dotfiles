@@ -8,16 +8,13 @@ call vundle#begin()
 Plugin 'VundleVim/Vundle.vim'
 
 " Utils
-Plugin 'tpope/vim-surround'            " surround word/sentence with quotes
 Plugin 'airblade/vim-rooter'           " auto-define the root of project
-Plugin 'dylanaraps/wal'                " colorscheme based on wal script
 Plugin 'ludovicchabant/vim-gutentags'  " ctags
-Plugin 'Valloric/YouCompleteMe'        " autocompletion
+Plugin 'ycm-core/YouCompleteMe'        " autocompletion
 
 " Git plugins
 Plugin 'tpope/vim-fugitive'            " git commands in vim
 Plugin 'airblade/vim-gitgutter'        " git diff for the current file
-Plugin 'junegunn/gv.vim'               " git commit browser
 
 " Airline
 Plugin 'vim-airline/vim-airline'        " vim status line
@@ -25,7 +22,6 @@ Plugin 'vim-airline/vim-airline-themes' " theme for the vim status line
 
 " File extensions
 Plugin 'scrooloose/nerdtree'            " file explorer in vim
-Plugin 'majutsushi/tagbar'
 
 " Find in path like
 Plugin 'rking/ag.vim'                   " the silver searcher implementation
@@ -33,19 +29,16 @@ Plugin 'ctrlpvim/ctrlp.vim'             " fuzzy finder
 
 " EditorConfig, Linters
 Plugin 'editorconfig/editorconfig-vim'  " editorconfig
+Plugin 'dense-analysis/ale'           " asynchronous linter
 
 " Language plugins
 Plugin 'tpope/vim-markdown'
 Plugin 'mattn/emmet-vim'               " Emmet for Vim
-Plugin 'posva/vim-vue'                 " VueJS support
 Plugin 'PotatoesMaster/i3-vim-syntax'  " i3wm syntax highlight
 Plugin 'pangloss/vim-javascript'       " javascript improvement
 Plugin 'mxw/vim-jsx'                   " JSX support
 Plugin 'dag/vim-fish'                  " fish shell support
 Plugin 'leafgarland/typescript-vim'    " typescript support
-
-" Syntax checking plugin
-Plugin 'dense-analysis/ale'           " asynchronous linter
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -70,7 +63,6 @@ let g:airline#extensions#tabline#enabled = 1
 autocmd InsertEnter * :set number
 autocmd InsertLeave * :set relativenumber
 
-"
 " Key mapping
 "
 " imap is for the Insert mode
