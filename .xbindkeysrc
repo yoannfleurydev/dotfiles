@@ -1,0 +1,7 @@
+# thumb wheel up => increase volume
+"pactl set-sink-volume @DEFAULT_SINK@ +2%"
+   b:6
+
+# thumb wheel down => lower volume
+"pactl set-sink-volume @DEFAULT_SINK@ -2%"
+   b:7

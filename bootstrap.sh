@@ -21,7 +21,6 @@ link_dotfiles() {
   mkdir -p $HOME/.zsh
   mkdir -p $HOME/.vim
   ln -sf $HOME/etc/dotfiles/config/fish/ $HOME/.config/fish
-  ln -sf $HOME/etc/dotfiles/zsh/zshrc $HOME/.zshrc
   ln -sf $HOME/etc/dotfiles/zsh/aliases.zsh $HOME/.zsh/aliases.zsh
   ln -sf $HOME/etc/dotfiles/zsh/prompt.zsh $HOME/.zsh/prompt.zsh
   ln -sf $HOME/etc/dotfiles/tmux/tmux.conf $HOME/.tmux.conf
@@ -42,6 +41,7 @@ link_dotfiles() {
   ln -sf $HOME/etc/dotfiles/config/alacritty $HOME/.config/
   ln -sf $HOME/etc/dotfiles/config/compton $HOME/.config/
   ln -sf $HOME/etc/dotfiles/config/morc_menu $HOME/.config/
+  ln -sf $HOME/etc/dotfiles/.xbindkeysrc $HOME/.xbindkeysrc
 }
 
 set_shell() {

@@ -327,6 +327,9 @@ exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
 exec --no-startup-id blueman-tray
 # https://github.com/bulletmark/libinput-gestures
 exec --no-startup-id libinput-gestures-setup start
+# http://www.nongnu.org/xbindkeys/xbindkeys.html
+# Useful to map more button from my MX Master 2 Logitech mouse
+exec --no-startup-id xbindkeys
 
 # Script that will prompt the user when the battery is low.
 exec --no-startup-id i3-battery-popup
