@@ -50,7 +50,7 @@ font-2 = NotoColorEmoji:scale=8;4
 
 modules-left = i3
 modules-center = music
-modules-right = xkeyboard xbacklight pulseaudio wlan eth battery temperature date powermenu github
+modules-right = xkeyboard xbacklight pulseaudio-control wlan eth battery temperature date powermenu github
 
 tray-position = right
 tray-padding = 2
@@ -283,6 +283,8 @@ menu-0-1-exec = poweroff
 [module/github]
 type = internal/github
 
+click-left = xdg-open https://github.com/notifications
+
 ; Accessing an access token stored in file
 token = ${file:/home/yfleury/.github_polybar_token}
 
@@ -295,7 +297,22 @@ interval = 60
 ; Github API URL (unreleased)
 ; Default: https://api.github.com/
 api-url = https://hub.example.org/api/v3/
-label = GH: %notifications%
+label = GH : %notifications%
+
+[module/pulseaudio-control]
+type = custom/script
+tail = true
+label=%output%
+; format-underline = ${colors.blue}
+
+exec = ~/etc/polybar-pulseaudio-control/pulseaudio-control.sh --listen
+click-right = exec pavucontrol &
+click-left = ~/etc/polybar-pulseaudio-control/pulseaudio-control.sh --togmute
+click-middle = ~/etc/polybar-pulseaudio-control/pulseaudio-control.sh --change
+scroll-up = ~/etc/polybar-pulseaudio-control/pulseaudio-control.sh --up
+scroll-down = ~/etc/polybar-pulseaudio-control/pulseaudio-control.sh --down
+label-padding = 2
+label-foreground = ${colors.foreground}
 
 [settings]
 screenchange-reload = true
