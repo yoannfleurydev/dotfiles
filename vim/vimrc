@@ -9,10 +9,8 @@ Plugin 'VundleVim/Vundle.vim'
 
 " Utils
 Plugin 'airblade/vim-rooter'           " auto-define the root of project
-Plugin 'ludovicchabant/vim-gutentags'  " ctags
-Plugin 'ycm-core/YouCompleteMe'        " autocompletion
 
-" Git plugins
+" Git
 Plugin 'tpope/vim-fugitive'            " git commands in vim
 Plugin 'airblade/vim-gitgutter'        " git diff for the current file
 
@@ -20,25 +18,21 @@ Plugin 'airblade/vim-gitgutter'        " git diff for the current file
 Plugin 'vim-airline/vim-airline'        " vim status line
 Plugin 'vim-airline/vim-airline-themes' " theme for the vim status line
 
-" File extensions
+" Files management
 Plugin 'scrooloose/nerdtree'            " file explorer in vim
-
-" Find in path like
 Plugin 'rking/ag.vim'                   " the silver searcher implementation
 Plugin 'ctrlpvim/ctrlp.vim'             " fuzzy finder
 
 " EditorConfig, Linters
 Plugin 'editorconfig/editorconfig-vim'  " editorconfig
-Plugin 'dense-analysis/ale'           " asynchronous linter
+Plugin 'dense-analysis/ale'             " asynchronous linter
 
 " Language plugins
-Plugin 'tpope/vim-markdown'
+Plugin 'tpope/vim-markdown'            " Markdown
 Plugin 'mattn/emmet-vim'               " Emmet for Vim
 Plugin 'PotatoesMaster/i3-vim-syntax'  " i3wm syntax highlight
 Plugin 'pangloss/vim-javascript'       " javascript improvement
-Plugin 'mxw/vim-jsx'                   " JSX support
 Plugin 'dag/vim-fish'                  " fish shell support
-Plugin 'leafgarland/typescript-vim'    " typescript support
 
 " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -77,21 +71,6 @@ noremap <Up> <Nop>
 noremap <Down> <Nop>
 noremap <Left> <Nop>
 noremap <Right> <Nop>
-
-" ALE Configuration
-" INLINE LINTING/TYPE CHECKING/FORMATTING
-let g:ale_fixers = {
-\   'markdown': ['prettier'],
-\   'javascript': ['prettier'],
-\   'css': ['prettier'],
-\}
-let g:ale_fix_on_save = 1
-let g:ale_sign_column_always = 1
-let g:ale_lint_on_save = 1
-let g:ale_linters_explicit = 1
-let g:ale_lint_on_text_changed = 0
-let g:ale_javascript_prettier_use_local_config = 1
-
 
 " NERDTree Configuration
 let NERDTreeShowHidden=1
