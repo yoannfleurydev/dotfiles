@@ -16,6 +16,10 @@ mkdirectories() {
   mkdir $HOME/{bin,dev,etc,tmp,work} -p
 }
 
+polybar_plugins() {
+    git clone git@github.com:marioortizmanero/polybar-pulseaudio-control.git ~/etc/polybar-pulseaudio-control
+}
+
 # Link all the dotfiles
 link_dotfiles() {
   mkdir -p $HOME/.zsh
