@@ -2,19 +2,19 @@
 
 **WM**
 
-I3 (gaps) is my Window Manager. I'm fond of this little gaps between windows.
+[i3-gaps](https://github.com/Airblader/i3) is my Window Manager.
 
 ![Clean](./screenshots/clean.png)
 ![Dirty](./screenshots/dirty.png)
 
 **Terminal**
 
-Alacritty is my main terminal, it is written in Rust and is very fast. As a
-shell, I use FISH, that I find fast too and that has great default integrations.
+[Alacritty](https://github.com/alacritty/alacritty) is my main terminal, it is written in Rust and is very fast. As a
+shell, I use [fish](https://github.com/fish-shell/fish-shell), that I find fast too and that has great default integrations.
 
 **Lockscreen**
 
-I use i3lock for the lockscreen. I have a custom script to enable multi-monitor
+I use [i3lock](https://github.com/i3/i3lock) for the lockscreen. I have a custom script to enable multi-monitor
 lockscreen. You can check [the script](./scripts/lock) in this repository.
 
 ![Lock sreen](./screenshots/lockscreen.png)
@@ -28,12 +28,12 @@ risk.
 - cava (terminal visualizer)
 - compton
 - editorconfig
-- fish
+- fish (shell)
 - git (code versionning)
 - i3 (windows manager)
 - morc-menu
-- polybar
-- rofi
+- polybar (topbar)
+- rofi (launcher)
 - tmux (terminal multiplexer)
 - vim (terminal editor)
 
@@ -48,7 +48,7 @@ Set fish as your login shell :
 
 ## Command Line Interface softwares
 
-- [gitweb](https://github.com/yoannfleurydev/gitweb)
+- [gitweb](https://github.com/yoannfleurydev/gitweb) - Open the current remote repository in your browser
 - [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) -
   similar to ack but faster
 - [tig](https://github.com/jonas/tig) - text mode interface for git
