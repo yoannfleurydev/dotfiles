@@ -26,9 +26,10 @@ set -x KAFKA_HOME $HOME_BIN/kafka
 set -x FLUTTER_HOME $HOME_BIN/flutter
 set -x XDG_CONFIG_HOME $HOME/.config
 set -x GOOGLE_CLOUD_HOME $HOME_BIN/google-cloud-sdk
+set -x DENO_INSTALL $HOME/.deno
 
 # PATH {{{
-set -x PATH (yarn global bin) $GOOGLE_CLOUD_HOME/bin $HOME/.cargo/bin $MVN_HOME/bin $ANDROID_HOME/platform-tools $ANDROID_HOME/tools $GRADLE_HOME/bin $HOME/.local/bin $FLUTTER_HOME/bin $JAVA_HOME/bin $HOME/bin $HOME/.npm-global/bin $PATH
+set -x PATH (yarn global bin) $DENO_INSTALL/bin $GOOGLE_CLOUD_HOME/bin $HOME/.cargo/bin $MVN_HOME/bin $ANDROID_HOME/platform-tools $ANDROID_HOME/tools $GRADLE_HOME/bin $HOME/.local/bin $FLUTTER_HOME/bin $JAVA_HOME/bin $HOME/bin $HOME/.npm-global/bin $PATH
 #}}}
 
 source ~/etc/dotfiles/config/fish/aliases.fish
