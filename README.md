@@ -49,6 +49,7 @@ Set fish as your login shell :
 ## Command Line Interface softwares
 
 - [gitweb](https://github.com/yoannfleurydev/gitweb) - Open the current remote repository in your browser
+- [bat](https://github.com/sharkdp/bat) - A cat(1) clone with wings. 
 - [the\_silver\_searcher](https://github.com/ggreer/the_silver_searcher) -
   similar to ack but faster
 - [tig](https://github.com/jonas/tig) - text mode interface for git
