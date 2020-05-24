@@ -52,6 +52,7 @@
 
 [push]
   default = current
+  followTags = true
 
 [fetch]
   prune = true
