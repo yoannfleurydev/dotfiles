@@ -160,8 +160,14 @@ bindsym $MOD+Shift+ccedilla move container to workspace 9
 bindsym $MOD+Shift+agrave move container to workspace 10
 
 set $SPOTIFY 8
+set $ZOOM    9
+
 assign [class="Spotify"] $SPOTIFY
+assign [class="zoom"]    $ZOOM
+
 for_window [class="Spotify"] move to workspace $SPOTIFY
+for_window [class="zoom"]    move to workspace $ZOOM
+
 for_window [class=".*"] title_format " %title"
 
 # reload the configuration file
