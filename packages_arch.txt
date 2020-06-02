@@ -4,6 +4,7 @@ ctags
 compton
 direnv
 discord
+espanso
 feh
 fish
 fzf
