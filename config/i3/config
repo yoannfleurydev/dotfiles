@@ -330,7 +330,9 @@ exec --no-startup-id "$HOME/.screenlayout/work-remote.sh"
 exec --no-startup-id feh --bg-fill $HOME/etc/dotfiles/wall.jpg
 # Useful for pamac-manager to ask for password
 exec --no-startup-id /usr/lib/polkit-gnome/polkit-gnome-authentication-agent-1
+# Start the applets for bluetooth and Network-Manager
 exec --no-startup-id blueman-tray
+exec --no-startup-id nm-applet
 # https://github.com/bulletmark/libinput-gestures
 exec --no-startup-id libinput-gestures-setup start
 # http://www.nongnu.org/xbindkeys/xbindkeys.html
