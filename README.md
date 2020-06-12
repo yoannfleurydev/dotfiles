@@ -9,8 +9,11 @@
 
 **Terminal**
 
-[Alacritty](https://github.com/alacritty/alacritty) is my main terminal, it is written in Rust and is very fast. As a
-shell, I use [fish](https://github.com/fish-shell/fish-shell), that I find fast too and that has great default integrations.
+[Alacritty](https://github.com/alacritty/alacritty) is my main terminal, it is
+written in Rust and is very fast. As a shell, I use
+[fish](https://github.com/fish-shell/fish-shell), that I find fast too and that
+has great default integrations. The prompt I use is
+[starship](https://starship.rs/).
 
 **Lockscreen**
 
@@ -28,6 +31,7 @@ risk.
 - cava (terminal visualizer)
 - compton
 - editorconfig
+- espanso (cross platform text expander)
 - fish (shell)
 - git (code versionning)
 - i3 (windows manager)
