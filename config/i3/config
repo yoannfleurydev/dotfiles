@@ -136,28 +136,28 @@ bindsym $MOD+q focus parent
 #bindsym $MOD+d focus child
 
 # switch to workspace
-bindsym $MOD+ampersand  workspace 1
-bindsym $MOD+eacute     workspace 2
-bindsym $MOD+quotedbl   workspace 3
-bindsym $MOD+apostrophe workspace 4
-bindsym $MOD+parenleft  workspace 5
-bindsym $MOD+minus      workspace 6
-bindsym $MOD+egrave     workspace 7
-bindsym $MOD+underscore workspace 8
-bindsym $MOD+ccedilla   workspace 9
-bindsym $MOD+agrave     workspace 10
+bindsym $MOD+1 workspace 1
+bindsym $MOD+2 workspace 2
+bindsym $MOD+3 workspace 3
+bindsym $MOD+4 workspace 4
+bindsym $MOD+5 workspace 5
+bindsym $MOD+6 workspace 6
+bindsym $MOD+7 workspace 7
+bindsym $MOD+8 workspace 8
+bindsym $MOD+9 workspace 9
+bindsym $MOD+0 workspace 10
 
 # move focused container to workspace
-bindsym $MOD+Shift+ampersand move container to workspace 1
-bindsym $MOD+Shift+eacute move container to workspace 2
-bindsym $MOD+Shift+quotedbl move container to workspace 3
-bindsym $MOD+Shift+apostrophe move container to workspace 4
+bindsym $MOD+Shift+1 move container to workspace 1
+bindsym $MOD+Shift+2 move container to workspace 2
+bindsym $MOD+Shift+3 move container to workspace 3
+bindsym $MOD+Shift+4 move container to workspace 4
 bindsym $MOD+Shift+5 move container to workspace 5
-bindsym $MOD+Shift+minus move container to workspace 6
-bindsym $MOD+Shift+egrave move container to workspace 7
-bindsym $MOD+Shift+underscore move container to workspace 8
-bindsym $MOD+Shift+ccedilla move container to workspace 9
-bindsym $MOD+Shift+agrave move container to workspace 10
+bindsym $MOD+Shift+6 move container to workspace 6
+bindsym $MOD+Shift+7 move container to workspace 7
+bindsym $MOD+Shift+8 move container to workspace 8
+bindsym $MOD+Shift+9 move container to workspace 9
+bindsym $MOD+Shift+0 move container to workspace 10
 
 set $SPOTIFY 8
 set $ZOOM    9
