@@ -232,7 +232,8 @@ mode "$mode_system" {
     bindsym e exec --no-startup-id i3-msg exit, mode "default"
     bindsym s exec --no-startup-id $HOME_BIN/lock && sleep 1 && systemctl suspend, mode "default"
     bindsym r exec --no-startup-id systemctl reboot, mode "default"
-    bindsym Shift+s exec --no-startup-id systemctl poweroff, mode "default"
+    bindsym Shift+s exec --no-startup-id $HOME_BIN/slack_status.sh away && systemctl poweroff; \
+        mode "default"
 
     # back to normal: Enter or Escape
     bindsym Return mode "default"
@@ -341,6 +342,25 @@ exec --no-startup-id xbindkeys
 
 # Script that will prompt the user when the battery is low.
 exec --no-startup-id i3-battery-popup
+
+# ----------------------------------
+# EXTERNAL INTEGRATION
+#-----------------------------------
+set $slack_status_changer (h)ere, (a)way, (b)rb, (z)oom
+mode "$slack_status_changer" {
+    bindsym z exec --no-startup-id $HOME_BIN/slack_status.sh zoom; \
+      mode "default"
+    bindsym a exec --no-startup-id $HOME_BIN/slack_status.sh away; \
+      mode "default"
+    bindsym b exec --no-startup-id $HOME_BIN/slack_status.sh brb; \
+      mode "default"
+    bindsym h exec --no-startup-id $HOME_BIN/slack_status.sh here; \
+      mode "default"
+    # back to normal: Enter or Escape
+    bindsym Return mode "default"
+    bindsym Escape mode "default"
+}
+bindsym $mod+Shift+s mode "$slack_status_changer"
 
 # vim:filetype=i3
 
