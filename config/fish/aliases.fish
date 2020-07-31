@@ -2,6 +2,10 @@
 alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
 alias git-merged='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
 
+function get_hash
+    git log --oneline | fzf | cut -f 1 -d" "
+end
+
 function git_push_origin
   set BRANCH (git symbolic-ref HEAD --short)
   git push origin $BRANCH
