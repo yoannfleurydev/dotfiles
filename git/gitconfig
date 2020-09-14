@@ -1,5 +1,5 @@
 [user]
-  email = yoann.fleury@yahoo.com
+  email = yoann.fleury@saagie.com
   name = Yoann Fleury
 
 [core]
@@ -58,4 +58,12 @@
   prune = true
 
 [pull]
-	rebase = true
+  rebase = true
+
+[filter "lfs"]
+  process = git-lfs filter-process
+  required = true
+  clean = git-lfs clean -- %f
+  smudge = git-lfs smudge -- %f
+[init]
+  defaultBranch = main
