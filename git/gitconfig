@@ -3,17 +3,13 @@
   name = Yoann Fleury
 
 [core]
-  editor = vim
+  editor = code --wait
   excludesfile = ~/.gitignore_global
-
-[commit]
-  template = ~/.git_commit_template
 
 [alias]
   amend = commit --amend
   amend-no-edit = commit --amend --no-edit
   conflicts = diff --name-only --diff-filter=U
-  fetch = fetch --prune
   l = log --pretty=oneline --graph --abbrev-commit
   last = log -1 HEAD
   st = status -sb
@@ -46,6 +42,7 @@
 [includeIf "gitdir:~/work/**"]
     path = ~/etc/dotfiles/git/gitconfig-work
 
+# Reuse recorded resolution of conflicted merges
 [rerere]
   enabled = true
   autoupdate = true
@@ -65,5 +62,6 @@
   required = true
   clean = git-lfs clean -- %f
   smudge = git-lfs smudge -- %f
+
 [init]
   defaultBranch = main
