@@ -3,7 +3,7 @@
   name = Yoann Fleury
 
 [core]
-  editor = code --wait
+  editor = vim
   excludesfile = ~/.gitignore_global
 
 [alias]
