@@ -50,6 +50,7 @@
 [push]
   default = current
   followTags = true
+  autoSetupRemote = true
 
 [fetch]
   prune = true
@@ -65,3 +66,7 @@
 
 [init]
   defaultBranch = main
+[url "git@github.com:"]
+	insteadOf = git://github.com/
+[url "git@gitlab.com:"]
+	insteadOf = git://gitlab.com/

@@ -1,6 +1,8 @@
 # GIT ALIASES {{{
 alias wip='git add .; git commit -a -m "WIP Commit"; git push origin master'
 alias git-merged='git branch --merged | egrep -v "(^\*|master|develop)" | xargs git branch -d'
+alias composer='docker run --pull=always --rm --interactive --tty --volume $PWD:/app --user $(id -u):$(id -g) composer:latest'
+alias p='pnpm'
 
 function get_hash
     git log --oneline | fzf | cut -f 1 -d" " | xclip -selection clipboard
