@@ -1,10 +1,12 @@
 [user]
   email = yoann.fleury@yahoo.com
   name = Yoann Fleury
+  signingkey = ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIAWB2BbLvHkUin+sdS5P6Di6v/ukHzt4PAiXxCpFdeAO
 
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
+  pager = delta
 
 [alias]
   amend = commit --amend
@@ -70,3 +72,13 @@
 	insteadOf = git://github.com/
 [url "git@gitlab.com:"]
 	insteadOf = git://gitlab.com/
+
+[gpg]
+  format = ssh
+
+[gpg "ssh"]
+  program = "/Applications/1Password.app/Contents/MacOS/op-ssh-sign"
+
+[commit]
+  gpgsign = true
+

@@ -60,3 +60,13 @@ tags.temp
 # Software files #
 ##################
 .gissue.json
+justfile
+
+# LLM files #
+#############
+*.prompt
+
+
+# Certs #
+#########
+certs/
