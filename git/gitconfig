@@ -8,6 +8,12 @@
   excludesfile = ~/.gitignore_global
   pager = delta
 
+[column]
+  ui = auto
+
+[branch]
+  sort = -committerdate
+
 [alias]
   amend = commit --amend
   amend-no-edit = commit --amend --no-edit
@@ -32,6 +38,9 @@
   # Use better prefix (c, i, w) instead of 'a' and 'b' in diff
   mnemonicPrefix = true
   wordRegex = .
+  algorithm = histogram
+  colorMoved = plain
+  renames = true
 
 [help]
   # Automatically correct and execute mistyped commands
@@ -56,9 +65,14 @@
 
 [fetch]
   prune = true
+  pruneTags = true
+  all = true
 
 [pull]
   rebase = true
+
+[rebase]
+  autoStash = true
 
 [filter "lfs"]
   process = git-lfs filter-process
@@ -81,4 +95,7 @@
 
 [commit]
   gpgsign = true
+  verbose = true
 
+[tag]
+  sort = version:refname
