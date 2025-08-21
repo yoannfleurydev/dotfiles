@@ -1,9 +1,0 @@
-#!/usr/bin/env bash
-
-. "${HOME}/.cache/wal/colors.sh"
-
-main() {
-    xrdb -merge ~/.cache/wal/rofi.xres &
-}
-
-main
