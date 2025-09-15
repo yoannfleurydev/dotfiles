@@ -51,7 +51,7 @@
   helper = cache
 
 [includeIf "gitdir:~/work/**"]
-    path = ~/etc/dotfiles/git/gitconfig-work
+    path = ~/.gitconfig-work
 
 # Reuse recorded resolution of conflicted merges
 [rerere]
