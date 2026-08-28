@@ -26,6 +26,7 @@
 ######################
 *.log
 *.sqlite
+*.bak
 
 # OS generated files #
 ######################
@@ -65,8 +66,11 @@ justfile
 # LLM files #
 #############
 *.prompt
+**.claude/*.local.json
 
 
 # Certs #
 #########
 certs/
+
+**/.claude/settings.local.json

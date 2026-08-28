@@ -31,3 +31,6 @@ aerospace                       caffeine                        firefox         
 appcleaner                      dbeaver-community               font-maple-mono-nf              handbrake-app                   slack
 applite                         devcleaner                      gcloud-cli                      keycastr                        spotify
 arc                             devtoys                         ghostty                         libreoffice                     utm
+
+
+hunk

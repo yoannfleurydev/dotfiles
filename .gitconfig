@@ -6,7 +6,7 @@
 [core]
   editor = vim
   excludesfile = ~/.gitignore_global
-  pager = delta
+	pager = hunk pager
 
 [column]
   ui = auto
